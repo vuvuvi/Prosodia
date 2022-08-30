@@ -492,6 +492,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
+      propertyPath: id
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
       propertyPath: locations.Array.size
       value: 0
       objectReference: {fileID: 0}
