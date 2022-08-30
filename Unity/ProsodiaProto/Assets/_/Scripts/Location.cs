@@ -8,6 +8,8 @@ public class Location : MonoBehaviour
   public float DistanceFromPlayer;
   private MeshRenderer meshRenderer;
   public PongEffect effect;
+  public List<Location> locations;
+  public int id;
   
   private void Start()
   {
@@ -17,6 +19,20 @@ public class Location : MonoBehaviour
   internal void ChangeMaterial(Material material)
   {
     meshRenderer.material = material;
-    Destroy(Instantiate(effect, transform).gameObject, effect.duration);
+    PongEffect pongEffect = Instantiate(effect, transform);
+    pongEffect.StartAnimation();
+    Destroy(pongEffect.gameObject, effect.duration);
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    foreach (var location in locations)
+    {
+      if(location)
+      {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, location.transform.position);
+      }
+    }
   }
 }

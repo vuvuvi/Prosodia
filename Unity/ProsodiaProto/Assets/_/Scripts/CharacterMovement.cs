@@ -8,6 +8,7 @@ public class CharacterMovement : MonoBehaviour
   private bool isMoving;
   private Vector3 targetLocation;
   private Vector3 movement;
+  public PongEffect effectPing;
 
   void Start()
   {
@@ -30,6 +31,7 @@ public class CharacterMovement : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.D))
       {
         locationManager.PlayerPing(transform.position);
+        effectPing.StartAnimation();
         isMoving = true;
         targetLocation = transform.position;
       }

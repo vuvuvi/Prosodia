@@ -144,9 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363453070e0890d499e631ce5422f75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 2
   duration: 1
   time: 0
   shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
+  started: 0
 --- !u!1 &1167349673556613640
 GameObject:
   m_ObjectHideFlags: 0

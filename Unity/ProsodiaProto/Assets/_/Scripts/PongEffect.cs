@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class PongEffect : MonoBehaviour
 {
+    public float size;
     public float duration;
     public float time;
     public Material shader;
-
-    void Start()
-    {
-        time = 0;
-    }
-
+    public bool started;
     
     void Update()
     {
-        if(time >= duration)
-        {
-            time = 0;
-            shader.SetFloat("_transparency", 1f);
-            transform.localScale = Vector3.zero;
-        }
-        else
+        if(started && time < duration)
         {
             time += Time.deltaTime;
-            transform.localScale += (Vector3.one * Time.deltaTime)/duration;
-            shader.SetFloat("_transparency", (1 - time/duration));
+            transform.localScale += size * (Vector3.one * Time.deltaTime)/duration;
+            shader.SetFloat("_transparency", ((1 - time/duration)*2));
         }
+    }
 
-        Debug.Log(shader.GetFloat("_transparency"));
+    public void StartAnimation()
+    {
+        time = 0;
+        shader.SetFloat("_transparency", 1f);
+        transform.localScale = Vector3.zero;
+        started = true;
     }
 }
