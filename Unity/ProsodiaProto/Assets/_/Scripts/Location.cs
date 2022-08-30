@@ -7,6 +7,8 @@ public class Location : MonoBehaviour
 {
   public float DistanceFromPlayer;
   private MeshRenderer meshRenderer;
+  public PongEffect effect;
+  
   private void Start()
   {
     meshRenderer = GetComponent<MeshRenderer>();
@@ -15,5 +17,6 @@ public class Location : MonoBehaviour
   internal void ChangeMaterial(Material material)
   {
     meshRenderer.material = material;
+    Destroy(Instantiate(effect, transform).gameObject, effect.duration);
   }
 }

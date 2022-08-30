@@ -674,7 +674,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "3bf45d7a51584b8e97adc99ad32b0d04",
     "m_Id": 0,
-    "m_DisplayName": "trans",
+    "m_DisplayName": "transparency",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1631,10 +1631,10 @@
     "m_Guid": {
         "m_GuidSerialized": "be2fba76-2fa6-4282-b3e1-8f4fa36ea59b"
     },
-    "m_Name": "trans",
+    "m_Name": "transparency",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "trans",
-    "m_DefaultReferenceName": "_trans",
+    "m_RefNameGeneratedByDisplayName": "transparency",
+    "m_DefaultReferenceName": "_transparency",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
