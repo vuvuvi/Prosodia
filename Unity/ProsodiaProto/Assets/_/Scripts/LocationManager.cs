@@ -14,6 +14,7 @@ public class LocationManager : MonoBehaviour
   public Material Black;
   public Material Yellow;
   public Material White;
+  
   void Start()
   {
     locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
@@ -32,8 +33,8 @@ public class LocationManager : MonoBehaviour
     {
       location.DistanceFromPlayer = Vector3.Distance(playerPosition, location.transform.position);
     }
-    locations= locations.OrderBy(location => location.DistanceFromPlayer).ToList();
-      ColorClosestLocations();
+    locations = locations.OrderBy(location => location.DistanceFromPlayer).ToList();
+    ColorClosestLocations();
   }
 
   private void ColorClosestLocations()
