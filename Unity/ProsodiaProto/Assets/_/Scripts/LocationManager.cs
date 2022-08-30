@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LocationManager : MonoBehaviour
 {
-  List<Location> locations;
+  public List<Location> locations;
   private List<Material> materials;
   public Material Red;
   public Material Blue;
@@ -14,7 +14,7 @@ public class LocationManager : MonoBehaviour
   public Material Black;
   public Material Yellow;
   public Material White;
-  
+
   void Start()
   {
     locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
@@ -53,5 +53,24 @@ public class LocationManager : MonoBehaviour
   {
     UncolorLocations();
     return locations[positionIndex].transform.position;
+  }
+
+  public void RefreshIdLocation()
+  {
+    locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    
+    for (int i = 0; i < locations.Count; i++)
+    {
+      locations[i].name = "Location " + i;
+      locations[i].id = i;
+      locations[i].transform.parent = null;
+      locations[i].transform.parent = transform;
+    }
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    RefreshIdLocation();
+    Debug.Log("Refresh ID locations");
   }
 }

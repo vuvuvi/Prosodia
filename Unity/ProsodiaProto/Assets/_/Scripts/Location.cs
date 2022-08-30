@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Location : MonoBehaviour
 {
@@ -34,5 +35,13 @@ public class Location : MonoBehaviour
         Gizmos.DrawLine(transform.position, location.transform.position);
       }
     }
+  }
+
+  private void OnDrawGizmos()
+  {
+    GUIStyle gUIStyle = new GUIStyle();
+    gUIStyle.fontSize = 20;
+    gUIStyle.normal.textColor = Color.white;
+    Handles.Label(transform.position, id.ToString(), gUIStyle);
   }
 }
