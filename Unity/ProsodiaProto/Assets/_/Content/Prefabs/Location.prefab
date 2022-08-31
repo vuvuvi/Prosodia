@@ -93,7 +93,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8180600580674300221}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DistanceFromPlayer: 0
   effect: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f, type: 3}
+  locations: []
+  id: 0
