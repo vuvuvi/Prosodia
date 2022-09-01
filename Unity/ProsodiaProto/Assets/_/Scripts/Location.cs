@@ -32,7 +32,10 @@ public class Location : MonoBehaviour
       if(location)
       {
         Gizmos.color = Color.red;
+        Vector3 orientation = location.transform.position-transform.position;
+        Vector3 pos = transform.position + orientation;
         Gizmos.DrawLine(transform.position, location.transform.position);
+        Gizmos.DrawMesh(MeshUtils.Triangle(.25f), pos - orientation.normalized * .25f , Quaternion.LookRotation(orientation));
       }
     }
   }

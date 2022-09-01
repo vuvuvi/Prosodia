@@ -14,6 +14,7 @@ public class LocationManager : MonoBehaviour
   public Material Black;
   public Material Yellow;
   public Material White;
+  public Boolean refreshIdLocations;
 
   void Start()
   {
@@ -70,7 +71,11 @@ public class LocationManager : MonoBehaviour
 
   private void OnDrawGizmosSelected()
   {
-    RefreshIdLocation();
-    Debug.Log("Refresh ID locations");
+    if(refreshIdLocations)
+    {  
+      RefreshIdLocation();
+      Debug.Log("Refresh ID locations");
+      refreshIdLocations = false;
+    }
   }
 }
