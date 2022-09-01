@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,7 +409,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 169071069}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 688170101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 337ff6f15b88efe43b37d181c12ecb8e, type: 3}
@@ -506,7 +506,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 179052592}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1567442090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 337ff6f15b88efe43b37d181c12ecb8e, type: 3}
@@ -662,7 +662,7 @@ PrefabInstance:
     - target: {fileID: 8180600580674300220, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.870699
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300220, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -672,7 +672,7 @@ PrefabInstance:
     - target: {fileID: 8180600580674300220, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.7608533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300220, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -966,6 +966,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337ff6f15b88efe43b37d181c12ecb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &688170101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8180600580674300221, guid: c8ee6e828b9660e4ea2c959fad592270,
+    type: 3}
+  m_PrefabInstance: {fileID: 169071069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &688170102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688170101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913585d686aa35c4dba2ccb39586e42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotePitch: 0
+  Reaction: {fileID: 11400000, guid: 21901a9a40a386645a03ac9c7103e433, type: 2}
 --- !u!1 &996211193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1101,26 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1567442090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8180600580674300221, guid: c8ee6e828b9660e4ea2c959fad592270,
+    type: 3}
+  m_PrefabInstance: {fileID: 179052592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1567442094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567442090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913585d686aa35c4dba2ccb39586e42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotePitch: 2
+  Reaction: {fileID: 11400000, guid: 21901a9a40a386645a03ac9c7103e433, type: 2}
 --- !u!1 &1845076349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,47 +1360,6 @@ MonoBehaviour:
   - {fileID: 319129855}
   - {fileID: 447964037}
   - {fileID: 580227849}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Red: {fileID: 2100000, guid: cf663964ab8262442a3ff35a81cd1cf6, type: 2}
   Blue: {fileID: 2100000, guid: 8a42577a31472ec4aae049f450013625, type: 2}
   Green: {fileID: 2100000, guid: 513b247fac0de3e43a253375ba8128a1, type: 2}

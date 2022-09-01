@@ -65,7 +65,7 @@ public class Melody : IEquatable<Melody>
 
   internal void Reset()
   {
-    Notes= new List<int>();
+    Notes.Clear();
   }
 
   public static bool operator == (Melody m1, Melody m2)

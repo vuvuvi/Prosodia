@@ -12,14 +12,18 @@ public class PlayerMelodyManager : MonoBehaviour
   public UnityEvent MelodyChanged;
 
   public UnityEvent<int> NotePlayed;
+  private CharacterMovement characterController;
 
   private void Start()
   {
     CurrentMelody = new Melody();
     MelodyChanged = new UnityEvent();
+    characterController = GetComponent<CharacterMovement>();
   }
   private void AddNote(int note)
   {
+    if (!characterController.IsPlaying)
+      return;
     CurrentMelody.AddNote(note);
     MelodyChanged.Invoke();
     NotePlayed.Invoke(note);

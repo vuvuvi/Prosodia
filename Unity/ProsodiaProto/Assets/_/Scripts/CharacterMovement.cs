@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
   private Vector3 movement;
   public PongEffect effectPing;
   private PlayerInput playerInput;
-
+  public bool IsPlaying => isPlaying;
   void Start()
   {
     locationManager = FindObjectOfType<LocationManager>();
