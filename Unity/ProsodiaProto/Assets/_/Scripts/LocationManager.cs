@@ -7,6 +7,7 @@ using UnityEngine;
 public class LocationManager : MonoBehaviour
 {
   public List<Location> locations;
+  public List<Location> locationsArround;
   private List<Material> materials;
   public Material Red;
   public Material Blue;
@@ -28,8 +29,9 @@ public class LocationManager : MonoBehaviour
     materials.Add(White);
   }
 
-  public void PlayerPing(Vector3 playerPosition)
+  public void PlayerPing(Vector3 playerPosition, List<Location> locationsArround)
   {
+    this.locationsArround = locationsArround;
     foreach (Location location in locations)
     {
       location.DistanceFromPlayer = Vector3.Distance(playerPosition, location.transform.position);
@@ -42,7 +44,7 @@ public class LocationManager : MonoBehaviour
   {
     for (int i = 0; i < materials.Count-1; i++)
     {
-      locations[i].ChangeMaterial(materials[i]);
+      locationsArround[i].ChangeMaterial(materials[i]);
     }
   }
   private void UncolorLocations()
@@ -55,6 +57,11 @@ public class LocationManager : MonoBehaviour
     UncolorLocations();
     return locations[positionIndex].transform.position;
   }
+
+  public void PingLocation(Location location)
+  {
+    UncolorLocations();
+  } 
 
   public void RefreshIdLocation()
   {
@@ -77,5 +84,10 @@ public class LocationManager : MonoBehaviour
       Debug.Log("Refresh ID locations");
       refreshIdLocations = false;
     }
+  }
+
+  public Location GetLocation(int id)
+  {
+    return locations.Find(location => location.id == id);
   }
 }
