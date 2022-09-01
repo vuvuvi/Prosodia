@@ -2,7 +2,7 @@
     "name": "Keyboard",
     "maps": [
         {
-            "name": "Keyboard",
+            "name": "PlayerMusic",
             "id": "cf9712b7-b775-421a-a50c-b650ca7265db",
             "actions": [
                 {
@@ -235,6 +235,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToggleMovePlay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerMove",
+            "id": "91017526-8567-4d03-94ff-ac0f67681da1",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "190dc45b-2f4c-4c9a-b5c8-58e8f47da489",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "19c5ffb5-87b9-4e8f-a498-7cf5d9e1c7a4",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
