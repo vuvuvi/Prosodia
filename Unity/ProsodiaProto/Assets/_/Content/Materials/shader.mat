@@ -121,7 +121,7 @@ Material:
     - _ZWrite: 1
     - _alpha: 0.726
     - _trans: 0.72215974
-    - _transparency: 0.008170128
+    - _transparency: 0.01029408
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

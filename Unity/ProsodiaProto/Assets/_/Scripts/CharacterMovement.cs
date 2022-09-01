@@ -8,16 +8,15 @@ public class CharacterMovement : MonoBehaviour
   LocationManager locationManager;
   private bool isInMovement;
   private bool isPlaying;
-  private Vector3 targetLocation;
   private Vector3 movement;
   public PongEffect effectPing;
   private PlayerInput playerInput;
+  public Location location;
 
   void Start()
   {
     locationManager = FindObjectOfType<LocationManager>();
     playerInput = GetComponent<PlayerInput>();
-    targetLocation = transform.position;
   }
 
   void OnToggleMovePlay()
@@ -27,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
   }
   void Update()
   {
-    if (Vector3.Distance(targetLocation, transform.position) > 0.3)
+    if (Vector3.Distance(location.transform.position, transform.position) > 0.3)
     {
       var frameMovement = movement.normalized * Time.deltaTime;
       transform.position += frameMovement;
@@ -37,30 +36,25 @@ public class CharacterMovement : MonoBehaviour
     {
       if (!isPlaying && Input.GetKeyDown(KeyCode.D))
       {
-        locationManager.PlayerPing(transform.position);
+        locationManager.PlayerPing(transform.position, location.locations);
         effectPing.StartAnimation();
         isInMovement = true;
-        targetLocation = transform.position;
+        location.transform.position = transform.position;
       }
       if (isInMovement)
       {
-        if (Input.GetKeyDown(KeyCode.Q))
+        KeyCode [] keysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
+        
+        for (int i = 0; i < location.locations.Count; i++)
         {
-          targetLocation = locationManager.GetDestinationOfLocation(1);
+          if(Input.GetKeyDown(keysCodes[i]))
+          {
+            location = location.locations[i];
+            //location.transform.position = locationManager.GetDestinationOfLocation(2);
+          }
         }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-          targetLocation = locationManager.GetDestinationOfLocation(2);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-          targetLocation = locationManager.GetDestinationOfLocation(3);
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-          targetLocation = locationManager.GetDestinationOfLocation(4);
-        }
-        movement = targetLocation - transform.position;
+        
+        movement = location.transform.position - transform.position;
         if (movement.sqrMagnitude > 0.1)
         {
           isInMovement = false;
