@@ -76,5 +76,8 @@ public class Location : MonoBehaviour
         distances.Add(Vector3.Distance(transform.position, location.transform.position));
       }
     }
+#if UNITY_EDITOR
+    Handles.Label(transform.position, id.ToString(), gUIStyle);
+#endif
   }
 }
