@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f4efb8b96ce32418834414fa172ca0, type: 3}
   m_Name: LIghtUpAction
   m_EditorClassIdentifier: 
+  noteInfoProvider: {fileID: 11400000, guid: 70c44fba45336cb40a24ce4ae5b5f27e, type: 2}
