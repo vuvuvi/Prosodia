@@ -24,7 +24,6 @@ public class LightUpAction : ActionHolder
       return;
     }
     material.color = newColor;
-    Debug.Log($"{gameObject.name} lights up for note{note}");
     StartCoroutine(LightDownCoroutine());
   }
 

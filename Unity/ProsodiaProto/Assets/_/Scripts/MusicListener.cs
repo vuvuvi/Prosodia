@@ -32,6 +32,7 @@ public class MusicListener : MelodyHolder
 
   protected virtual void UnsubscribeToPlayer(PlayerMelodyManager player)
   {
+    playerMelody.Reset();
     playerMelody = null;
     player.MelodyChanged.RemoveListener(CompareMelodies);
   }
