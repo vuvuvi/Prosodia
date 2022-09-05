@@ -66,7 +66,6 @@ public class CharacterMovement : MonoBehaviour
           isInMovement = false;
         }
       }
-
     }
   }
 }
