@@ -36,7 +36,6 @@ public class CharacterMovement : MonoBehaviour
     {
       if (!isPlaying && Input.GetKeyDown(KeyCode.D))
       {
-        locationManager.PlayerPing(transform.position, location.locations);
         effectPing.StartAnimation();
         isInMovement = true;
         location.transform.position = transform.position;
@@ -61,6 +60,15 @@ public class CharacterMovement : MonoBehaviour
         }
       }
 
+    }
+  }
+
+  private void OnTriggerEnter(Collider other)
+  {
+    Location loc = other.GetComponent<Location>();
+    if(loc && location.locations.Contains(loc))
+    {
+      locationManager.PingLocation(loc);
     }
   }
 }

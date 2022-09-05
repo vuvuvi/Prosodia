@@ -10,6 +10,7 @@ public class Location : MonoBehaviour
   private MeshRenderer meshRenderer;
   public PongEffect effect;
   public List<Location> locations;
+  public int maxLocation;
   public int id;
   
   private void Start()
@@ -46,5 +47,14 @@ public class Location : MonoBehaviour
     gUIStyle.fontSize = 20;
     gUIStyle.normal.textColor = Color.white;
     Handles.Label(transform.position, id.ToString(), gUIStyle);
+  }
+
+  private void OnValidate()
+  {
+    if(this.locations.Count > LocationManager.MAX_LOCATIONS)
+    {
+      Debug.LogWarning("You can't add more location");
+      this.locations.RemoveAt(this.locations.Count-1);
+    }
   }
 }
