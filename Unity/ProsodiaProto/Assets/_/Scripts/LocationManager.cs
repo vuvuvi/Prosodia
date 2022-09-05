@@ -70,7 +70,7 @@ public class LocationManager : MonoBehaviour
       index = this.locationsArround.Count-1;
     }
     
-    //location.ChangeMaterial(materials[index]);
+    location.ChangeMaterial(materials[index]);
   } 
 
   public void RefreshIdLocation()
