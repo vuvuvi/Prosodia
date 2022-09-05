@@ -29,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
   {
     if (Vector3.Distance(targetLocation, transform.position) > 0.3)
     {
-      var frameMovement = movement.normalized * Time.deltaTime;
+      var frameMovement = movement.normalized * Time.deltaTime * 3;
       transform.position += frameMovement;
       Camera.main.transform.position += frameMovement;
     }

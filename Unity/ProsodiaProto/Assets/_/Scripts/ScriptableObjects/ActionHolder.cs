@@ -3,7 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ActionHolder : ScriptableObject
+public abstract class ActionHolder : MonoBehaviour
 {
-  public Action<GameObject,int> Action;
+  public NoteInfoProvider NoteInfoProvider;
+  public Action<int> Action;
+  private bool isValid;
+
+  public bool IsValid
+  {
+    get => isValid;
+    set
+    {
+      isValid = value;
+      Validate();
+    }
+  }
+
+  protected abstract void Validate();
+
 }
