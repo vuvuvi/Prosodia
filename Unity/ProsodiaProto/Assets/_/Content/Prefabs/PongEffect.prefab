@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1167349672821442243}
   - component: {fileID: 1167349672821442246}
   - component: {fileID: 1167349672821442245}
-  - component: {fileID: 1167349672821442244}
   m_Layer: 0
   m_Name: Wave3
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1167349672821442244
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167349672821442242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1167349673390948780
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167349673390948781}
   - component: {fileID: 1167349673390948782}
+  - component: {fileID: 3672250504956101453}
   m_Layer: 0
   m_Name: PongEffect
   m_TagString: Untagged
@@ -149,6 +136,19 @@ MonoBehaviour:
   time: 0
   shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
   started: 0
+--- !u!135 &3672250504956101453
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167349673390948780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1167349673556613640
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +160,6 @@ GameObject:
   - component: {fileID: 1167349673556613641}
   - component: {fileID: 1167349673556613644}
   - component: {fileID: 1167349673556613643}
-  - component: {fileID: 1167349673556613642}
   m_Layer: 0
   m_Name: Wave1
   m_TagString: Untagged
@@ -233,19 +232,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1167349673556613642
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167349673556613640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1167349673995585784
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +243,6 @@ GameObject:
   - component: {fileID: 1167349673995585785}
   - component: {fileID: 1167349673995585788}
   - component: {fileID: 1167349673995585787}
-  - component: {fileID: 1167349673995585786}
   m_Layer: 0
   m_Name: Wave2
   m_TagString: Untagged
@@ -330,16 +315,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1167349673995585786
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167349673995585784}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

@@ -113,4 +113,5 @@ MonoBehaviour:
   DistanceFromPlayer: 0
   effect: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f, type: 3}
   locations: []
+  maxLocation: 0
   id: 0

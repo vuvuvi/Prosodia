@@ -17,6 +17,8 @@ public class LocationManager : MonoBehaviour
   public Material White;
   public Boolean refreshIdLocations;
 
+  public static readonly int MAX_LOCATIONS = 4;
+
   void Start()
   {
     locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
@@ -42,7 +44,7 @@ public class LocationManager : MonoBehaviour
 
   private void ColorClosestLocations()
   {
-    for (int i = 0; i < materials.Count-1; i++)
+    for (int i = 0; i < this.locationsArround.Count; i++)
     {
       locationsArround[i].ChangeMaterial(materials[i]);
     }
@@ -60,7 +62,15 @@ public class LocationManager : MonoBehaviour
 
   public void PingLocation(Location location)
   {
-    UncolorLocations();
+    int index = this.locationsArround.IndexOf(location);
+
+    if(index < 0)
+    {
+      this.locationsArround.Add(location);
+      index = this.locationsArround.Count-1;
+    }
+    
+    //location.ChangeMaterial(materials[index]);
   } 
 
   public void RefreshIdLocation()

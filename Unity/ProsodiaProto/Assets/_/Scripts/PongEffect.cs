@@ -16,15 +16,27 @@ public class PongEffect : MonoBehaviour
         {
             time += Time.deltaTime;
             transform.localScale += size * (Vector3.one * Time.deltaTime)/duration;
+            Vector3 localScale = transform.localScale;
             shader.SetFloat("_transparency", ((1 - time/duration)*2));
+
+            Debug.Log((1 - time/duration)*2);
         }
+        else
+        {
+            Reset();
+        }
+    }
+
+    public void Reset()
+    {
+        transform.localScale = Vector3.zero;
+        shader.SetFloat("_transparency", 2f);
     }
 
     public void StartAnimation()
     {
+        Reset();
         time = 0;
-        shader.SetFloat("_transparency", 1f);
-        transform.localScale = Vector3.zero;
         started = true;
     }
 }
