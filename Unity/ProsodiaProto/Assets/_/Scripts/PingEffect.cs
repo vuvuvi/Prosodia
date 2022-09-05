@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PongEffect : MonoBehaviour
+public class PingEffect : MonoBehaviour
 {
     public float size;
     public float duration;
@@ -16,10 +16,7 @@ public class PongEffect : MonoBehaviour
         {
             time += Time.deltaTime;
             transform.localScale += size * (Vector3.one * Time.deltaTime)/duration;
-            Vector3 localScale = transform.localScale;
             shader.SetFloat("_transparency", ((1 - time/duration)*2));
-
-            Debug.Log((1 - time/duration)*2);
         }
         else
         {

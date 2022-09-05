@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
   private bool isInMovement;
   private bool isPlaying;
   private Vector3 movement;
-  public PongEffect effectPing;
+  public PingEffect effectPing;
   private PlayerInput playerInput;
   public bool IsPlaying => isPlaying;
   public Location location;
@@ -27,7 +27,7 @@ public class CharacterMovement : MonoBehaviour
   }
   void Update()
   {
-    if (Vector3.Distance(location.transform.position, transform.position) > 0.3)
+    if (Vector3.Distance(Location.transform.position, transform.position) > 0.3)
     {
       var frameMovement = movement.normalized * Time.deltaTime;
       transform.position += frameMovement;
@@ -39,22 +39,21 @@ public class CharacterMovement : MonoBehaviour
       {
         effectPing.StartAnimation();
         isInMovement = true;
-        location.transform.position = transform.position;
+        Location.transform.position = transform.position;
       }
       if (isInMovement)
       {
         KeyCode [] keysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
         
-        for (int i = 0; i < location.locations.Count; i++)
+        for (int i = 0; i < Location.locations.Count; i++)
         {
           if(Input.GetKeyDown(keysCodes[i]))
           {
-            location = location.locations[i];
-            //location.transform.position = locationManager.GetDestinationOfLocation(2);
+            Location = Location.locations[i];
           }
         }
         
-        movement = location.transform.position - transform.position;
+        movement = Location.transform.position - transform.position;
         if (movement.sqrMagnitude > 0.1)
         {
           isInMovement = false;
@@ -67,7 +66,7 @@ public class CharacterMovement : MonoBehaviour
   private void OnTriggerEnter(Collider other)
   {
     Location loc = other.GetComponent<Location>();
-    if(loc && location.locations.Contains(loc))
+    if(loc && Location.locations.Contains(loc))
     {
       locationManager.PingLocation(loc);
     }
