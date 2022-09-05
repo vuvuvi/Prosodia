@@ -1,15 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NoteListener : MonoBehaviour
 {
   public int NotePitch;
-  public ActionHolder Reaction;
+  private List<ActionHolder> reactions;
+  private bool isValid;
+  public bool IsValid
+  {
+
+    get => isValid;
+    set
+    {
+      if (isValid != value)
+      {
+        isValid = value;
+        reactions.ForEach(a => a.IsValid = isValid);
+      }
+    }
+  }
 
   private void Start()
   {
+    reactions = GetComponents<ActionHolder>().ToList();
     FindObjectOfType<PlayerMelodyManager>().NotePlayed.AddListener(ReactToNote);
   }
 
@@ -24,7 +40,8 @@ public class NoteListener : MonoBehaviour
 
   private void Act()
   {
-    if (Reaction != null && Reaction.Action != null)
-      Reaction.Action(gameObject, NotePitch);
+    if (reactions != null)
+      foreach (var action in reactions)
+        action.Action(NotePitch);
   }
 }
