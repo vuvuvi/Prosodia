@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1167349673390948782}
   - component: {fileID: 3672250504956101453}
   m_Layer: 0
-  m_Name: PongEffect
+  m_Name: PingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167349673390948780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363453070e0890d499e631ce5422f75e, type: 3}
+  m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 2
+  size: 1
   duration: 1
   time: 0
   shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}

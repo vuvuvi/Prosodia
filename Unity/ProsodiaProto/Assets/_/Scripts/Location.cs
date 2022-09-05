@@ -8,9 +8,8 @@ public class Location : MonoBehaviour
 {
   public float DistanceFromPlayer;
   private MeshRenderer meshRenderer;
-  public PongEffect effect;
+  public PingEffect effect;
   public List<Location> locations;
-  public int maxLocation;
   public int id;
   
   private void Start()
@@ -21,7 +20,7 @@ public class Location : MonoBehaviour
   internal void ChangeMaterial(Material material)
   {
     meshRenderer.material = material;
-    PongEffect pongEffect = Instantiate(effect, transform);
+    PingEffect pongEffect = Instantiate(effect, transform);
     pongEffect.StartAnimation();
     Destroy(pongEffect.gameObject, effect.duration);
   }
