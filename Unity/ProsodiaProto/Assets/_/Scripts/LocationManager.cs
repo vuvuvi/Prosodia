@@ -61,9 +61,15 @@ public class LocationManager : MonoBehaviour
     if(RefreshIdLocations)
     {  
       RefreshIdLocation();
+      StartCoroutine(WaitRefresh());
+    }
+  }
+
+  IEnumerator WaitRefresh()
+  {
+    yield return new WaitForSeconds(.1f);
       Debug.Log("Refresh ID locations");
       RefreshIdLocations = false;
-    }
   }
 
   public Location GetLocation(int id)
