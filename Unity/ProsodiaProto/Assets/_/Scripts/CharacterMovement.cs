@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
   public PingEffect effectPing;
   private PlayerInput playerInput;
   public Location Location;
-
+  public bool IsPlaying => isPlaying;
   void Start()
   {
     locationManager = FindObjectOfType<LocationManager>();
@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
   {
     if (Vector3.Distance(Location.transform.position, transform.position) > 0.3)
     {
-      var frameMovement = movement.normalized * Time.deltaTime;
+      var frameMovement = movement.normalized * Time.deltaTime * 3;
       transform.position += frameMovement;
       Camera.main.transform.position += frameMovement;
     }
@@ -60,7 +60,6 @@ public class CharacterMovement : MonoBehaviour
           isInMovement = false;
         }
       }
-
     }
   }
 

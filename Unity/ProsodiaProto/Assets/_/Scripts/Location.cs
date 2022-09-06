@@ -52,7 +52,9 @@ public class Location : MonoBehaviour
     GUIStyle gUIStyle = new GUIStyle();
     gUIStyle.fontSize = 20;
     gUIStyle.normal.textColor = Color.white;
+#if UNITY_EDITOR
     Handles.Label(transform.position, id.ToString(), gUIStyle);
+#endif
   }
 
   private void OnValidate()

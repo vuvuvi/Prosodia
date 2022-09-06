@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 1167349673390948780, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
       propertyPath: m_Name
-      value: PongEffect
+      value: PingEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1167349673390948780, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
@@ -672,7 +672,7 @@ PrefabInstance:
     - target: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
       propertyPath: size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363453070e0890d499e631ce5422f75e, type: 3}
+  m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &269839485 stripped
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectPing: {fileID: 269839484}
-  location: {fileID: 1242399436}
+  Location: {fileID: 1242399436}
 --- !u!65 &1845076353
 BoxCollider:
   m_ObjectHideFlags: 0
