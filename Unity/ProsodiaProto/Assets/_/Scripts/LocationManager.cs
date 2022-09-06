@@ -6,71 +6,74 @@ using UnityEngine;
 
 public class LocationManager : MonoBehaviour
 {
-  public List<Location> locations;
-  private List<Material> materials;
-  public Material Red;
-  public Material Blue;
-  public Material Green;
-  public Material Black;
-  public Material Yellow;
-  public Material White;
+  public List<Location> Locations;
+  public List<Location> LocationsArround;
+  public List<Material> Materials;
+  public Material DefaultMatetrial;
+  public Boolean RefreshIdLocations;
+
+  public static readonly int MAX_LOCATIONS = 4;
 
   void Start()
   {
-    locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
-    materials = new List<Material>();
-    materials.Add(Black);
-    materials.Add(Red);
-    materials.Add(Blue);
-    materials.Add(Green);
-    materials.Add(Yellow);
-    materials.Add(White);
+    Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    RefreshIdLocation();
   }
 
-  public void PlayerPing(Vector3 playerPosition)
+  public void UncolorLocationsPinged()
   {
-    foreach (Location location in locations)
+    foreach (Location location in LocationsArround)
     {
-      location.DistanceFromPlayer = Vector3.Distance(playerPosition, location.transform.position);
+      location.ChangeMaterial(DefaultMatetrial);
+      location.noteKeyboard.text = "";
+      location.noteKeyboard.gameObject.SetActive(false);
     }
-    locations = locations.OrderBy(location => location.DistanceFromPlayer).ToList();
-    ColorClosestLocations();
   }
 
-  private void ColorClosestLocations()
+  public void PingLocation(Location location, string note)
   {
-    for (int i = 0; i < materials.Count-1; i++)
+    int index = this.LocationsArround.IndexOf(location);
+
+    if(index < 0)
     {
-      locations[i].ChangeMaterial(materials[i]);
+      this.LocationsArround.Add(location);
+      index = this.LocationsArround.Count-1;
     }
-  }
-  private void UncolorLocations()
-  {
-    foreach (Location location in locations)
-      location.ChangeMaterial(White);
-  }
-  public Vector3 GetDestinationOfLocation(int positionIndex)
-  {
-    UncolorLocations();
-    return locations[positionIndex].transform.position;
-  }
+    
+    location.PingLocation(Materials[index], note);
+  } 
 
   public void RefreshIdLocation()
   {
-    locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
     
-    for (int i = 0; i < locations.Count; i++)
+    for (int i = 0; i < Locations.Count; i++)
     {
-      locations[i].name = "Location " + i;
-      locations[i].id = i;
-      locations[i].transform.parent = null;
-      locations[i].transform.parent = transform;
+      Locations[i].name = "Location " + i;
+      Locations[i].Id = i;
+      Locations[i].transform.parent = null;
+      Locations[i].transform.parent = transform;
     }
   }
 
   private void OnDrawGizmosSelected()
   {
-    RefreshIdLocation();
-    Debug.Log("Refresh ID locations");
+    if(RefreshIdLocations)
+    {  
+      RefreshIdLocation();
+      StartCoroutine(WaitRefresh());
+    }
+  }
+
+  IEnumerator WaitRefresh()
+  {
+    yield return new WaitForSeconds(.1f);
+      Debug.Log("Refresh ID locations");
+      RefreshIdLocations = false;
+  }
+
+  public Location GetLocation(int id)
+  {
+    return Locations.Find(location => location.Id == id);
   }
 }
