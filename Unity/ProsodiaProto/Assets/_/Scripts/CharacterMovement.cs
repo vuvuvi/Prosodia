@@ -13,17 +13,26 @@ public class CharacterMovement : MonoBehaviour
   private PlayerInput playerInput;
   public Location Location;
   public bool IsPlaying => isPlaying;
+  public Keyboard keyboard;
+  public TMPro.TMP_Text TextMode;
+  public KeyCode [] KeysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
   void Start()
   {
     locationManager = FindObjectOfType<LocationManager>();
     playerInput = GetComponent<PlayerInput>();
+    keyboard = new Keyboard();
+    keyboard.Enable();
+    //keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => {Debug.Log(ctx.ReadValueAsObject());};
   }
 
   void OnToggleMovePlay()
   {
     if (!isInMovement)
       isPlaying = !isPlaying;
+
+    TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
   }
+
   void Update()
   {
     if (Vector3.Distance(Location.transform.position, transform.position) > 0.3)
@@ -41,16 +50,14 @@ public class CharacterMovement : MonoBehaviour
         Location.transform.position = transform.position;
       }
       if (isInMovement)
-      {
-        KeyCode [] keysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
-        
-        for (int i = 0; i < Location.locations.Count; i++)
+      { 
+        for (int i = 0; i < Location.Locations.Count; i++)
         {
-          if(Input.GetKeyDown(keysCodes[i]))
+          if(Input.GetKeyDown(KeysCodes[i]))
           {
-            Location = Location.locations[i];
+            locationManager.UncolorLocationsPinged();
+            Location = Location.Locations[i];
             locationManager.LocationsArround = new List<Location>();
-            locationManager.GetDestinationOfLocation(0);
           }
         }
         
@@ -66,9 +73,9 @@ public class CharacterMovement : MonoBehaviour
   private void OnTriggerEnter(Collider other)
   {
     Location loc = other.GetComponent<Location>();
-    if(loc && Location.locations.Contains(loc))
+    if(loc && Location.Locations.Contains(loc))
     {
-      locationManager.PingLocation(loc);
+      locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());
     }
   }
 }

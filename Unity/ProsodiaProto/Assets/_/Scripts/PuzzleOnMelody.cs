@@ -13,6 +13,7 @@ public class PuzzleOnMelody : MusicListener
     NoteListeners = ItemsContainer.GetComponentsInChildren<NoteListener>().ToList();
     MelodyLength = NoteListeners.Count;
     base.Start();
+    Debug.Log("Melody => " + Melody);
     for (int i = 0; i < NoteListeners.Count; i++)
     {
       var child = NoteListeners[i];
