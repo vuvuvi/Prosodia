@@ -19,25 +19,16 @@ public class LocationManager : MonoBehaviour
     Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
   }
 
-  private void ColorClosestLocations()
+  public void UncolorLocationsPinged()
   {
-    for (int i = 0; i < this.LocationsArround.Count; i++)
+    foreach (Location location in LocationsArround)
     {
-      LocationsArround[i].PingLocation(Materials[i]);
+      location.ChangeMaterial(DefaultMatetrial);
+      location.noteKeyboard.gameObject.SetActive(false);
     }
   }
-  private void UncolorLocations()
-  {
-    foreach (Location location in Locations)
-      location.ChangeMaterial(DefaultMatetrial);
-  }
-  public Vector3 GetDestinationOfLocation(int positionIndex)
-  {
-    UncolorLocations();
-    return Locations[positionIndex].transform.position;
-  }
 
-  public void PingLocation(Location location)
+  public void PingLocation(Location location, string note)
   {
     int index = this.LocationsArround.IndexOf(location);
 
@@ -47,7 +38,7 @@ public class LocationManager : MonoBehaviour
       index = this.LocationsArround.Count-1;
     }
     
-    location.PingLocation(Materials[index]);
+    location.PingLocation(Materials[index], note);
   } 
 
   public void RefreshIdLocation()
@@ -57,7 +48,7 @@ public class LocationManager : MonoBehaviour
     for (int i = 0; i < Locations.Count; i++)
     {
       Locations[i].name = "Location " + i;
-      Locations[i].id = i;
+      Locations[i].Id = i;
       Locations[i].transform.parent = null;
       Locations[i].transform.parent = transform;
     }
@@ -75,6 +66,6 @@ public class LocationManager : MonoBehaviour
 
   public Location GetLocation(int id)
   {
-    return Locations.Find(location => location.id == id);
+    return Locations.Find(location => location.Id == id);
   }
 }

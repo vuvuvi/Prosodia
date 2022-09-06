@@ -6,24 +6,25 @@ using UnityEditor;
 
 public class Location : MonoBehaviour
 {
-  public float DistanceFromPlayer;
   private MeshRenderer meshRenderer;
-  public PingEffect effect;
-  public List<Location> locations;
-  public List<float> distances;
-  public int id;
+  public float DistanceFromPlayer;
+  public PingEffect Effect;
+  public List<Location> Locations;
+  public List<float> Distances;
+  public int Id;
+  public TMPro.TMP_Text noteKeyboard;
   
   private void Start()
   {
     meshRenderer = GetComponent<MeshRenderer>();
   }
 
-  internal void PingLocation(Material material)
+  internal void PingLocation(Material material, string note)
   {
     ChangeMaterial(material);
-    PingEffect pongEffect = Instantiate(effect, transform);
-    pongEffect.StartAnimation();
-    Destroy(pongEffect.gameObject, effect.duration);
+    Effect.StartAnimation();
+    noteKeyboard.text = note;
+    noteKeyboard.gameObject.SetActive(true);
   }
 
   public void ChangeMaterial(Material material)
@@ -33,7 +34,7 @@ public class Location : MonoBehaviour
 
   private void OnDrawGizmosSelected()
   {
-    foreach (var location in locations)
+    foreach (var location in Locations)
     {
       if(location)
       {
@@ -52,28 +53,30 @@ public class Location : MonoBehaviour
     GUIStyle gUIStyle = new GUIStyle();
     gUIStyle.fontSize = 20;
     gUIStyle.normal.textColor = Color.white;
-    //Handles.Label(transform.position, id.ToString(), gUIStyle);
+#if UNITY_EDITOR
+    Handles.Label(transform.position, Id.ToString(), gUIStyle);
+#endif
   }
 
   private void OnValidate()
   {
     RefreshDistances();
-    if(this.locations.Count > LocationManager.MAX_LOCATIONS)
+    if(this.Locations.Count > LocationManager.MAX_LOCATIONS)
     {
       Debug.LogWarning("You can't add more location");
-      this.locations.RemoveAt(this.locations.Count-1);
+      this.Locations.RemoveAt(this.Locations.Count-1);
     }
   }
 
   private void RefreshDistances()
   {
-    distances = new List<float>();
+    Distances = new List<float>();
 
-    foreach (var location in locations)
+    foreach (var location in Locations)
     {
       if(location)
       {
-        distances.Add(Vector3.Distance(transform.position, location.transform.position));
+        Distances.Add(Vector3.Distance(transform.position, location.transform.position));
       }
     }
 #if UNITY_EDITOR
