@@ -42,6 +42,6 @@ public class Location : MonoBehaviour
     GUIStyle gUIStyle = new GUIStyle();
     gUIStyle.fontSize = 20;
     gUIStyle.normal.textColor = Color.white;
-    Handles.Label(transform.position, id.ToString(), gUIStyle);
+    //Handles.Label(transform.position, id.ToString(), gUIStyle);
   }
 }
