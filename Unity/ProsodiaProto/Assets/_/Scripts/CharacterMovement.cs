@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class CharacterMovement : MonoBehaviour
     playerInput = GetComponent<PlayerInput>();
     keyboard = new Keyboard();
     keyboard.Enable();
-    //keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => {Debug.Log(ctx.ReadValueAsObject());};
+    keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => {Debug.Log(ctx.ReadValueAsObject());};
   }
 
   void OnToggleMovePlay()

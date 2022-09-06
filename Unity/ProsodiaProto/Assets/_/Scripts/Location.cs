@@ -17,6 +17,9 @@ public class Location : MonoBehaviour
   private void Start()
   {
     meshRenderer = GetComponent<MeshRenderer>();
+    var a = 0;
+    var b = 0;
+    int v = b /a;
   }
 
   internal void PingLocation(Material material, string note)
@@ -66,6 +69,25 @@ public class Location : MonoBehaviour
       Debug.LogWarning("You can't add more location");
       this.Locations.RemoveAt(this.Locations.Count-1);
     }
+
+    for (int i = 0; i < this.Locations.Count; i++)
+    {
+      Location location = this.Locations[i];
+      
+      if(location && !location.Locations.Contains(this))
+      {
+        Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
+        if(location.Locations.Count < 4)
+        {
+          location.Locations.Add(this);
+        }
+        else
+        {
+          Debug.LogWarning("I can't add more location. You will be reduce connection");
+        }
+      }
+    }
+    
   }
 
   private void RefreshDistances()
