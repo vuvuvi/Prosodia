@@ -17,6 +17,7 @@ public class LocationManager : MonoBehaviour
   void Start()
   {
     Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    RefreshIdLocation();
   }
 
   public void UncolorLocationsPinged()
@@ -24,6 +25,7 @@ public class LocationManager : MonoBehaviour
     foreach (Location location in LocationsArround)
     {
       location.ChangeMaterial(DefaultMatetrial);
+      location.noteKeyboard.text = "";
       location.noteKeyboard.gameObject.SetActive(false);
     }
   }
