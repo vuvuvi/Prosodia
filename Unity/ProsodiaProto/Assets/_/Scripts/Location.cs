@@ -10,6 +10,7 @@ public class Location : MonoBehaviour
   private MeshRenderer meshRenderer;
   public PingEffect effect;
   public List<Location> locations;
+  public List<float> distances;
   public int id;
   
   private void Start()
@@ -17,12 +18,17 @@ public class Location : MonoBehaviour
     meshRenderer = GetComponent<MeshRenderer>();
   }
 
-  internal void ChangeMaterial(Material material)
+  internal void PingLocation(Material material)
   {
-    meshRenderer.material = material;
+    ChangeMaterial(material);
     PingEffect pongEffect = Instantiate(effect, transform);
     pongEffect.StartAnimation();
     Destroy(pongEffect.gameObject, effect.duration);
+  }
+
+  public void ChangeMaterial(Material material)
+  {
+    meshRenderer.material = material;
   }
 
   private void OnDrawGizmosSelected()
@@ -42,6 +48,7 @@ public class Location : MonoBehaviour
 
   private void OnDrawGizmos()
   {
+    RefreshDistances();
     GUIStyle gUIStyle = new GUIStyle();
     gUIStyle.fontSize = 20;
     gUIStyle.normal.textColor = Color.white;
@@ -50,10 +57,24 @@ public class Location : MonoBehaviour
 
   private void OnValidate()
   {
+    RefreshDistances();
     if(this.locations.Count > LocationManager.MAX_LOCATIONS)
     {
       Debug.LogWarning("You can't add more location");
       this.locations.RemoveAt(this.locations.Count-1);
+    }
+  }
+
+  private void RefreshDistances()
+  {
+    distances = new List<float>();
+
+    foreach (var location in locations)
+    {
+      if(location)
+      {
+        distances.Add(Vector3.Distance(transform.position, location.transform.position));
+      }
     }
   }
 }
