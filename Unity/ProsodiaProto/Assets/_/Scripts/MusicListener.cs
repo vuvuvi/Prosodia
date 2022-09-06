@@ -6,25 +6,18 @@ using UnityEngine.Events;
 
 public class MusicListener : MelodyHolder
 {
-  private Melody melodyGoal
-  {
-    get { return Melody; }
-    set { Melody = value; }
-  }
-  private Melody playerMelody;
+  protected Melody playerMelody;
   public UnityEvent GoalReached = new UnityEvent();
 
-  private void Start()
+  protected void Start()
   {
-
     var melodyGenerator = new MelodyGenerator();
-    melodyGoal = melodyGenerator.GetNewMelody(MelodyLength);
+    Melody = melodyGenerator.GetNewMelody(MelodyLength);
   }
   private void OnTriggerEnter(Collider other)
   {
-    
     var player = other.gameObject.GetComponent<PlayerMelodyManager>();
-    if(player == null)
+    if (player == null)
       return;
     SubscribeToPlayer(player);
   }
@@ -37,13 +30,14 @@ public class MusicListener : MelodyHolder
     UnsubscribeToPlayer(player);
   }
 
-  private void UnsubscribeToPlayer(PlayerMelodyManager player)
+  protected virtual void UnsubscribeToPlayer(PlayerMelodyManager player)
   {
+    playerMelody.Reset();
     playerMelody = null;
     player.MelodyChanged.RemoveListener(CompareMelodies);
   }
 
-  private void SubscribeToPlayer(PlayerMelodyManager player)
+  protected virtual void SubscribeToPlayer(PlayerMelodyManager player)
   {
     playerMelody = player.CurrentMelody;
     player.MelodyChanged.AddListener(CompareMelodies);
@@ -51,12 +45,12 @@ public class MusicListener : MelodyHolder
 
   private void CompareMelodies()
   {
-    if(!melodyGoal.StartsWith(playerMelody))
+    if (!Melody.StartsWith(playerMelody))
     {
       playerMelody.Reset();
       return;
     }
-    if(melodyGoal == playerMelody)
+    if (Melody == playerMelody)
     {
       GoalReached.Invoke();
     }

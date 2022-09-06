@@ -2,35 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "So/Actions/LightUp")]
 public class LightUpAction : ActionHolder
 {
-  public NoteInfoProvider noteInfoProvider;
-  private void OnEnable()
+  private Material material;
+  private MeshRenderer meshRenderer;
+  private Color baseColor;
+  public float LitUpTime = 1;
+  protected void OnEnable()
   {
     Action = LightUp;
+    meshRenderer = gameObject.GetComponent<MeshRenderer>();
+    material = new Material(meshRenderer.material);
+    meshRenderer.material = material;
+    baseColor = material.color;
   }
-  private void LightUp(GameObject go, int note)
+  private void LightUp(int note)
   {
-    var meshrenderer = go.GetComponent<MeshRenderer>();
-    var oldMat = meshrenderer.material;
-    var newColor = noteInfoProvider.GetNoteColor(note);
-    if(oldMat.color == newColor)
+    var newColor = NoteInfoProvider.GetNoteColor(note);
+    if (material.color == newColor)
     {
       return;
     }
-    NoteListener mb = go.GetComponent<NoteListener>();
-    meshrenderer.material = new Material(meshrenderer.material);
-    meshrenderer.material.color = newColor;
-    Debug.Log($"{go.name} lights up for note{note}");
-    mb.StartCoroutine(LightDown(meshrenderer, oldMat.color));
+    material.color = newColor;
+    StartCoroutine(LightDownCoroutine());
   }
 
-  private IEnumerator LightDown(MeshRenderer mesh, Color color)
+  private IEnumerator LightDownCoroutine()
   {
-    yield return new WaitForSeconds(1);
-    mesh.material.color = color;
+    yield return new WaitForSeconds(LitUpTime);
+    LightDown();
     yield return null;
   }
 
+  private void LightDown()
+  {
+    if (!IsValid)
+      material.color = baseColor;
+  }
+  protected override void Validate()
+  {
+    LightDown();
+  }
 }

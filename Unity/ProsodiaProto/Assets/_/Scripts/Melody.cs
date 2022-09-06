@@ -26,7 +26,8 @@ public class Melody : IEquatable<Melody>
 
   public bool StartsWith(Melody other)
   {
-    for(int i = 0; i < other.Notes.Count; i++)
+    var maxLength = MathF.Min(Notes.Count, other.Notes.Count);
+    for(int i = 0; i < maxLength; i++)
     {
       if (Notes[i] != other.Notes[i])
         return false;
