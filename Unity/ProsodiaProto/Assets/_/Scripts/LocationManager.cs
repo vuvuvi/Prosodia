@@ -23,7 +23,7 @@ public class LocationManager : MonoBehaviour
   {
     for (int i = 0; i < this.LocationsArround.Count; i++)
     {
-      LocationsArround[i].ChangeMaterial(Materials[i]);
+      LocationsArround[i].PingLocation(Materials[i]);
     }
   }
   private void UncolorLocations()
@@ -47,7 +47,7 @@ public class LocationManager : MonoBehaviour
       index = this.LocationsArround.Count-1;
     }
     
-    location.ChangeMaterial(Materials[index]);
+    location.PingLocation(Materials[index]);
   } 
 
   public void RefreshIdLocation()

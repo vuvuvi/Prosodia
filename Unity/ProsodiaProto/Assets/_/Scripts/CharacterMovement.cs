@@ -49,6 +49,8 @@ public class CharacterMovement : MonoBehaviour
           if(Input.GetKeyDown(keysCodes[i]))
           {
             Location = Location.locations[i];
+            locationManager.LocationsArround = new List<Location>();
+            locationManager.GetDestinationOfLocation(0);
           }
         }
         
