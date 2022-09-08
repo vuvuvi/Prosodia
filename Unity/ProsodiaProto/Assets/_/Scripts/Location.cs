@@ -13,13 +13,11 @@ public class Location : MonoBehaviour
   public List<float> Distances;
   public int Id;
   public TMPro.TMP_Text noteKeyboard;
-  
+
   private void Start()
   {
     meshRenderer = GetComponent<MeshRenderer>();
-    var a = 0;
-    var b = 0;
-    int v = b /a;
+    meshRenderer.enabled = false;
   }
 
   internal void PingLocation(Material material, string note)
@@ -39,13 +37,13 @@ public class Location : MonoBehaviour
   {
     foreach (var location in Locations)
     {
-      if(location)
+      if (location)
       {
         Gizmos.color = Color.red;
-        Vector3 orientation = location.transform.position-transform.position;
+        Vector3 orientation = location.transform.position - transform.position;
         Vector3 pos = transform.position + orientation;
         Gizmos.DrawLine(transform.position, location.transform.position);
-        Gizmos.DrawMesh(MeshUtils.Triangle(.25f), pos - orientation.normalized * .25f , Quaternion.LookRotation(orientation));
+        Gizmos.DrawMesh(MeshUtils.Triangle(.25f), pos - orientation.normalized * .25f, Quaternion.LookRotation(orientation));
       }
     }
   }
@@ -64,20 +62,20 @@ public class Location : MonoBehaviour
   private void OnValidate()
   {
     RefreshDistances();
-    if(this.Locations.Count > LocationManager.MAX_LOCATIONS)
+    if (this.Locations.Count > LocationManager.MAX_LOCATIONS)
     {
       Debug.LogWarning("You can't add more location");
-      this.Locations.RemoveAt(this.Locations.Count-1);
+      this.Locations.RemoveAt(this.Locations.Count - 1);
     }
 
     for (int i = 0; i < this.Locations.Count; i++)
     {
       Location location = this.Locations[i];
-      
-      if(location && !location.Locations.Contains(this))
+
+      if (location && !location.Locations.Contains(this))
       {
         Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
-        if(location.Locations.Count < 4)
+        if (location.Locations.Count < 4)
         {
           location.Locations.Add(this);
         }
@@ -87,7 +85,7 @@ public class Location : MonoBehaviour
         }
       }
     }
-    
+
   }
 
   private void RefreshDistances()
@@ -96,7 +94,7 @@ public class Location : MonoBehaviour
 
     foreach (var location in Locations)
     {
-      if(location)
+      if (location)
       {
         Distances.Add(Vector3.Distance(transform.position, location.transform.position));
       }
