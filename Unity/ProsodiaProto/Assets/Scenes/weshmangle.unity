@@ -690,7 +690,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363453070e0890d499e631ce5422f75e, type: 3}
+  m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &269839485 stripped
@@ -1094,9 +1094,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
+      propertyPath: Distances.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: Locations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
       propertyPath: locations.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: Distances.Array.data[0]
+      value: 7.3081393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: Locations.Array.data[0]
+      value: 
+      objectReference: {fileID: 823063484}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: locations.Array.data[0]
@@ -1607,7 +1627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectPing: {fileID: 269839484}
-  location: {fileID: 1242399436}
+  TextMode: {fileID: 0}
+  KeysCodes: 71000000730000006600000067000000
+  Location: {fileID: 1242399436}
 --- !u!65 &1845076353
 BoxCollider:
   m_ObjectHideFlags: 0

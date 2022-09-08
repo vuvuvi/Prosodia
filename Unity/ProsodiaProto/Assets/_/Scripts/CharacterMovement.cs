@@ -41,7 +41,7 @@ public class CharacterMovement : MonoBehaviour
     {
       var frameMovement = movement.normalized * Time.deltaTime * 3;
       transform.position += frameMovement;
-      Camera.main.transform.position += frameMovement;
+      //Camera.main.transform.position += frameMovement;
     }
     else
     {
