@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/ProsodiaProto/Assets/Scenes/CreditScene.unity.meta
 guid: ef6fcbde22de6064c8d1e6583514958f
+========
+guid: a95cdbead3eb1384e97de35e2467a493
+>>>>>>>> Asset-fixing:Unity/ProsodiaProto/Assets/Scenes/weshmangle.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

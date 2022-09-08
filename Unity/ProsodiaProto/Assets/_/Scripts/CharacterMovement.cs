@@ -12,12 +12,11 @@ public class CharacterMovement : MonoBehaviour
   private Vector3 movement;
   public PingEffect effectPing;
   private PlayerInput playerInput;
+  public Location Location;
   public bool IsPlaying => isPlaying;
   public Keyboard keyboard;
   public TMPro.TMP_Text TextMode;
   public KeyCode [] KeysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
-  public Location Location;
-
   void Start()
   {
     locationManager = FindObjectOfType<LocationManager>();
@@ -41,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
     {
       var frameMovement = movement.normalized * Time.deltaTime * 3;
       transform.position += frameMovement;
-      //Camera.main.transform.position += frameMovement;
+      Camera.main.transform.position += frameMovement;
     }
     else
     {
@@ -69,7 +68,6 @@ public class CharacterMovement : MonoBehaviour
           isInMovement = false;
         }
       }
-
     }
   }
 

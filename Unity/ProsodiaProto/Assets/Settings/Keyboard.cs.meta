@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/ProsodiaProto/Assets/Settings/Keyboard.cs.meta
 guid: 557f021f7c747f74c89d57cc4a1379fa
+========
+guid: 61831d3d634744647b24843e392c73b6
+>>>>>>>> Asset-fixing:Unity/ProsodiaProto/Assets/_/Scripts/MeshUtils.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
