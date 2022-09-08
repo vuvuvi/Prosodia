@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 1167349673390948780, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
       propertyPath: m_Name
-      value: PongEffect
+      value: PingEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1167349673390948780, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
@@ -672,7 +672,7 @@ PrefabInstance:
     - target: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
       propertyPath: size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1167349673390948782, guid: 34649f760aeeeb3478b95a97a553972f,
         type: 3}
@@ -1094,29 +1094,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
-      propertyPath: Distances.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
-        type: 3}
-      propertyPath: Locations.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
-        type: 3}
       propertyPath: locations.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
-        type: 3}
-      propertyPath: Distances.Array.data[0]
-      value: 7.3081393
-      objectReference: {fileID: 0}
-    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
-        type: 3}
-      propertyPath: Locations.Array.data[0]
-      value: 
-      objectReference: {fileID: 823063484}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: locations.Array.data[0]
@@ -1627,8 +1607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectPing: {fileID: 269839484}
-  TextMode: {fileID: 0}
-  KeysCodes: 71000000730000006600000067000000
   Location: {fileID: 1242399436}
 --- !u!65 &1845076353
 BoxCollider:
