@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
   public Keyboard keyboard;
   public TMPro.TMP_Text TextMode;
   public KeyCode [] KeysCodes = new KeyCode[4]{KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G};
-  public Location location;
+  public Location Location;
 
   void Start()
   {
