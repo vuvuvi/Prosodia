@@ -7,19 +7,34 @@ public class AudioManager : MonoBehaviour
 {
 
     public GameObject MovementAudioSourcesContainer;
-    private List<AudioSource> MovementAudioSources; 
+    public GameObject PUzle1AudioSourcesContainer;
+    private List<AudioSource> MovementAudioSources;
+    private List<AudioSource> Puzzle1AudioSources;
 
     private void Start()
     {
         MovementAudioSources = new List<AudioSource>();
-        var Sources = MovementAudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
-        MovementAudioSources.AddRange(Sources);
+        Puzzle1AudioSources = new List<AudioSource>();
+        var sources = MovementAudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
+        for (int i = 0; i < sources.Count; i++)
+        {
+            MovementAudioSources.Add(sources[i]);
+        }
+        sources = PUzle1AudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
+        for (int i = 0; i < sources.Count; i++)
+        {
+            Puzzle1AudioSources.Add(sources[i]);
+        }
     }
 
 
-    public void PlaySound()
+    public void PlayMovementSound(int i)
     {
-        Debug.Log("playing sound");
-        MovementAudioSources[0].Play();
+        MovementAudioSources[i].Play();
+    }
+
+    public void PlayPuzzle1Sound(int i)
+    {
+        Puzzle1AudioSources[i].Play();
     }
 }

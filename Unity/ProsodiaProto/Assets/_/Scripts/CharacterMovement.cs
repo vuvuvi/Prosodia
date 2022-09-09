@@ -42,13 +42,13 @@ public class CharacterMovement : MonoBehaviour
         {
             var frameMovement = movement.normalized * Time.deltaTime * 3;
             transform.position += frameMovement;
-            Camera.main.transform.position += frameMovement;
+            //Camera.main.transform.position += frameMovement;
         }
         else
         {
             if (!isPlaying && Input.GetKeyDown(KeyCode.D))
             {
-                audioManager.PlaySound();
+                audioManager.PlayMovementSound(0);
                 effectPing.StartAnimation();
                 isInMovement = true;
                 Location.transform.position = transform.position;
@@ -59,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeysCodes[i]))
                     {
+                        audioManager.PlayMovementSound(i+1);
                         locationManager.UncolorLocationsPinged();
                         Location = Location.Locations[i];
                         locationManager.LocationsArround = new List<Location>();

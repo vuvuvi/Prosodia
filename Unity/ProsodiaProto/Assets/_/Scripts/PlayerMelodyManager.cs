@@ -13,9 +13,11 @@ public class PlayerMelodyManager : MonoBehaviour
 
   public UnityEvent<int> NotePlayed;
   private CharacterMovement characterController;
+    private AudioManager audioManager;
 
   private void Start()
   {
+        audioManager = GetComponentInChildren<AudioManager>();
     CurrentMelody = new Melody();
     MelodyChanged = new UnityEvent();
     characterController = GetComponent<CharacterMovement>();
@@ -24,6 +26,7 @@ public class PlayerMelodyManager : MonoBehaviour
   {
     if (!characterController.IsPlaying)
       return;
+    audioManager.PlayPuzzle1Sound(note);
     CurrentMelody.AddNote(note);
     MelodyChanged.Invoke();
     NotePlayed.Invoke(note);
