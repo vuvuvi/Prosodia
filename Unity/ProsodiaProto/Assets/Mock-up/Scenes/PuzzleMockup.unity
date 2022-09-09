@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2232,6 +2232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementAudioSourcesContainer: {fileID: 507563819}
+  PUzle1AudioSourcesContainer: {fileID: 0}
 --- !u!1 &934116903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4184,8 @@ GameObject:
   - component: {fileID: 1463957503}
   - component: {fileID: 1463957505}
   - component: {fileID: 1463957504}
+  - component: {fileID: 1463957507}
+  - component: {fileID: 1463957506}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -4272,6 +4275,7 @@ MonoBehaviour:
   Location: {fileID: 972109265}
   TextMode: {fileID: 1154300766}
   KeysCodes: 71000000730000006600000067000000
+  Iwalk: 0
 --- !u!65 &1463957504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4301,6 +4305,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1463957506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463957499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd70cb78f647be4392ab51c6fa0ad54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1463957507}
+  CharacterMovement: {fileID: 1463957503}
+--- !u!95 &1463957507
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463957499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 22f2548e851ace1418e2bdf1b3beff6e, type: 3}
+  m_Controller: {fileID: 9100000, guid: dccff88e5e809c14dba2e6a5d8919f9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1527132939
 PrefabInstance:
   m_ObjectHideFlags: 0

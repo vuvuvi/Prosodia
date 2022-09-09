@@ -18,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
     public TMPro.TMP_Text TextMode;
     public KeyCode[] KeysCodes = new KeyCode[4] { KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G };
     private AudioManager audioManager;
+    public bool Iwalk;
     void Start()
     {
         locationManager = FindObjectOfType<LocationManager>();
@@ -46,6 +47,8 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
+            Iwalk = false;
+
             if (!isPlaying && Input.GetKeyDown(KeyCode.D))
             {
                 audioManager.PlayMovementSound(0);
@@ -63,6 +66,7 @@ public class CharacterMovement : MonoBehaviour
                         locationManager.UncolorLocationsPinged();
                         Location = Location.Locations[i];
                         locationManager.LocationsArround = new List<Location>();
+                        Iwalk = true;
                     }
                 }
 
