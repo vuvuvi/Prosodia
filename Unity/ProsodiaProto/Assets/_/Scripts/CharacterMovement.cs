@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour
     {
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
-        audioManager = GetComponent<AudioManager>();
+        audioManager = GetComponentInChildren<AudioManager>();
         keyboard = new Keyboard();
         keyboard.Enable();
         keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => { Debug.Log(ctx.ReadValueAsObject()); };
