@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Location))]
 public class PuzzleOnMelody : MusicListener
 {
   public GameObject ItemsContainer;
   public List<NoteListener> NoteListeners;
-
+  private Location Location;
   protected new void Start()
   {
+    Location = GetComponent<Location>();
     NoteListeners = ItemsContainer.GetComponentsInChildren<NoteListener>().ToList();
     MelodyLength = NoteListeners.Count;
     base.Start();
@@ -24,6 +26,7 @@ public class PuzzleOnMelody : MusicListener
   {
     base.SubscribeToPlayer(player);
     player.MelodyChanged.AddListener(ValidateMelody);
+    Location.noteKeyboard.text = Melody.ToString();
 
   }
   protected override void UnsubscribeToPlayer(PlayerMelodyManager player)
