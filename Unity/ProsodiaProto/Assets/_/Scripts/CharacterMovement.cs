@@ -29,21 +29,20 @@ public class CharacterMovement : MonoBehaviour
         keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => { Debug.Log(ctx.ReadValueAsObject()); };
     }
 
-    void OnToggleMovePlay()
-    {
-        if (!isInMovement)
-            isPlaying = !isPlaying;
+  void OnToggleMovePlay()
+  {
+    if (!isInMovement)
+      isPlaying = !isPlaying;
 
-        TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
-    }
+    TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
+  }
 
     void Update()
     {
         if (Vector3.Distance(Location.transform.position, transform.position) > 0.3)
         {
-            var frameMovement = movement.normalized * Time.deltaTime * 3;
+            var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
             transform.position += frameMovement;
-            //Camera.main.transform.position += frameMovement;
         }
         else
         {
@@ -53,6 +52,12 @@ public class CharacterMovement : MonoBehaviour
             {
                 audioManager.PlayMovementSound(0);
                 effectPing.StartAnimation();
+        Location.noteKeyboard.text = "";
+        for(int i = 0; i < Location.Locations.Count;i++)
+        {
+          var loc = Location.Locations[i];
+          loc.noteKeyboard.text = KeysCodes[i].ToString();
+        }
                 isInMovement = true;
                 Location.transform.position = transform.position;
             }
@@ -70,21 +75,21 @@ public class CharacterMovement : MonoBehaviour
                     }
                 }
 
-                movement = Location.transform.position - transform.position;
-                if (movement.sqrMagnitude > 0.1)
-                {
-                    isInMovement = false;
-                }
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Location loc = other.GetComponent<Location>();
-        if (loc && Location.Locations.Contains(loc))
+        movement = Location.transform.position - transform.position;
+        if (movement.sqrMagnitude > 0.1)
         {
-            locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());
+          isInMovement = false;
         }
+      }
     }
+  }
+
+  private void OnTriggerEnter(Collider other)
+  {
+    Location loc = other.GetComponent<Location>();
+    if (loc && Location.Locations.Contains(loc))
+    {
+      locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());
+    }
+  }
 }
