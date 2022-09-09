@@ -50,6 +50,12 @@ public class CharacterMovement : MonoBehaviour
             {
                 audioManager.PlayMovementSound(0);
                 effectPing.StartAnimation();
+        Location.noteKeyboard.text = "";
+        for(int i = 0; i < Location.Locations.Count;i++)
+        {
+          var loc = Location.Locations[i];
+          loc.noteKeyboard.text = KeysCodes[i].ToString();
+        }
                 isInMovement = true;
                 Location.transform.position = transform.position;
             }
