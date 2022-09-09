@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     public KeyCode[] KeysCodes = new KeyCode[4] { KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G };
     private AudioManager audioManager;
     public bool Iwalk;
+    public float MoveSpeed = 6;
     void Start()
     {
         locationManager = FindObjectOfType<LocationManager>();
