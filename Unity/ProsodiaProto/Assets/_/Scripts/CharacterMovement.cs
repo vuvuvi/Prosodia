@@ -40,7 +40,11 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(Location.transform.position, transform.position) > 0.3)
+        var locPos = Location.transform.position;
+        var playerPos = transform.position;
+        locPos.y = 0;
+        playerPos.y = 0;
+        if (Vector3.Distance(locPos, playerPos) > 0.2f)
         {
             var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
             transform.position += frameMovement;
@@ -77,6 +81,7 @@ public class CharacterMovement : MonoBehaviour
                 }
 
                 movement = Location.transform.position - transform.position;
+                movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
