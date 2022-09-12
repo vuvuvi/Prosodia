@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,21 @@ public class AudioManager : MonoBehaviour
 {
 
     public GameObject MovementAudioSourcesContainer;
-    public GameObject PUzle1AudioSourcesContainer;
+    public GameObject Puzzle1AudioSourcesContainer;
     private List<AudioSource> MovementAudioSources;
     private List<AudioSource> Puzzle1AudioSources;
+    private Melody melodyToPlay;
+    private float timeForNextNotePlayed;
+    public float TimeBetweenNotAutoPlayed = 1;
+    private List<AudioSource> notesCurrentlyPlaying;
+    private Dictionary<string, List<AudioSource>> AudioSources;
 
     private void Start()
     {
+        GetAudioSources();
+        notesCurrentlyPlaying = new List<AudioSource>();
+        timeForNextNotePlayed = Time.time + TimeBetweenNotAutoPlayed;
+        melodyToPlay = new Melody();
         MovementAudioSources = new List<AudioSource>();
         Puzzle1AudioSources = new List<AudioSource>();
         var sources = MovementAudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
@@ -20,21 +30,70 @@ public class AudioManager : MonoBehaviour
         {
             MovementAudioSources.Add(sources[i]);
         }
-        sources = PUzle1AudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
+        sources = Puzzle1AudioSourcesContainer.GetComponentsInChildren<AudioSource>().ToList();
         for (int i = 0; i < sources.Count; i++)
         {
             Puzzle1AudioSources.Add(sources[i]);
         }
     }
 
+    private void GetAudioSources()
+    {
+        AudioSources = new Dictionary<string, List<AudioSource>>();
+        var sources = GetComponentsInChildren<AudioSource>().ToList();
+        for (int i = 0; i < sources.Count; i++)
+        {
+            var source = sources[i];
+            var parentName = source.transform.parent.name;
+            if (!AudioSources.ContainsKey(parentName))
+                AudioSources.Add(parentName, new List<AudioSource>() { });
+            AudioSources[parentName].Add(source);
+        }
+    }
 
+    private void Update()
+    {
+        if (Time.time > timeForNextNotePlayed && melodyToPlay.Notes.Count > 0)
+        {
+            var note = Puzzle1AudioSources[melodyToPlay.Notes[0]];
+            note.Play();
+            melodyToPlay.RemoveFromTheBeginning(1);
+            timeForNextNotePlayed = Time.time + TimeBetweenNotAutoPlayed;
+        }
+    }
+
+    internal void Play(Melody melody)
+    {
+        melodyToPlay.Add(melody);
+    }
+
+    public void PlayNote(int note, string sound, bool stopsTheOthers = false)
+    {
+        if (stopsTheOthers)
+        {
+            for (int i = notesCurrentlyPlaying.Count; i > 0; i--)
+            {
+                var nt = notesCurrentlyPlaying[0];
+                nt.Stop();
+                notesCurrentlyPlaying.RemoveAt(0);
+            }
+        }
+        var n = AudioSources[sound][note];
+        n.Play();
+        notesCurrentlyPlaying.Add(n);
+    }
     public void PlayMovementSound(int i)
     {
-        MovementAudioSources[i].Play();
+        var note = MovementAudioSources[i];
+        note.Play();
+        notesCurrentlyPlaying.Add(note);
     }
 
     public void PlayPuzzle1Sound(int i)
     {
-        Puzzle1AudioSources[i].Play();
+
+        var note = Puzzle1AudioSources[i];
+        note.Play();
+        notesCurrentlyPlaying.Add(note);
     }
 }
