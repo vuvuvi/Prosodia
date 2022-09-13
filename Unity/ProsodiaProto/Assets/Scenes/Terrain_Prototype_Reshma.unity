@@ -454,6 +454,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &157865992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7728337699239735205, guid: c8ee6e828b9660e4ea2c959fad592270,
+    type: 3}
+  m_PrefabInstance: {fileID: 654673421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362265149
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementAudioSourcesContainer: {fileID: 794143262}
-  Puzzle1AudioSourcesContainer: {fileID: 0}
+  Puzzle1AudioSourcesContainer: {fileID: 379790879}
   TimeBetweenNotAutoPlayed: 1
 --- !u!1 &379790879
 GameObject:
@@ -750,7 +762,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89b48102ce6209c41884cbe317845eeb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.683
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -946,6 +958,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 337ff6f15b88efe43b37d181c12ecb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &654673429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654673423}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab15716017cbb6a4eb91783e72cae17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &747341583
@@ -1161,7 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794143263}
   m_Layer: 0
-  m_Name: MovementSounds
+  m_Name: Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1255,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df5b8c32f0c922441b39e7d3502a2eee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.683
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1315,6 +1339,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &837030819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837030821}
+  - component: {fileID: 837030820}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &837030820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837030819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece1d85a52c6a0542b57aa142bdf139d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteInfoProvider: {fileID: 11400000, guid: 70c44fba45336cb40a24ce4ae5b5f27e, type: 2}
+--- !u!4 &837030821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837030819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.99338, y: 100, z: 35.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &854622934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,7 +1503,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9156af7c1c991824baafa0c3e8af9f0a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.683
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2273,7 +2342,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e1a9d3cebaeee4c46a8637f8c1f4dfa5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.683
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2974,7 +3043,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 84888a1558053304bb841cf2d8e34413, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.683
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3216,7 +3285,7 @@ GameObject:
   - component: {fileID: 1889701830}
   - component: {fileID: 1889701829}
   m_Layer: 0
-  m_Name: Character (1)
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3297,7 +3366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67d09267e1da9c44970ce9c9d274322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPing: {fileID: 0}
+  effectPing: {fileID: 157865992}
   Location: {fileID: 654673425}
   TextMode: {fileID: 0}
   KeysCodes: 71000000730000006600000067000000
@@ -3566,39 +3635,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1986340327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8180600580674300221, guid: c8ee6e828b9660e4ea2c959fad592270,
-    type: 3}
-  m_PrefabInstance: {fileID: 1096544960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1986340328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8180600580674300220, guid: c8ee6e828b9660e4ea2c959fad592270,
     type: 3}
   m_PrefabInstance: {fileID: 1096544960}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1986340329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986340327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa53719c0f272634491ab92e18d2d603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MelodyLength: 0
-  SoundName: Puzzle1
-  GoalReached:
-    m_PersistentCalls:
-      m_Calls: []
-  ItemsContainer: {fileID: 2007876867}
-  NoteListeners: []
-  RandomMelody: 0
-  FixedMelody: 00000000010000000200000003000000
 --- !u!1001 &2001585020
 PrefabInstance:
   m_ObjectHideFlags: 0

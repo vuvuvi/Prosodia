@@ -44,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
         var playerPos = transform.position;
         locPos.y = 0;
         playerPos.y = 0;
-        if (Vector3.Distance(locPos, playerPos) > 0.2f)
+        if (Vector3.Distance(locPos, playerPos) > 2.2f)
         {
             var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
             transform.position += frameMovement;
