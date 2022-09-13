@@ -148,11 +148,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MelodyLength: 0
+  SoundName: Puzzle1
   GoalReached:
     m_PersistentCalls:
       m_Calls: []
   ItemsContainer: {fileID: 2135448050}
   NoteListeners: []
+  RandomMelody: 0
+  FixedMelody: 
 --- !u!114 &80534586 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
@@ -1965,7 +1968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &837458680
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,7 +2313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementAudioSourcesContainer: {fileID: 507563819}
-  PUzle1AudioSourcesContainer: {fileID: 269453576}
+  Puzzle1AudioSourcesContainer: {fileID: 0}
+  TimeBetweenNotAutoPlayed: 1
 --- !u!1 &934116903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,7 +2331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &934116904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,7 +2375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &948643596
 Transform:
   m_ObjectHideFlags: 0
@@ -2557,11 +2561,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MelodyLength: 0
+  SoundName: Puzzle1
   GoalReached:
     m_PersistentCalls:
       m_Calls: []
   ItemsContainer: {fileID: 2135448050}
   NoteListeners: []
+  RandomMelody: 0
+  FixedMelody: 
 --- !u!114 &972109265 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
@@ -2673,7 +2680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1007121988
 Transform:
   m_ObjectHideFlags: 0
@@ -2743,7 +2750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1069149138
 Transform:
   m_ObjectHideFlags: 0
@@ -3442,7 +3449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1280007100
 Transform:
   m_ObjectHideFlags: 0
@@ -3853,7 +3860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1362520871
 Transform:
   m_ObjectHideFlags: 0
@@ -4192,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1463957500
 Transform:
   m_ObjectHideFlags: 0
@@ -5544,11 +5551,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MelodyLength: 0
+  SoundName: Puzzle1
   GoalReached:
     m_PersistentCalls:
       m_Calls: []
   ItemsContainer: {fileID: 2135448050}
   NoteListeners: []
+  RandomMelody: 0
+  FixedMelody: 
 --- !u!1001 &2118042903
 PrefabInstance:
   m_ObjectHideFlags: 0
