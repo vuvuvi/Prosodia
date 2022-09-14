@@ -44,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
         var playerPos = transform.position;
         locPos.y = 0;
         playerPos.y = 0;
-        if (Vector3.Distance(locPos, playerPos) > 2.2f)
+        if (Vector3.Distance(locPos, playerPos) > 0.2f && movement.sqrMagnitude > 0.1f)
         {
             var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
             transform.position += frameMovement;
@@ -64,7 +64,7 @@ public class CharacterMovement : MonoBehaviour
                     loc.noteKeyboard.text = KeysCodes[i].ToString();
                 }
                 isInMovement = true;
-                Location.transform.position = transform.position;
+                //Location.transform.position = transform.position;
             }
             if (isInMovement)
             {
