@@ -15,7 +15,7 @@ public class OrganAnim : MonoBehaviour
     {
        if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            GetComponent<Animator>().Play("OrganAnim");
+            GetComponent<Animator>().Play("OrganAnimation");
         }
     }
 }
