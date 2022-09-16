@@ -17,9 +17,8 @@ public class Location : MonoBehaviour
   private void Start()
   {
     meshRenderer = GetComponent<MeshRenderer>();
-    var a = 0;
-    var b = 0;
-    int v = b /a;
+    meshRenderer.enabled = false;
+    noteKeyboard.gameObject.transform.rotation = Camera.main.transform.rotation;
   }
 
   internal void PingLocation(Material material, string note)
