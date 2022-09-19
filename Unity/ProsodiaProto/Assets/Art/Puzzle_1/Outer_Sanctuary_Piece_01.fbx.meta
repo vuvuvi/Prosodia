@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Unity/ProsodiaProto/Assets/Art/Puzzle_1/Inner_Sanctuary_02.fbx.meta
-guid: 5897bd756fa2b36448a306c515a6ba43
-========
-guid: d561be38f199d1744944b85c7809da9e
->>>>>>>> origin/Add-3d-Assets:Unity/ProsodiaProto/Assets/Art/Puzzle_1/Outer_Sanctuary_Piece_01.fbx.meta
+guid: e5f5fbe7c840d3f448e530213859483b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
