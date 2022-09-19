@@ -37,6 +37,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    internal string GetSoundName(int i)
+    {
+        return AudioSources.Keys.ToList()[i+1].ToString();
+    }
+
     private void GetAudioSources()
     {
         AudioSources = new Dictionary<string, List<AudioSource>>();

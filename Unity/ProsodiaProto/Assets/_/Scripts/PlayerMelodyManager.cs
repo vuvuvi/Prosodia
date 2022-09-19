@@ -14,7 +14,7 @@ public class PlayerMelodyManager : MonoBehaviour
     public UnityEvent<int> NotePlayed;
     private CharacterMovement characterController;
     private AudioManager audioManager;
-    public string SoundName { get; private set; }
+    public string SoundName { get; private set; } = "Puzzle1";
 
 
     private void Start()
@@ -23,6 +23,8 @@ public class PlayerMelodyManager : MonoBehaviour
         CurrentMelody = new Melody();
         MelodyChanged = new UnityEvent();
         characterController = GetComponent<CharacterMovement>();
+        SoundName = audioManager.GetSoundName(0);
+        Debug.Log(SoundName);
     }
     private void AddNote(int note)
     {
