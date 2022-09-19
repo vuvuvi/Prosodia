@@ -2372,7 +2372,7 @@ MonoBehaviour:
   ItemsContainer: {fileID: 2007876867}
   NoteListeners: []
   RandomMelody: 0
-  FixedMelody: 010000000200000003000000040000000500000006000000
+  FixedMelody: 020000000400000006000000010000000700000003000000
 --- !u!1001 &854622934
 PrefabInstance:
   m_ObjectHideFlags: 0
