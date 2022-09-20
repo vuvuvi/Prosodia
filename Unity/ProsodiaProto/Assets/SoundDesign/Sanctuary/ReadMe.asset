@@ -15,9 +15,9 @@ MonoBehaviour:
   m_StyleList:
   - m_Name: RocksSolution
     m_HashCode: -295312865
-    m_OpeningDefinition: 
-    m_ClosingDefinition: 
-    m_OpeningTagArray: 
-    m_ClosingTagArray: 
+    m_OpeningDefinition: 'Solution is (one note on each rocks) '
+    m_ClosingDefinition: FHFK
+    m_OpeningTagArray: 530000006f0000006c0000007500000074000000690000006f0000006e00000020000000690000007300000020000000280000006f0000006e00000065000000200000006e0000006f0000007400000065000000200000006f0000006e000000200000006500000061000000630000006800000020000000720000006f000000630000006b000000730000002900000020000000
+    m_ClosingTagArray: 4600000048000000460000004b000000
     m_OpeningTagUnicodeArray: 
     m_ClosingTagUnicodeArray: 
