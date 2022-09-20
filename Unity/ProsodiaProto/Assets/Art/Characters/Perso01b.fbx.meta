@@ -77,12 +77,12 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: Perso 01b(Clone)
+    - name: Perso01b(Clone)
       parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
