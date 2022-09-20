@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: d83f0c264862b6f43b19ae964934bddf
+guid: f479d0dad646b80428b1255ed7df8246
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 5762415363551741236
+    second: Alien@Idle
+  - first:
+      74: 207964795901777080
+    second: Alien@Idle2
   externalObjects: {}
   materials:
     materialImportMode: 2
