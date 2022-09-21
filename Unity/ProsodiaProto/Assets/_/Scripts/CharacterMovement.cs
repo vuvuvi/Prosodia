@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
+using System;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -25,17 +26,53 @@ public class CharacterMovement : MonoBehaviour
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
         audioManager = GetComponentInChildren<AudioManager>();
-        keyboard = new Keyboard();
-        keyboard.Enable();
-        keyboard.PlayerMusic.ToggleMovePlay.performed += ctx => { Debug.Log(ctx.ReadValueAsObject()); };
+
     }
 
-    void OnToggleMovePlay()
+    public void ToggleMovePlay()
     {
         if (!isInMovement)
             isPlaying = !isPlaying;
 
-        TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
+        //if (isPlaying)
+        //{
+        //    keyboard.PlayerMove.Disable();
+        //    keyboard.PlayerMusic.Enable();
+        //}
+        //else
+        //{
+        //    keyboard.PlayerMove.Enable();
+        //    keyboard.PlayerMusic.Disable();
+        //}
+        //TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
+    }
+
+    public void Echolocation()
+    {
+        if (!isPlaying)
+        {
+            audioManager.PlayNote(0, "Move");
+            effectPing.StartAnimation();
+            Location.noteKeyboard.text = "";
+            for (int i = 0; i < Location.Locations.Count; i++)
+            {
+                var loc = Location.Locations[i];
+                loc.noteKeyboard.text = KeysCodes[i].ToString();
+            }
+            isInMovement = true;
+        }
+    }
+
+    public void MoveTo(int pos)
+    {
+        if (isInMovement)
+        {
+            audioManager.PlayMovementSound(pos + 1);
+            locationManager.UncolorLocationsPinged();
+            Location = Location.Locations[pos];
+            locationManager.LocationsArround = new List<Location>();
+            Iwalk = true;
+        }
     }
 
     void Update()
@@ -53,33 +90,9 @@ public class CharacterMovement : MonoBehaviour
         {
             Iwalk = false;
 
-            if (!isPlaying && Input.GetKeyDown(KeyCode.D))
-            {
-                audioManager.PlayNote(0, "Move");
-                effectPing.StartAnimation();
-                Location.noteKeyboard.text = "";
-                for (int i = 0; i < Location.Locations.Count; i++)
-                {
-                    var loc = Location.Locations[i];
-                    loc.noteKeyboard.text = KeysCodes[i].ToString();
-                }
-                isInMovement = true;
-                //Location.transform.position = transform.position;
-            }
+
             if (isInMovement)
             {
-                for (int i = 0; i < Location.Locations.Count; i++)
-                {
-                    if (Input.GetKeyDown(KeysCodes[i]))
-                    {
-                        audioManager.PlayMovementSound(i + 1);
-                        locationManager.UncolorLocationsPinged();
-                        Location = Location.Locations[i];
-                        locationManager.LocationsArround = new List<Location>();
-                        Iwalk = true;
-                    }
-                }
-
                 movement = Location.transform.position - transform.position;
                 movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
@@ -89,6 +102,7 @@ public class CharacterMovement : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
