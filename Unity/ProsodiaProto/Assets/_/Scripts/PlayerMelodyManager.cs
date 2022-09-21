@@ -14,6 +14,7 @@ public class PlayerMelodyManager : MonoBehaviour
     public UnityEvent<int> NotePlayed;
     private CharacterMovement characterController;
     private AudioManager audioManager;
+
     public string SoundName { get; private set; } = "Puzzle1";
 
 
@@ -26,7 +27,7 @@ public class PlayerMelodyManager : MonoBehaviour
         SoundName = audioManager.GetSoundName(0);
         Debug.Log(SoundName);
     }
-    private void AddNote(int note)
+    public void AddNote(int note)
     {
         if (!characterController.IsPlaying)
             return;
@@ -43,55 +44,5 @@ public class PlayerMelodyManager : MonoBehaviour
     public void Reset()
     {
         CurrentMelody.Reset();
-    }
-
-    void OnKey0()
-    {
-        AddNote(0);
-    }
-
-    void OnKey1()
-    {
-        AddNote(1);
-    }
-
-    void OnKey2()
-    {
-        AddNote(2);
-    }
-
-    void OnKey3()
-    {
-        AddNote(3);
-    }
-
-    void OnKey4()
-    {
-        AddNote(4);
-    }
-
-    void OnKey5()
-    {
-        AddNote(5);
-    }
-
-    void OnKey6()
-    {
-        AddNote(6);
-    }
-
-    void OnKey7()
-    {
-        AddNote(7);
-    }
-
-    void OnKey8()
-    {
-        AddNote(8);
-    }
-
-    void OnKey9()
-    {
-        AddNote(9);
     }
 }

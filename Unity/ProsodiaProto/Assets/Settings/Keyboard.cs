@@ -141,8 +141,30 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""1629f05e-9400-494a-837a-39ebf7532857"",
+                    ""path"": ""<MidiDevice>/note052"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6d4f1a99-d397-4228-99a2-593c76f61175"",
                     ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07b3ff1a-dd9e-42e3-90b1-05618960b1c1"",
+                    ""path"": ""<MidiDevice>/note053"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -163,8 +185,30 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""228695a2-30dd-469e-adac-467e2875310b"",
+                    ""path"": ""<MidiDevice>/note055"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""1fd3c250-b5d2-4a31-8117-ee320d689aa0"",
                     ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2d98eac-b0d7-4f2d-a457-d23a76776493"",
+                    ""path"": ""<MidiDevice>/note057"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -185,8 +229,30 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""96334ad6-8d63-4bf1-b53d-1260ffe67a8e"",
+                    ""path"": ""<MidiDevice>/note059"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7c8a3f63-972b-4166-a5bf-5351ff3c5aaf"",
                     ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd4c0e7f-d925-47db-8407-9db47c0f2786"",
+                    ""path"": ""<MidiDevice>/note060"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -207,8 +273,30 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""126de9a1-122d-48fc-9163-d2181575a087"",
+                    ""path"": ""<MidiDevice>/note062"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""3492a68c-8597-49af-84a7-2a8dfd93d36a"",
                     ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71306b76-4b32-4b71-a2fe-b4bacc627c49"",
+                    ""path"": ""<MidiDevice>/note064"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -229,8 +317,30 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""03e0cf44-297d-454e-ad2e-f1b609f68b4d"",
+                    ""path"": ""<MidiDevice>/note065"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""86fef40c-b128-4ffb-948b-6d9f0f533294"",
                     ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Key9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1e6a883-39c9-462a-8b09-394a59f3f70c"",
+                    ""path"": ""<MidiDevice>/note067"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -248,6 +358,17 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                     ""action"": ""ToggleMovePlay"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95f6edda-b29e-4e68-9cda-78faf99b1306"",
+                    ""path"": ""<MidiDevice>/note061"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMovePlay"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -256,9 +377,54 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
             ""id"": ""91017526-8567-4d03-94ff-ac0f67681da1"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Echolocation"",
                     ""type"": ""Button"",
                     ""id"": ""190dc45b-2f4c-4c9a-b5c8-58e8f47da489"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleMovePlay"",
+                    ""type"": ""Button"",
+                    ""id"": ""d887c941-6910-4730-819e-ebd27698237c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move0"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d8630ae-a743-4da6-9dfe-503002ca58a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move1"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9fe65b0-baaf-4700-8b41-d46f2267305f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move2"",
+                    ""type"": ""Button"",
+                    ""id"": ""6de87add-2b42-48d1-b8e0-78602b175c2e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move3"",
+                    ""type"": ""Button"",
+                    ""id"": ""e4a12c78-4e86-4378-999f-1d50efc2debc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -269,11 +435,132 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""19c5ffb5-87b9-4e8f-a498-7cf5d9e1c7a4"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Echolocation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""818c8923-88df-4470-a347-80e885071721"",
+                    ""path"": ""<MidiDevice>/note055"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Echolocation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9970df39-c2b3-48f4-9c16-d2b28cc34676"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55aef4e1-8047-4eb6-bb45-f0e3e57eb73c"",
+                    ""path"": ""<MidiDevice>/note052"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59cf5aec-c857-4f62-9657-7aca2d2a7b66"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6949bbdc-ed73-4773-8310-3dc892ad700d"",
+                    ""path"": ""<MidiDevice>/note053"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ae93e79-31d9-49ea-80a3-a0e82d0f41e7"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47a0f62e-542b-4aba-8104-0c728a7a14ef"",
+                    ""path"": ""<MidiDevice>/note057"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b017b86e-553e-44b9-96f5-7e296eb98eb1"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32409d57-baac-4823-a730-402a2a0fa709"",
+                    ""path"": ""<MidiDevice>/note059"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f303100-a9b1-48f1-8a21-d8039696e90b"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMovePlay"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09ac21e9-27c8-4688-ba6a-ede72dfe22c9"",
+                    ""path"": ""<MidiDevice>/note061"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMovePlay"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -309,7 +596,12 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
         m_PlayerMusic_ToggleMovePlay = m_PlayerMusic.FindAction("ToggleMovePlay", throwIfNotFound: true);
         // PlayerMove
         m_PlayerMove = asset.FindActionMap("PlayerMove", throwIfNotFound: true);
-        m_PlayerMove_Newaction = m_PlayerMove.FindAction("New action", throwIfNotFound: true);
+        m_PlayerMove_Echolocation = m_PlayerMove.FindAction("Echolocation", throwIfNotFound: true);
+        m_PlayerMove_ToggleMovePlay = m_PlayerMove.FindAction("ToggleMovePlay", throwIfNotFound: true);
+        m_PlayerMove_Move0 = m_PlayerMove.FindAction("Move0", throwIfNotFound: true);
+        m_PlayerMove_Move1 = m_PlayerMove.FindAction("Move1", throwIfNotFound: true);
+        m_PlayerMove_Move2 = m_PlayerMove.FindAction("Move2", throwIfNotFound: true);
+        m_PlayerMove_Move3 = m_PlayerMove.FindAction("Move3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -482,12 +774,22 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
     // PlayerMove
     private readonly InputActionMap m_PlayerMove;
     private IPlayerMoveActions m_PlayerMoveActionsCallbackInterface;
-    private readonly InputAction m_PlayerMove_Newaction;
+    private readonly InputAction m_PlayerMove_Echolocation;
+    private readonly InputAction m_PlayerMove_ToggleMovePlay;
+    private readonly InputAction m_PlayerMove_Move0;
+    private readonly InputAction m_PlayerMove_Move1;
+    private readonly InputAction m_PlayerMove_Move2;
+    private readonly InputAction m_PlayerMove_Move3;
     public struct PlayerMoveActions
     {
         private @Keyboard m_Wrapper;
         public PlayerMoveActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_PlayerMove_Newaction;
+        public InputAction @Echolocation => m_Wrapper.m_PlayerMove_Echolocation;
+        public InputAction @ToggleMovePlay => m_Wrapper.m_PlayerMove_ToggleMovePlay;
+        public InputAction @Move0 => m_Wrapper.m_PlayerMove_Move0;
+        public InputAction @Move1 => m_Wrapper.m_PlayerMove_Move1;
+        public InputAction @Move2 => m_Wrapper.m_PlayerMove_Move2;
+        public InputAction @Move3 => m_Wrapper.m_PlayerMove_Move3;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMove; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -497,16 +799,46 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerMoveActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnNewaction;
+                @Echolocation.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnEcholocation;
+                @Echolocation.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnEcholocation;
+                @Echolocation.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnEcholocation;
+                @ToggleMovePlay.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnToggleMovePlay;
+                @ToggleMovePlay.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnToggleMovePlay;
+                @ToggleMovePlay.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnToggleMovePlay;
+                @Move0.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove0;
+                @Move0.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove0;
+                @Move0.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove0;
+                @Move1.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove1;
+                @Move1.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove1;
+                @Move1.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove1;
+                @Move2.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove2;
+                @Move2.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove2;
+                @Move2.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove2;
+                @Move3.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
+                @Move3.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
+                @Move3.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
             }
             m_Wrapper.m_PlayerMoveActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Echolocation.started += instance.OnEcholocation;
+                @Echolocation.performed += instance.OnEcholocation;
+                @Echolocation.canceled += instance.OnEcholocation;
+                @ToggleMovePlay.started += instance.OnToggleMovePlay;
+                @ToggleMovePlay.performed += instance.OnToggleMovePlay;
+                @ToggleMovePlay.canceled += instance.OnToggleMovePlay;
+                @Move0.started += instance.OnMove0;
+                @Move0.performed += instance.OnMove0;
+                @Move0.canceled += instance.OnMove0;
+                @Move1.started += instance.OnMove1;
+                @Move1.performed += instance.OnMove1;
+                @Move1.canceled += instance.OnMove1;
+                @Move2.started += instance.OnMove2;
+                @Move2.performed += instance.OnMove2;
+                @Move2.canceled += instance.OnMove2;
+                @Move3.started += instance.OnMove3;
+                @Move3.performed += instance.OnMove3;
+                @Move3.canceled += instance.OnMove3;
             }
         }
     }
@@ -536,6 +868,11 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
     }
     public interface IPlayerMoveActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnEcholocation(InputAction.CallbackContext context);
+        void OnToggleMovePlay(InputAction.CallbackContext context);
+        void OnMove0(InputAction.CallbackContext context);
+        void OnMove1(InputAction.CallbackContext context);
+        void OnMove2(InputAction.CallbackContext context);
+        void OnMove3(InputAction.CallbackContext context);
     }
 }
