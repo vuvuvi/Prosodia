@@ -33,18 +33,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!isInMovement)
             isPlaying = !isPlaying;
-
-        //if (isPlaying)
-        //{
-        //    keyboard.PlayerMove.Disable();
-        //    keyboard.PlayerMusic.Enable();
-        //}
-        //else
-        //{
-        //    keyboard.PlayerMove.Enable();
-        //    keyboard.PlayerMusic.Disable();
-        //}
-        //TextMode.text = isPlaying ? "Piano Mode" : "Moving Mode";
     }
 
     public void Echolocation()

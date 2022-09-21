@@ -7,7 +7,7 @@ using UnityEngine;
 public class NoteListener : MonoBehaviour
 {
   public int NotePitch;
-  private List<ActionHolder> reactions;
+  private List<NoteActionHolder> reactions;
   private bool isValid;
   public bool IsValid
   {
@@ -25,7 +25,7 @@ public class NoteListener : MonoBehaviour
 
   private void Start()
   {
-    reactions = GetComponents<ActionHolder>().ToList();
+    reactions = GetComponents<NoteActionHolder>().ToList();
     FindObjectOfType<PlayerMelodyManager>().NotePlayed.AddListener(ReactToNote);
   }
 

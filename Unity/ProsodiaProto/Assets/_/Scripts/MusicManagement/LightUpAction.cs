@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightUpAction : ActionHolder
+public class LightUpAction : NoteActionHolder
 {
   private Material material;
   private MeshRenderer meshRenderer;
