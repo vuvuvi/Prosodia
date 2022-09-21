@@ -3,7 +3,97 @@ guid: 4fb2e774ef485a842a693b4033fe008d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass01
+    second: {fileID: 2100000, guid: 314bc2c51ad76584c822ab7933638553, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keyboard01
+    second: {fileID: 2100000, guid: b5c60fd4dcdbabf41a5b770ae8e1bf0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keyboard01.001
+    second: {fileID: 2100000, guid: 3b4bc1dc5477a0f4ba998fc7d4e3846a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keyboard02
+    second: {fileID: 2100000, guid: 745eadd358c2d3b4798503cd5d760be4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keyboard03
+    second: {fileID: 2100000, guid: f4ea92a596cda5e4b8e4fe42aaff077b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipes01.001
+    second: {fileID: 2100000, guid: 2ef2f3da6e320924cb0b253fc85c2b59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01
+    second: {fileID: 2100000, guid: 87dd3e2e5468101438834ffd9beba453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01.001
+    second: {fileID: 2100000, guid: 672aec418335e7640bb619810c175958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01.002
+    second: {fileID: 2100000, guid: 46a0d47bfe7cca24c8b07f47cc1c22ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01.003
+    second: {fileID: 2100000, guid: b3faa429e5419ce4f8216fb609675416, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01.004
+    second: {fileID: 2100000, guid: 0ee70322f7e412041966eb8c9349fe13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit01.006
+    second: {fileID: 2100000, guid: 649f53e21b257cd429aafceae4b904f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit02
+    second: {fileID: 2100000, guid: e8f1e53e8c9852e498d39731645db4b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit02.001
+    second: {fileID: 2100000, guid: cc0e14a71815363448736504dbc205ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit02.002
+    second: {fileID: 2100000, guid: d927cbcb461f7d94d875a634c61df87b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spacesuit02.003
+    second: {fileID: 2100000, guid: 4e1c2b8a98448ae45a1bc0557a4fbe77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue01
+    second: {fileID: 2100000, guid: d728b4cb85b19924087ea257e8afa48f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood01
+    second: {fileID: 2100000, guid: d1ea51e84cfb32e439da50d980facc94, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -76,7 +166,9 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 54e3a96c6ba1b67459c3c6818164f3c9
+  - 193b6a9db6b23544e8640c4a14b3cedb
   importAnimation: 0
   humanDescription:
     serializedVersion: 3
