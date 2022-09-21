@@ -2213,7 +2213,21 @@ MonoBehaviour:
   ItemsContainer: {fileID: 2007876867}
   NoteListeners: []
   RandomMelody: 0
-  FixedMelody: 020000000400000006000000010000000700000003000000
+  FixedMelody: 020000000400000006000000020000000400000006000000
+--- !u!114 &852727444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852727440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25b13063fba5c6479e6a80d7b8d3c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 852727443}
+  TrackToPlay: {fileID: 1066206969}
 --- !u!1001 &854622934
 PrefabInstance:
   m_ObjectHideFlags: 0
