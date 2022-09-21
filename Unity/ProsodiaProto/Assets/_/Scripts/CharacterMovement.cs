@@ -21,12 +21,15 @@ public class CharacterMovement : MonoBehaviour
     private AudioManager audioManager;
     public bool Iwalk;
     public float MoveSpeed = 6;
+    Animator animator;
+    int isWalkingHash;
     void Start()
     {
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
         audioManager = GetComponentInChildren<AudioManager>();
-
+        animator = GetComponentInChildren<Animator>();
+        isWalkingHash = Animator.StringToHash("isWalking");
     }
 
     public void ToggleMovePlay()
@@ -60,6 +63,7 @@ public class CharacterMovement : MonoBehaviour
             Location = Location.Locations[pos];
             locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
+            animator.SetBool(isWalkingHash, true);
         }
     }
 
@@ -86,6 +90,8 @@ public class CharacterMovement : MonoBehaviour
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
+                    animator.SetBool(isWalkingHash, false);
+
                 }
             }
         }
