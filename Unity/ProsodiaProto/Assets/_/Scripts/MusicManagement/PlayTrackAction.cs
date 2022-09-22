@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayTrackAction : PuzzleActionHolder
+public class PlayTrackAction : ActionHolder
 {
     public AudioSource TrackToPlay;
 
@@ -15,7 +15,6 @@ public class PlayTrackAction : PuzzleActionHolder
     {
         Action = () =>
         {
-            Debug.Log("track playing");
             PlayTrack();
         };
     }

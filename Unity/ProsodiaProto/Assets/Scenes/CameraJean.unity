@@ -557,6 +557,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &171506039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171506041}
+  - component: {fileID: 171506040}
+  - component: {fileID: 171506042}
+  m_Layer: 0
+  m_Name: StonePuzzlesSolver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &171506040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171506039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25b13063fba5c6479e6a80d7b8d3c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 0}
+  TrackToPlay: {fileID: 1700491094}
+--- !u!4 &171506041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171506039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171506042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171506039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b13dd6a641c2564f98a7243c1e72902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {fileID: 11400000, guid: 6ef571130395d8e41816a41b0379b5b2, type: 2}
+  Goal: {fileID: 11400000, guid: d49c57dbf5c03f040a16473efaf56d17, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &232380617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,18 +1806,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 654673421}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &654673423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8180600580674300221, guid: c8ee6e828b9660e4ea2c959fad592270,
+    type: 3}
+  m_PrefabInstance: {fileID: 654673421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &654673425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
     type: 3}
   m_PrefabInstance: {fileID: 654673421}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 654673423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 337ff6f15b88efe43b37d181c12ecb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &654673426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654673423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa53719c0f272634491ab92e18d2d603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MelodyLength: 0
+  SoundName: Puzzle1
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemsContainer: {fileID: 1836952489}
+  NoteListeners: []
+  RandomMelody: 0
+  FixedMelody: 05000000
+--- !u!114 &654673427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654673423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea82bc1cf83f4d74ba577a20f852279f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 0}
+  ValueToIncrease: {fileID: 11400000, guid: 6ef571130395d8e41816a41b0379b5b2, type: 2}
+  IncreaseAmount: {fileID: 11400000, guid: 5c85a1c7029f7604d9d8ec79e62ba5df, type: 2}
 --- !u!1 &747341583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837030821}
   - component: {fileID: 837030820}
+  - component: {fileID: 837030822}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2166,6 +2273,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837030822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837030819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f271dfd5b2bc124f8096f021f508ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberOfStonePuzzleSolved: {fileID: 0}
 --- !u!1001 &852727438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2308,7 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MelodyLength: 6
   SoundName: Puzzle1
-  GoalReached:
+  Event:
     m_PersistentCalls:
       m_Calls: []
   ItemsContainer: {fileID: 2007876867}
@@ -2327,7 +2447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25b13063fba5c6479e6a80d7b8d3c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Puzzle: {fileID: 852727443}
+  Puzzle: {fileID: 0}
   TrackToPlay: {fileID: 1066206969}
 --- !u!1001 &854622934
 PrefabInstance:
@@ -5675,6 +5795,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1836952487}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1836952489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e5ee84e7d0320e64eb03a9b8d4b05b76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1836952487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836952490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836952489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913585d686aa35c4dba2ccb39586e42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotePitch: 1
 --- !u!1 &1839042911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec6fe9d1b6706e428cef8cd9c01c31b,
