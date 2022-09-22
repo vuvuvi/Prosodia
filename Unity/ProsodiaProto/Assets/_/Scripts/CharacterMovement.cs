@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     public float MoveSpeed = 6;
     Animator animator;
     int isWalkingHash;
+    int isPlayingHash;
     public Transform MeshContainer;
     void Start()
     {
@@ -30,13 +31,22 @@ public class CharacterMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         audioManager = GetComponentInChildren<AudioManager>();
         animator = GetComponentInChildren<Animator>();
+        isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
+    }
+
+    internal void StartPlaying()
+    {
+        animator.SetBool(isPlayingHash, true);
     }
 
     public void ToggleMovePlay()
     {
         if (!isInMovement)
             isPlaying = !isPlaying;
+        if (!isPlaying)
+            animator.SetBool(isPlayingHash, false);
+
     }
 
     public void Echolocation()
