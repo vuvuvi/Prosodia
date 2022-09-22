@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     public float MoveSpeed = 6;
     Animator animator;
     int isWalkingHash;
+    public Transform MeshContainer;
     void Start()
     {
         locationManager = FindObjectOfType<LocationManager>();
@@ -64,6 +65,7 @@ public class CharacterMovement : MonoBehaviour
             locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
+            MeshContainer.LookAt(Location.transform, MeshContainer.up);
         }
     }
 
@@ -73,13 +75,19 @@ public class CharacterMovement : MonoBehaviour
         var playerPos = transform.position;
         locPos.y = 0;
         playerPos.y = 0;
-        if (Vector3.Distance(locPos, playerPos) > 0.2f && movement.sqrMagnitude > 0.1f)
+        var distanceLeft = Vector3.Distance(locPos, playerPos);
+        if (distanceLeft > 0.2f && movement.sqrMagnitude > 0.1f)
         {
             var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
             transform.position += frameMovement;
         }
         else
         {
+            if (distanceLeft < 0.2f)
+            {
+                animator.SetBool(isWalkingHash, false);
+            }
+
             Iwalk = false;
 
 
@@ -90,8 +98,6 @@ public class CharacterMovement : MonoBehaviour
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
-                    animator.SetBool(isWalkingHash, false);
-
                 }
             }
         }

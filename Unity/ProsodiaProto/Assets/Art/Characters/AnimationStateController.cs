@@ -27,7 +27,7 @@ public class AnimationStateController : MonoBehaviour
 
        if (isWalking && !forwardPressed)
        {
-            animator.SetBool(isWalkingHash, false); 
+            //animator.SetBool(isWalkingHash, false); 
        }
     }
 }
