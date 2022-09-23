@@ -588,7 +588,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Puzzle: {fileID: 0}
-  TrackToPlay: {fileID: 1700491094}
+  TrackToPlay: {fileID: 391048029}
+  Delay: 1
 --- !u!4 &171506041
 Transform:
   m_ObjectHideFlags: 0
@@ -597,7 +598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171506039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 69.89, y: 100.1, z: 32.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2285,7 +2286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f271dfd5b2bc124f8096f021f508ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfStonePuzzleSolved: {fileID: 0}
+  NumberOfStonePuzzleSolved: {fileID: 11400000, guid: 6ef571130395d8e41816a41b0379b5b2,
+    type: 2}
 --- !u!1001 &852727438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2449,6 +2451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Puzzle: {fileID: 0}
   TrackToPlay: {fileID: 1066206969}
+  Delay: 0
 --- !u!1001 &854622934
 PrefabInstance:
   m_ObjectHideFlags: 0

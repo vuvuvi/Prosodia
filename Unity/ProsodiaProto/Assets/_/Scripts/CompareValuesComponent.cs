@@ -12,12 +12,16 @@ public class CompareValuesComponent : MonoBehaviour, ICanReachGoal
     void Start()
     {
         CompareValues();
+        Value.ValueChanged.AddListener(CompareValues);
+        Goal.ValueChanged.AddListener(CompareValues);
     }
 
     private void CompareValues()
     {
-        if(Value.Value == Goal.Value)
+        Debug.Log("Compare");
+        if (Value.Value == Goal.Value)
         {
+            Debug.Log("Compare ==");
             GoalReached.Invoke();
         }
     }

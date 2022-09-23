@@ -4,19 +4,21 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "So/IntVariable")]
 public class IntVariable : ScriptableObject
 {
-    public int Value;
-    public UnityEvent ValueChanged = new UnityEvent();
-    private int oldValue;
-    private void OnEnable()
+    [SerializeField]
+    private int val;
+    public int Value
     {
-        oldValue = Value;
+        get => val;
+        set => Validate(value);
     }
-    private void OnValidate()
+    public UnityEvent ValueChanged = new UnityEvent();
+
+    private void Validate(int newVal)
     {
-        if (oldValue != Value)
+        if (val != newVal)
         {
+            val = newVal;
             ValueChanged.Invoke();
-            oldValue = Value;
         }
     }
 }

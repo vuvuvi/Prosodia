@@ -47,7 +47,7 @@ public abstract class ActionHolder : MonoBehaviour
         if (Puzzle != null)
             Triggers.Add(Puzzle);
         else
-        Triggers = GetComponents<MonoBehaviour>().OfType<ICanReachGoal>().ToList();
+            Triggers = GetComponents<MonoBehaviour>().OfType<ICanReachGoal>().ToList();
     }
 
     protected abstract void CreateAction();
