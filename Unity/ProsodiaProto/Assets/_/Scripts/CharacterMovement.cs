@@ -75,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
             locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
-            MeshContainer.LookAt(Location.transform, MeshContainer.up);
+            MeshContainer.LookAt(Location.transform, Vector3.up);
         }
     }
 
