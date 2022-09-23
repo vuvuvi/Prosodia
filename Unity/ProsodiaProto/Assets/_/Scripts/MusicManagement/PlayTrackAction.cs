@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayTrackAction : PuzzleActionHolder
+public class PlayTrackAction : ActionHolder
 {
     public AudioSource TrackToPlay;
+    public float Delay;
 
     private void PlayTrack()
     {
-        TrackToPlay.Play();
+        TrackToPlay.PlayDelayed(Delay);
     }
 
     protected override void CreateAction()
     {
         Action = () =>
         {
-            Debug.Log("track playing");
             PlayTrack();
         };
     }

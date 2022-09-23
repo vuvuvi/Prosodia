@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MusicListener : MelodyHolder
+public class MusicListener : MelodyHolder, ICanReachGoal
 {
     protected Melody playerMelody;
-    public UnityEvent GoalReached = new UnityEvent();
+    public UnityEvent Event = new UnityEvent();
+
+    public UnityEvent GoalReached => Event;
 
     protected void Start()
     {
@@ -58,7 +60,7 @@ public class MusicListener : MelodyHolder
         }
         if (Melody == playerMelody)
         {
-            GoalReached.Invoke();
+            Event.Invoke();
         }
     }
 }

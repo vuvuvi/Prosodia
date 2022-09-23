@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Location))]
 public class PuzzleOnMelody : MusicListener
@@ -11,6 +12,8 @@ public class PuzzleOnMelody : MusicListener
     private Location Location;
     public bool RandomMelody;
     public List<int> FixedMelody;
+
+
     protected new void Start()
     {
         Location = GetComponent<Location>();
@@ -56,4 +59,9 @@ public class PuzzleOnMelody : MusicListener
             NoteListeners[i].IsValid = playerMelody.Notes.Count > i && playerMelody.Notes[i] == Melody.Notes[i];
         }
     }
+}
+
+public interface ICanReachGoal
+{
+    public UnityEvent GoalReached { get; }
 }
