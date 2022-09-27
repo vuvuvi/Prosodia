@@ -104,7 +104,7 @@ public class CharacterMovement : MonoBehaviour
             if (isInMovement)
             {
                 movement = Location.transform.position - transform.position;
-                movement.y = 0;
+                //movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
