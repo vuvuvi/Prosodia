@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 2714220389749453963}
   - component: {fileID: 2459071419122470513}
   m_Layer: 0
-  m_Name: Perso_Texture_01T@Breathing Idle
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
