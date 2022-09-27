@@ -1,0 +1,92 @@
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 6 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    ProsodiaProto/Assets/Art/Puzzle_1/Pros_InnerSanctuary_01.png
+	deleted:    ProsodiaProto/Assets/Art/Puzzle_1/Pros_InnerSanctuary_01.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 01.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 01.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 02.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 02.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 03Metal.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 03Metal.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 04Crack.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 04Crack.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 05Crack.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 05Crack.png.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 07.png
+	deleted:    ProsodiaProto/Assets/Art/Texture/Alien Soil 07.png.meta
+	modified:   ProsodiaProto/Assets/Art/Texture/NewLayer 7.terrainlayer
+	deleted:    ProsodiaProto/Assets/Art/Texture/RockFloor.jpg
+	deleted:    ProsodiaProto/Assets/Art/Texture/RockFloor.jpg.meta
+	deleted:    ProsodiaProto/Assets/Art/Texture/ground_0001_1k_gtyU6D/ground_0001_color_1k.jpg
+	deleted:    ProsodiaProto/Assets/Art/Texture/ground_0001_1k_gtyU6D/ground_0001_color_1k.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/306356777_1086444738656068_1227398709020340086_n.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/306356777_1086444738656068_1227398709020340086_n.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/4141-normal.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/4141-normal.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Blue.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Blue.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Default.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Default.mat.meta
+	modified:   ProsodiaProto/Assets/_/Content/Materials/Fire.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Green.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Green.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush - Copy.brush
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush - Copy.brush.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush 1.brush
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush 1.brush.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush.brush
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewBrush.brush.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 1.terrainlayer
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 1.terrainlayer.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 2.terrainlayer
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 2.terrainlayer.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 3.terrainlayer
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer 3.terrainlayer.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer.terrainlayer
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/NewLayer.terrainlayer.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Red.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Red.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/ShaderPing.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/ShaderPing.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/StoneMaterial.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/StoneMaterial.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Terrain.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Terrain.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Yellow.mat
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/Yellow.mat.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/brown_mud_leaves_01_4k.blend
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/brown_mud_leaves_01_4k.blend.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/brown_mud_leaves_01_diff_4k.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/brown_mud_leaves_01_diff_4k.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/textures/brown_mud_leaves_01_nor_gl_4k.exr
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_4k.blend/textures/brown_mud_leaves_01_nor_gl_4k.exr.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_diff_4k.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_diff_4k.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_disp_4k.png
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_disp_4k.png.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_rough_4k.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/brown_mud_leaves_01_rough_4k.jpg.meta
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/summer-background-sea-water.jpg
+	deleted:    ProsodiaProto/Assets/_/Content/Materials/summer-background-sea-water.jpg.meta
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ProsodiaProto/Assets/Art/TerrainData_1596bf9a-7246-4703-86e1-d01d0bdc5d52.asset
+	ProsodiaProto/Assets/Art/TerrainData_1596bf9a-7246-4703-86e1-d01d0bdc5d52.asset.meta
+	ProsodiaProto/Assets/Art/TerrainData_33ad544a-25e2-4252-a14c-134bb1a9037e.asset
+	ProsodiaProto/Assets/Art/TerrainData_33ad544a-25e2-4252-a14c-134bb1a9037e.asset.meta
+	ProsodiaProto/Assets/_/Content/Brush.meta
+	ProsodiaProto/Assets/_/Content/Brush/
+	ProsodiaProto/Assets/_/Content/Materials/Ping.mat
+	ProsodiaProto/Assets/_/Content/Materials/Ping.mat.meta
+	ProsodiaProto/Assets/_/Content/Textures.meta
+	ProsodiaProto/Assets/_/Content/Textures/
+	f
+
+no changes added to commit (use "git add" and/or "git commit -a")
