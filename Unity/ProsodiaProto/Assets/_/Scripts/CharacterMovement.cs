@@ -33,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
+        transform.position = Location.transform.position;
     }
 
     internal void StartPlaying()
