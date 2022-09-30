@@ -11,7 +11,7 @@ public class LightUpAction : NoteActionHolder
   protected void OnEnable()
   {
     Action = LightUp;
-    meshRenderer = gameObject.GetComponent<MeshRenderer>();
+    meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
     material = new Material(meshRenderer.material);
     meshRenderer.material = material;
     baseColor = material.color;
