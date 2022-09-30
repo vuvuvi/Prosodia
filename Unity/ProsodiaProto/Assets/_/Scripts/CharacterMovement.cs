@@ -36,6 +36,7 @@ public class CharacterMovement : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking");
         transform.position = Location.transform.position;
         cameraManager  = GetComponent<CameraManager>();
+        cameraManager.SetCharacterTransform(MeshContainer);
     }
 
     internal void StartPlaying()
@@ -50,7 +51,6 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying)
             animator.SetBool(isPlayingHash, false);
         cameraManager.ToggleCamera();
-
     }
 
     public void Echolocation()
