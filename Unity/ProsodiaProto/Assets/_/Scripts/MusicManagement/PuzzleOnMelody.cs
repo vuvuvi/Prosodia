@@ -27,7 +27,7 @@ public class PuzzleOnMelody : MusicListener
         else
         {
             if (NoteListeners.Count != FixedMelody.Count)
-                Debug.LogError("the number of note listeners is not equal to the melody length");
+                Debug.LogError("the number of note listeners is not equal to the melody length" + gameObject.name);
             else
             {
                 Melody = new Melody(FixedMelody);

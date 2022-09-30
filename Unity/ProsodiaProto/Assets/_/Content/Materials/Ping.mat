@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ping
-  m_Shader: {fileID: -6465566751694194690, guid: 6b2e7ae5a6776a54dbee630d9e3d4fc9,
+  m_Shader: {fileID: -6465566751694194690, guid: 5ca3b63a4aee66941a0a10ba3238f332,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -121,7 +121,7 @@ Material:
     - _ZWrite: 1
     - _alpha: 0.726
     - _trans: 0.72215974
-    - _transparency: 2
+    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

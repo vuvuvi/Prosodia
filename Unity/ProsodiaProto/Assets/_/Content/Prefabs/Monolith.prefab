@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteInfoProvider: {fileID: 11400000, guid: 70c44fba45336cb40a24ce4ae5b5f27e, type: 2}
+  meshRenderer: {fileID: 2630759227718319767}
   LitUpTime: 1
 --- !u!1001 &3694007455841886739
 PrefabInstance:
@@ -162,6 +163,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec6fe9d1b6706e428cef8cd9c01c31b, type: 3}
+--- !u!23 &2630759227718319767 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2ec6fe9d1b6706e428cef8cd9c01c31b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3694007455841886739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3803704714288481784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ec6fe9d1b6706e428cef8cd9c01c31b,
