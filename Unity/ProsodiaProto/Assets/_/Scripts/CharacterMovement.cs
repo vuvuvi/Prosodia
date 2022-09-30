@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isInMovement;
     private bool isPlaying;
     private Vector3 movement;
-    public PingEffect effectPing;
+    public EffectPingPlayer effectPingPlayer;
     private PlayerInput playerInput;
     public Location Location;
     public bool IsPlaying => isPlaying;
@@ -58,7 +58,7 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying)
         {
             audioManager.PlayNote(0, "Move");
-            effectPing.StartAnimation();
+            effectPingPlayer.StartAnimation();
             Location.noteKeyboard.text = "";
             for (int i = 0; i < Location.Locations.Count; i++)
             {

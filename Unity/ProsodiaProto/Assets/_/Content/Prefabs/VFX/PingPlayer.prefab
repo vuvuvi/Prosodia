@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1167349673390948781}
-  - component: {fileID: 1167349673390948782}
-  - component: {fileID: 3672250504956101453}
+  - component: {fileID: 4903412696753687780}
+  - component: {fileID: 4518330736597039953}
   m_Layer: 0
   m_Name: PingPlayer
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1167349673390948782
+--- !u!114 &4903412696753687780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,27 +43,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167349673390948780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f4e6d5ea81f97428a4b0973cbac438, type: 3}
+  m_Script: {fileID: 11500000, guid: c0ae31e024d490a40bf99e61997fca06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1
-  duration: 1
-  time: 0
-  shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
-  started: 0
---- !u!135 &3672250504956101453
-SphereCollider:
+  Duration: 2
+  CurrentTime: 0
+  State: 2
+  Updated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4518330736597039953}
+        m_TargetAssemblyTypeName: EffectPingPlayer, Assembly-CSharp
+        m_MethodName: UpdateAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Stoped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4518330736597039953}
+        m_TargetAssemblyTypeName: EffectPingPlayer, Assembly-CSharp
+        m_MethodName: UpdateAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4518330736597039953
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167349673390948780}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7dcc9016356675448fb27647f21ea34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 0
+  shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
+  animation: {fileID: 4903412696753687780}
 --- !u!1 &5545971179954342900
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +105,6 @@ GameObject:
   - component: {fileID: 3859391479894926862}
   - component: {fileID: 1528797694775831582}
   - component: {fileID: 381727165254816356}
-  - component: {fileID: 4085650647883485898}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -91,8 +120,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545971179954342900}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 0.74, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1167349673390948781}
@@ -148,17 +177,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4085650647883485898
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5545971179954342900}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
