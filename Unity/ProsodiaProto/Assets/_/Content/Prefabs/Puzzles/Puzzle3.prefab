@@ -44,7 +44,7 @@ PrefabInstance:
     - target: {fileID: 4498597081766121407, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
       propertyPath: m_Name
-      value: Megalite
+      value: Monolith
       objectReference: {fileID: 0}
     - target: {fileID: 7492978685891117540, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 4498597081766121407, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
       propertyPath: m_Name
-      value: Megalite
+      value: Monolith
       objectReference: {fileID: 0}
     - target: {fileID: 7492978685891117540, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 4498597081766121407, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
       propertyPath: m_Name
-      value: Megalite
+      value: Monolith
       objectReference: {fileID: 0}
     - target: {fileID: 8137779151066801149, guid: 6be79b474db04d643985640e3b587ee4,
         type: 3}
