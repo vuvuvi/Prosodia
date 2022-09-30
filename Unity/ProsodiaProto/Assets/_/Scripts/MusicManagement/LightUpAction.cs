@@ -5,13 +5,13 @@ using UnityEngine;
 public class LightUpAction : NoteActionHolder
 {
   private Material material;
+  [SerializeField]
   private MeshRenderer meshRenderer;
   private Color baseColor;
   public float LitUpTime = 1;
   protected void OnEnable()
   {
     Action = LightUp;
-    meshRenderer = gameObject.GetComponent<MeshRenderer>();
     material = new Material(meshRenderer.material);
     meshRenderer.material = material;
     baseColor = material.color;
