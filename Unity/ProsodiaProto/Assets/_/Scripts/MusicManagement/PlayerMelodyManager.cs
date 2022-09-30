@@ -32,7 +32,7 @@ public class PlayerMelodyManager : MonoBehaviour
         if (!characterController.IsPlaying)
             return;
         characterController.StartPlaying();
-        audioManager.PlayNote(note, SoundName, true);
+        audioManager.PlayNote(note, SoundName);
         CurrentMelody.AddNote(note);
         MelodyChanged.Invoke();
         NotePlayed.Invoke(note);

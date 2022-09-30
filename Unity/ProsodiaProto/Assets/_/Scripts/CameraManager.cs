@@ -8,6 +8,12 @@ public class CameraManager : MonoBehaviour
     public Camera Camera;
     public CinemachineVirtualCamera CharacterVirtualCam;
     private CinemachineVirtualCamera puzzleVirtualCam;
+    private Transform CharacterMesh;
+
+    public void SetCharacterTransform(Transform t)
+    {
+        CharacterMesh = t;
+    }
     private void OnTriggerEnter(Collider other)
     {
         var virtualCam = other.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
@@ -32,5 +38,10 @@ public class CameraManager : MonoBehaviour
         puzzleVirtualCam.enabled = !puzzleVirtualCam.enabled;
         Camera.orthographic = !Camera.orthographic;
         CharacterVirtualCam.enabled = !CharacterVirtualCam.enabled;
+    }
+    private void Update()
+    {
+        if (!Camera.orthographic)
+            CharacterMesh.rotation = Quaternion.LookRotation(Camera.transform.forward, Vector3.up);
     }
 }
