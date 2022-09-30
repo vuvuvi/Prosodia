@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1167349673390948780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1167349673556613641}
@@ -135,7 +135,7 @@ MonoBehaviour:
   duration: 1
   time: 0
   shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
-  started: 0
+  started: 1
 --- !u!135 &3672250504956101453
 SphereCollider:
   m_ObjectHideFlags: 0
