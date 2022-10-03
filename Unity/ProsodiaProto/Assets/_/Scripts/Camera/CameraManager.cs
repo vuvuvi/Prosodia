@@ -1,6 +1,4 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -9,7 +7,13 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera CharacterVirtualCam;
     private CinemachineVirtualCamera puzzleVirtualCam;
     private Transform CharacterMesh;
+    private PerspectiveSwitcher perspectiveSwitcher;
 
+    private void Start()
+    {
+        perspectiveSwitcher = Camera.gameObject.GetComponent<PerspectiveSwitcher>();
+        ResetCamera();
+    }
     public void SetCharacterTransform(Transform t)
     {
         CharacterMesh = t;
@@ -26,17 +30,23 @@ public class CameraManager : MonoBehaviour
         var virtualCam = other.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         if (virtualCam == null)
             return;
+        ResetCamera();
+    }
+
+    private void ResetCamera()
+    {
         puzzleVirtualCam.enabled = false;
         puzzleVirtualCam = null;
         CharacterVirtualCam.enabled = true;
-        Camera.orthographic = true;
+        perspectiveSwitcher.SetOrthographic();
     }
+
     public void ToggleCamera()
     {
         if (puzzleVirtualCam == null)
             return;
         puzzleVirtualCam.enabled = !puzzleVirtualCam.enabled;
-        Camera.orthographic = !Camera.orthographic;
+        perspectiveSwitcher.ToggleCamera();
         CharacterVirtualCam.enabled = !CharacterVirtualCam.enabled;
     }
     private void Update()
