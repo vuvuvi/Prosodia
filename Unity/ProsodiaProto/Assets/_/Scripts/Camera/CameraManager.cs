@@ -35,7 +35,7 @@ public class CameraManager : MonoBehaviour
 
     private void ResetCamera()
     {
-        puzzleVirtualCam.enabled = false;
+        if (puzzleVirtualCam != null) puzzleVirtualCam.enabled = false;
         puzzleVirtualCam = null;
         CharacterVirtualCam.enabled = true;
         perspectiveSwitcher.SetOrthographic();
