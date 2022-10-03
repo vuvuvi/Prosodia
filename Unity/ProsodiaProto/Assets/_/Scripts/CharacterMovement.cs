@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEditor;
-using System;
 
 public class CharacterMovement : MonoBehaviour
 {

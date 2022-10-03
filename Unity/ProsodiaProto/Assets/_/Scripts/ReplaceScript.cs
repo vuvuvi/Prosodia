@@ -41,6 +41,7 @@ public class ReplaceScript : MonoBehaviour
 
     public IEnumerator ReplaceWithPrefab(GameObject go)
     {
+        #if UNITY_EDITOR
         Object @object = UnityEditor.PrefabUtility.InstantiatePrefab(prefab, go.transform.parent);
         GameObject instance = @object as GameObject;
         instance.name = prefab.name;
@@ -51,5 +52,8 @@ public class ReplaceScript : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         Debug.Log($"Destroy {go}");
         DestroyImmediate(go);
+        #else
+        yield return new WaitForSeconds(.1f);
+        #endif
     }
 }
