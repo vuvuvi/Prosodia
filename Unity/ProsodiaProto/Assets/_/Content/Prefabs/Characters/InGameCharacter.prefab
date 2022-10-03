@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
+    m_Style: 0
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
@@ -2985,7 +2985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67d09267e1da9c44970ce9c9d274322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPing: {fileID: 0}
+  effectPingPlayer: {fileID: 0}
   Location: {fileID: 0}
   TextMode: {fileID: 0}
   KeysCodes: 71000000730000006600000067000000

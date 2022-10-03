@@ -32,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
         isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
         transform.position = Location.transform.position;
-        cameraManager  = GetComponent<CameraManager>();
+        cameraManager = GetComponent<CameraManager>();
         cameraManager.SetCharacterTransform(MeshContainer);
     }
 
@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Echolocation()
     {
-        if (!isPlaying)
+        if (!isPlaying && !Iwalk)
         {
             audioManager.PlayNote(0, "Move");
             effectPingPlayer.StartAnimation();
@@ -68,7 +68,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveTo(int pos)
     {
-        if (isInMovement)
+        if (isInMovement && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayMovementSound(pos + 1);
             locationManager.UncolorLocationsPinged();
@@ -97,15 +97,12 @@ public class CharacterMovement : MonoBehaviour
             if (distanceLeft < 0.2f)
             {
                 animator.SetBool(isWalkingHash, false);
+                Iwalk = false;
             }
-
-            Iwalk = false;
-
 
             if (isInMovement)
             {
                 movement = Location.transform.position - transform.position;
-                //movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
@@ -113,7 +110,6 @@ public class CharacterMovement : MonoBehaviour
             }
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {

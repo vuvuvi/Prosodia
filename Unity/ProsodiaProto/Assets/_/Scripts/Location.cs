@@ -1,106 +1,103 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine;
 
 public class Location : MonoBehaviour
 {
-  private MeshRenderer meshRenderer;
-  public float DistanceFromPlayer;
-  public PingEffect Effect;
-  public List<Location> Locations;
-  public List<float> Distances;
-  public int Id;
-  public TMPro.TMP_Text noteKeyboard;
-  
-  private void Start()
-  {
-    meshRenderer = GetComponent<MeshRenderer>();
-    meshRenderer.enabled = false;
-    noteKeyboard.gameObject.transform.rotation = Camera.main.transform.rotation;
-  }
+    private MeshRenderer meshRenderer;
+    public float DistanceFromPlayer;
+    public PingEffect Effect;
+    public List<Location> Locations;
+    public List<float> Distances;
+    public int Id;
+    public TMPro.TMP_Text noteKeyboard;
+    public bool IsAvailable = true;
 
-  internal void PingLocation(Material material, string note)
-  {
-    ChangeMaterial(material);
-    Effect.StartAnimation();
-    noteKeyboard.text = note;
-    noteKeyboard.gameObject.SetActive(true);
-  }
-
-  public void ChangeMaterial(Material material)
-  {
-    meshRenderer.material = material;
-  }
-
-  private void OnDrawGizmosSelected()
-  {
-    foreach (var location in Locations)
+    private void Start()
     {
-      if(location)
-      {
-        Gizmos.color = Color.red;
-        Vector3 orientation = location.transform.position-transform.position;
-        Vector3 pos = transform.position + orientation;
-        Gizmos.DrawLine(transform.position, location.transform.position);
-        Gizmos.DrawMesh(MeshUtils.Triangle(.25f), pos - orientation.normalized * .25f , Quaternion.LookRotation(orientation));
-      }
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.enabled = false;
+        noteKeyboard.gameObject.transform.rotation = Camera.main.transform.rotation;
     }
-  }
 
-  private void OnDrawGizmos()
-  {
-    RefreshDistances();
-    GUIStyle gUIStyle = new GUIStyle();
-    gUIStyle.fontSize = 20;
-    gUIStyle.normal.textColor = Color.white;
+    internal void PingLocation(Material material, string note)
+    {
+        ChangeMaterial(material);
+        Effect.StartAnimation();
+        noteKeyboard.text = note;
+        noteKeyboard.gameObject.SetActive(true);
+    }
+
+    public void ChangeMaterial(Material material)
+    {
+        meshRenderer.material = material;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        foreach (var location in Locations)
+        {
+            if (location)
+            {
+                Gizmos.color = Color.red;
+                Vector3 orientation = location.transform.position - transform.position;
+                Vector3 pos = transform.position + orientation;
+                Gizmos.DrawLine(transform.position, location.transform.position);
+                Gizmos.DrawMesh(MeshUtils.Triangle(.25f), pos - orientation.normalized * .25f, Quaternion.LookRotation(orientation));
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        RefreshDistances();
+        GUIStyle gUIStyle = new GUIStyle();
+        gUIStyle.fontSize = 20;
+        gUIStyle.normal.textColor = Color.white;
 #if UNITY_EDITOR
-    Handles.Label(transform.position, Id.ToString(), gUIStyle);
+        Handles.Label(transform.position, Id.ToString(), gUIStyle);
 #endif
-  }
-
-  private void OnValidate()
-  {
-    RefreshDistances();
-    if(this.Locations.Count > LocationManager.MAX_LOCATIONS)
-    {
-      Debug.LogWarning("You can't add more location");
-      this.Locations.RemoveAt(this.Locations.Count-1);
     }
 
-    for (int i = 0; i < this.Locations.Count; i++)
+    private void OnValidate()
     {
-      Location location = this.Locations[i];
-      
-      if(location && !location.Locations.Contains(this))
-      {
-        Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
-        if(location.Locations.Count < 4)
+        RefreshDistances();
+        if (this.Locations.Count > LocationManager.MAX_LOCATIONS)
         {
-          location.Locations.Add(this);
+            Debug.LogWarning("You can't add more location");
+            this.Locations.RemoveAt(this.Locations.Count - 1);
         }
-        else
+
+        for (int i = 0; i < this.Locations.Count; i++)
         {
-          Debug.LogWarning("I can't add more location. You will be reduce connection");
+            Location location = this.Locations[i];
+
+            if (location && !location.Locations.Contains(this))
+            {
+                Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
+                if (location.Locations.Count < 4)
+                {
+                    location.Locations.Add(this);
+                }
+                else
+                {
+                    Debug.LogWarning("I can't add more location. You will be reduce connection");
+                }
+            }
         }
-      }
+
     }
-    
-  }
 
-  private void RefreshDistances()
-  {
-    Distances = new List<float>();
-
-    foreach (var location in Locations)
+    private void RefreshDistances()
     {
-      if(location)
-      {
-        Distances.Add(Vector3.Distance(transform.position, location.transform.position));
-      }
+        Distances = new List<float>();
+
+        foreach (var location in Locations)
+        {
+            if (location)
+            {
+                Distances.Add(Vector3.Distance(transform.position, location.transform.position));
+            }
+        }
     }
-  }
 }
