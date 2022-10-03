@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dcc9016356675448fb27647f21ea34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shader: {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
+  shader: {fileID: 2100000, guid: 722e2a6bb4ab08a4da780a1e2d0ce1d3, type: 2}
   animate: {fileID: 4903412696753687780}
 --- !u!1 &5545971179954342900
 GameObject:
@@ -154,7 +154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a32ea13a10227f0489de505a67160637, type: 2}
+  - {fileID: 2100000, guid: 722e2a6bb4ab08a4da780a1e2d0ce1d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

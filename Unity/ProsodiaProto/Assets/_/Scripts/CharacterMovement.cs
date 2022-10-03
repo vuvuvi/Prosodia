@@ -62,6 +62,8 @@ public class CharacterMovement : MonoBehaviour
             {
                 var loc = Location.Locations[i];
                 loc.noteKeyboard.text = KeysCodes[i].ToString();
+
+                NoteListener noteListener = loc.GetComponent<NoteListener>();
                 PingLocation(i).transform.position = loc.transform.position;
             }
             isInMovement = true;

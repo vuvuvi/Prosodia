@@ -6,7 +6,7 @@ public class Location : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     public float DistanceFromPlayer;
-    public PingEffect Effect;
+    // public PingEffect Effect;
     public List<Location> Locations;
     public List<float> Distances;
     public int Id;
@@ -23,7 +23,7 @@ public class Location : MonoBehaviour
     internal void PingLocation(Material material, string note)
     {
         ChangeMaterial(material);
-        Effect.StartAnimation();
+        // Effect.StartAnimation();
         noteKeyboard.text = note;
         noteKeyboard.gameObject.SetActive(true);
     }

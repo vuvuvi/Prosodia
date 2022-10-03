@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1167349673390948782}
   - component: {fileID: 3672250504956101453}
   m_Layer: 0
-  m_Name: PingEffect
+  m_Name: Ping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
