@@ -20,9 +20,13 @@ public class MatrixBlender : MonoBehaviour
     private IEnumerator LerpFromTo(Matrix4x4 src, Matrix4x4 dest, float duration)
     {
         float startTime = Time.time;
-        while (Time.time - startTime < duration)
+        float countTIme = 0;
+        // while (Time.time - startTime < duration)
+        while (countTIme < duration)
         {
-            camera.projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration);
+            // camera.projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration);
+            countTIme += Time.deltaTime;
+            camera.projectionMatrix = MatrixLerp(src, dest, countTIme / duration);
             yield return 1;
         }
         camera.projectionMatrix = dest;

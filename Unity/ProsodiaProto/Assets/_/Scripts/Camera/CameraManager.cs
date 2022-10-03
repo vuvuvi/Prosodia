@@ -8,23 +8,19 @@ public class CameraManager : MonoBehaviour
     private CinemachineVirtualCamera puzzleVirtualCam;
     private Transform CharacterMesh;
     private PerspectiveSwitcher perspectiveSwitcher;
-<<<<<<< HEAD
-=======
     private bool isOrtho;
->>>>>>> ef7414ff0199af5442bcd9c4dc43c2fc89117db5
 
     private void Start()
     {
         perspectiveSwitcher = Camera.gameObject.GetComponent<PerspectiveSwitcher>();
-<<<<<<< HEAD
         ResetCamera();
-=======
->>>>>>> ef7414ff0199af5442bcd9c4dc43c2fc89117db5
     }
+
     public void SetCharacterTransform(Transform t)
     {
         CharacterMesh = t;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         var virtualCam = other.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
@@ -32,6 +28,7 @@ public class CameraManager : MonoBehaviour
             return;
         puzzleVirtualCam = virtualCam;
     }
+
     private void OnTriggerExit(Collider other)
     {
         var virtualCam = other.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
@@ -42,18 +39,11 @@ public class CameraManager : MonoBehaviour
 
     private void ResetCamera()
     {
-<<<<<<< HEAD
         if (puzzleVirtualCam != null) puzzleVirtualCam.enabled = false;
         puzzleVirtualCam = null;
         CharacterVirtualCam.enabled = true;
         perspectiveSwitcher.SetOrthographic();
-=======
         isOrtho = true;
-        CharacterVirtualCam.enabled = true;
-        perspectiveSwitcher.SetOrthographic();
-        puzzleVirtualCam.enabled = false;
-        puzzleVirtualCam = null;
->>>>>>> ef7414ff0199af5442bcd9c4dc43c2fc89117db5
     }
 
     public void ToggleCamera()

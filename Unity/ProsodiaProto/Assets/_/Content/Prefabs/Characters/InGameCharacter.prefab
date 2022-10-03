@@ -2402,8 +2402,8 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 0
-    m_Time: 2
+    m_Style: 1
+    m_Time: 1
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2445,6 +2445,7 @@ MonoBehaviour:
   near: 0.3
   far: 1000
   orthographicSize: 10
+  duration: 1
 --- !u!1 &7446301436680224907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3020,7 @@ MonoBehaviour:
   Location: {fileID: 0}
   TextMode: {fileID: 0}
   KeysCodes: 71000000730000006600000067000000
+  pingLocations: []
   Iwalk: 0
   MoveSpeed: 6
   MeshContainer: {fileID: 6979500565820521593}
