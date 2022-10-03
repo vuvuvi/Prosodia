@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     public Keyboard keyboard;
     public TMPro.TMP_Text TextMode;
     public KeyCode[] KeysCodes = new KeyCode[4] { KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G };
+    public PingLocation[] pingLocations;
     private AudioManager audioManager;
     public bool Iwalk;
     public float MoveSpeed = 6;
@@ -61,9 +62,17 @@ public class CharacterMovement : MonoBehaviour
             {
                 var loc = Location.Locations[i];
                 loc.noteKeyboard.text = KeysCodes[i].ToString();
+                PingLocation(i).transform.position = loc.transform.position;
             }
             isInMovement = true;
         }
+    }
+
+    public PingLocation PingLocation(int index)
+    {
+        PingLocation pingLocation = pingLocations[index];
+        pingLocation.StartAnimation();
+        return pingLocation;
     }
 
     public void MoveTo(int pos)
@@ -114,6 +123,7 @@ public class CharacterMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Location loc = other.GetComponent<Location>();
+        
         if (loc && Location.Locations.Contains(loc))
         {
             locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());

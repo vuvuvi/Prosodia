@@ -125,6 +125,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726
+    - _intensity: 1
     - _radius: 4.34
     - _stroke: 0.03
     - _stroke_blur: 0.95

@@ -5,20 +5,20 @@ using UnityEngine;
 public class EffectPingPlayer : MonoBehaviour
 {
     public Material shader;
-    public AnimationTime animation;
+    public AnimationTime animate;
 
     public void StartAnimation()
     {
-        if(animation.State != StateAnime.STARTED)
+        if(animate.State != StateAnime.STARTED)
         {
-            animation.StartAnimation();
+            animate.StartAnimation();
         }
     }
 
 
     public void UpdateAnimation(float currentTime)
     {
-        float time = currentTime / animation.Duration ;
+        float time = currentTime / animate.Duration ;
 
         float radius = 5.5f * time;
         float transparency = Mathf.Sin(time * 2 * Mathf.PI);
