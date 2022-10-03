@@ -71,7 +71,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveTo(int pos)
     {
-        if (isInMovement)
+        if (isInMovement && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayMovementSound(pos + 1);
             locationManager.UncolorLocationsPinged();
@@ -106,7 +106,6 @@ public class CharacterMovement : MonoBehaviour
             if (isInMovement)
             {
                 movement = Location.transform.position - transform.position;
-                //movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
