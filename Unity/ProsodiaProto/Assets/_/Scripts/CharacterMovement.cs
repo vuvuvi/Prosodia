@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEditor;
-using System;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -11,13 +8,14 @@ public class CharacterMovement : MonoBehaviour
     private bool isInMovement;
     private bool isPlaying;
     private Vector3 movement;
-    public PingEffect effectPing;
+    public EffectPingPlayer effectPingPlayer;
     private PlayerInput playerInput;
     public Location Location;
     public bool IsPlaying => isPlaying;
     public Keyboard keyboard;
     public TMPro.TMP_Text TextMode;
     public KeyCode[] KeysCodes = new KeyCode[4] { KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G };
+    public PingLocation[] pingLocations;
     private AudioManager audioManager;
     public bool Iwalk;
     public float MoveSpeed = 6;
@@ -35,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
         transform.position = Location.transform.position;
-        cameraManager  = GetComponent<CameraManager>();
+        cameraManager = GetComponent<CameraManager>();
         cameraManager.SetCharacterTransform(MeshContainer);
     }
 
@@ -55,23 +53,33 @@ public class CharacterMovement : MonoBehaviour
 
     public void Echolocation()
     {
-        if (!isPlaying)
+        if (!isPlaying && !Iwalk)
         {
             audioManager.PlayNote(0, "Move");
-            effectPing.StartAnimation();
+            effectPingPlayer.StartAnimation();
             Location.noteKeyboard.text = "";
             for (int i = 0; i < Location.Locations.Count; i++)
             {
                 var loc = Location.Locations[i];
                 loc.noteKeyboard.text = KeysCodes[i].ToString();
+
+                NoteListener noteListener = loc.GetComponent<NoteListener>();
+                PingLocation(i).transform.position = loc.transform.position;
             }
             isInMovement = true;
         }
     }
 
+    public PingLocation PingLocation(int index)
+    {
+        PingLocation pingLocation = pingLocations[index];
+        pingLocation.StartAnimation();
+        return pingLocation;
+    }
+
     public void MoveTo(int pos)
     {
-        if (isInMovement)
+        if (isInMovement && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayMovementSound(pos + 1);
             locationManager.UncolorLocationsPinged();
@@ -100,15 +108,12 @@ public class CharacterMovement : MonoBehaviour
             if (distanceLeft < 0.2f)
             {
                 animator.SetBool(isWalkingHash, false);
+                Iwalk = false;
             }
-
-            Iwalk = false;
-
 
             if (isInMovement)
             {
                 movement = Location.transform.position - transform.position;
-                //movement.y = 0;
                 if (movement.sqrMagnitude > 0.1)
                 {
                     isInMovement = false;
@@ -117,10 +122,10 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         Location loc = other.GetComponent<Location>();
+        
         if (loc && Location.Locations.Contains(loc))
         {
             locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());

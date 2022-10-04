@@ -290,6 +290,7 @@ MonoBehaviour:
   Distances: []
   Id: 0
   noteKeyboard: {fileID: 2851745366105151545}
+  IsAvailable: 1
 --- !u!1001 &8895682830597844491
 PrefabInstance:
   m_ObjectHideFlags: 0
