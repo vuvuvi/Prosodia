@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     int isWalkingHash;
     int isPlayingHash;
     public Transform MeshContainer;
+    public NoteInfoProvider NoteInfoProvider;
     private CameraManager cameraManager;
     void Start()
     {
@@ -56,23 +57,28 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying && !Iwalk)
         {
             audioManager.PlayNote(0, "Move");
-            effectPingPlayer.StartAnimation();
-            Location.noteKeyboard.text = "";
-            for (int i = 0; i < Location.Locations.Count; i++)
+            
+            if(!(effectPingPlayer.animate.State == StateAnime.STARTED))
             {
-                var loc = Location.Locations[i];
-                loc.noteKeyboard.text = KeysCodes[i].ToString();
-
-                NoteListener noteListener = loc.GetComponent<NoteListener>();
-                PingLocation(i).transform.position = loc.transform.position;
+                effectPingPlayer.StartAnimation();
+            
+                Location.noteKeyboard.text = "";
+                for (int i = 0; i < Location.Locations.Count; i++)
+                {
+                    var loc = Location.Locations[i];
+                    loc.noteKeyboard.text = KeysCodes[i].ToString();
+                    Color color = NoteInfoProvider.GetNoteColor(i);
+                    PingLocation(i, color).transform.position = loc.transform.position;
+                }
+                isInMovement = true;
             }
-            isInMovement = true;
         }
     }
 
-    public PingLocation PingLocation(int index)
+    public PingLocation PingLocation(int index, Color color)
     {
         PingLocation pingLocation = pingLocations[index];
+        pingLocation.SetColor(color);
         pingLocation.StartAnimation();
         return pingLocation;
     }

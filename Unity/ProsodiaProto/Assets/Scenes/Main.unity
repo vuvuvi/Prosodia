@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008095468, g: 0.004161891, b: 0.02006406, a: 1}
+  m_IndirectSpecularColor: {r: 0.00080954505, g: 0.004162026, b: 0.020064274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6172,6 +6172,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7446301436903408983, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
+      propertyPath: NoteInfoProvider
+      value: 
+      objectReference: {fileID: 11400000, guid: 70c44fba45336cb40a24ce4ae5b5f27e,
+        type: 2}
+    - target: {fileID: 7446301436903408983, guid: 7f58136fa3ed7ac44994079e98032598,
+        type: 3}
       propertyPath: effectPingPlayer
       value: 
       objectReference: {fileID: 2021467833}
@@ -11199,7 +11205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b63d19e9da6ca49b6e7c7001fba73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Puzzle: {fileID: 1873271995}
+  NoteInfoProvider: {fileID: 0}
   ObjectToMove: {fileID: 1208196503}
   Destination: {fileID: 1816377014}
   Speed: 1
