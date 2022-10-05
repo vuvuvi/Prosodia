@@ -8,6 +8,9 @@ public class MusicListener : MelodyHolder, ICanReachGoal
 {
     protected Melody playerMelody;
     public UnityEvent Event = new UnityEvent();
+    public GameObject ItemsContainer;
+    public List<int> FixedMelody;
+    public bool RandomMelody;
 
     public UnityEvent GoalReached => Event;
 

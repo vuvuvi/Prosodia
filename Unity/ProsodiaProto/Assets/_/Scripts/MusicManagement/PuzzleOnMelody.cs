@@ -7,11 +7,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Location))]
 public class PuzzleOnMelody : MusicListener
 {
-    public GameObject ItemsContainer;
     public List<NoteListener> NoteListeners;
     private Location Location;
-    public bool RandomMelody;
-    public List<int> FixedMelody;
 
 
     protected new void Start()
