@@ -8,7 +8,7 @@ public class Highlight : MonoBehaviour
     public GameObject instanceHighlight;
     private void OnValidate()
     {
-        material = Resources.Load<Material>("Ping");
+        material = Resources.Load<Material>("Highlight");
         
         Compute();
     }

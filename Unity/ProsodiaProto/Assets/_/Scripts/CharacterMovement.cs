@@ -70,12 +70,20 @@ public class CharacterMovement : MonoBehaviour
                 {
                     var loc = Location.Locations[i];
                     loc.noteKeyboard.text = KeysCodes[i].ToString();
+                    PuzzleOnMelody puzzleOnMelody = loc.GetComponent<PuzzleOnMelody>();
+                    HiddeAllHighlights(1);
                     Color color = NoteInfoProvider.GetNoteColor(i);
                     PingLocation(i, color).transform.position = loc.transform.position;
                 }
                 isInMovement = true;
             }
         }
+    }
+
+    public void HiddeAllHighlights(float value)
+    {
+        Highlight highlight = FindObjectOfType<Highlight>();
+        highlight.material.SetFloat("_transparency", value);
     }
 
     public PingLocation PingLocation(int index, Color color)
@@ -97,6 +105,7 @@ public class CharacterMovement : MonoBehaviour
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
             AgentNavMesh.SetDestination(Location.transform.position);
+            HiddeAllHighlights(0);
         }
     }
 
