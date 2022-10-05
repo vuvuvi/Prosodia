@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -24,7 +25,9 @@ public class CharacterMovement : MonoBehaviour
     int isPlayingHash;
     public Transform MeshContainer;
     public NoteInfoProvider NoteInfoProvider;
+    public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
+    
     void Start()
     {
         locationManager = FindObjectOfType<LocationManager>();
@@ -93,38 +96,22 @@ public class CharacterMovement : MonoBehaviour
             locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
-            MeshContainer.LookAt(Location.transform, Vector3.up);
+            AgentNavMesh.SetDestination(Location.transform.position);
         }
+    }
+
+    public bool CharacterReachedDestination()
+    {
+        return Iwalk && AgentNavMesh.remainingDistance != Mathf.Infinity && AgentNavMesh.pathStatus == NavMeshPathStatus.PathComplete && AgentNavMesh.remainingDistance == 0;
     }
 
     void Update()
     {
-        var locPos = Location.transform.position;
-        var playerPos = transform.position;
-        locPos.y = 0;
-        playerPos.y = 0;
-        var distanceLeft = Vector3.Distance(locPos, playerPos);
-        if (distanceLeft > 0.2f && movement.sqrMagnitude > 0.1f)
+        if(CharacterReachedDestination())
         {
-            var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
-            transform.position += frameMovement;
-        }
-        else
-        {
-            if (distanceLeft < 0.2f)
-            {
-                animator.SetBool(isWalkingHash, false);
-                Iwalk = false;
-            }
-
-            if (isInMovement)
-            {
-                movement = Location.transform.position - transform.position;
-                if (movement.sqrMagnitude > 0.1)
-                {
-                    isInMovement = false;
-                }
-            }
+            animator.SetBool(isWalkingHash, false);
+            Iwalk = false;
+            isInMovement = false;
         }
     }
 
