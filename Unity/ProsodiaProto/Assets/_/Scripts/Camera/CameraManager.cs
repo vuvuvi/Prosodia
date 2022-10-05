@@ -54,10 +54,13 @@ public class CameraManager : MonoBehaviour
         puzzleVirtualCam.enabled = !puzzleVirtualCam.enabled;
         perspectiveSwitcher.ToggleCamera();
         CharacterVirtualCam.enabled = !CharacterVirtualCam.enabled;
+
+        if(isOrtho)
+            CharacterMesh.localRotation = Quaternion.Euler(0,0,0);
     }
     private void Update()
     {
-        if (!isOrtho)
+        if(!isOrtho)
             CharacterMesh.rotation = Quaternion.LookRotation(Camera.transform.forward, Vector3.up);
     }
 }

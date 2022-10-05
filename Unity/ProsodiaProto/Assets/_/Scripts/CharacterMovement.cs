@@ -32,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
     {
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
-        audioManager = GetComponentInChildren<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         animator = GetComponentInChildren<Animator>();
         isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
