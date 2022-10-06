@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008095366, g: 0.004161895, b: 0.020063972, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008095468, g: 0.004161891, b: 0.02006406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8130,12 +8130,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7651894493784423238}
     - target: {fileID: 7446301436903408976, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: CharacterVirtualCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7651894493784423237}
     - target: {fileID: 7446301436903408978, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: m_RootOrder
@@ -26771,3 +26771,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fccc766bcaee194f8e12721c7ad9620, type: 3}
+--- !u!114 &7651894493784423237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7651894493876607179, guid: 9fccc766bcaee194f8e12721c7ad9620,
+    type: 3}
+  m_PrefabInstance: {fileID: 7651894493784423236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &7651894493784423238 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7651894493267980593, guid: 9fccc766bcaee194f8e12721c7ad9620,
+    type: 3}
+  m_PrefabInstance: {fileID: 7651894493784423236}
+  m_PrefabAsset: {fileID: 0}
