@@ -286,6 +286,6 @@ MonoBehaviour:
   DistanceFromPlayer: 0
   Locations: []
   Distances: []
-  Id: 28
+  Id: 19
   noteKeyboard: {fileID: 2851745366105151545}
   IsAvailable: 1
