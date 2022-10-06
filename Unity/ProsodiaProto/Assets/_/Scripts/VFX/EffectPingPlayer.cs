@@ -6,6 +6,9 @@ public class EffectPingPlayer : MonoBehaviour
 {
     public Material shader;
     public AnimationTime animate;
+    
+    public float radius = 5.5f;
+    public float strokeBlur = .25f;
 
     public void StartAnimation()
     {
@@ -18,12 +21,12 @@ public class EffectPingPlayer : MonoBehaviour
 
     public void UpdateAnimation(float currentTime)
     {
-        float time = currentTime / animate.Duration ;
+        float progress = currentTime / animate.Duration;
+        
+        float transparency = Mathf.Sin(progress * Mathf.PI);
 
-        float radius = 5.5f * time;
-        float transparency = Mathf.Sin(time * 2 * Mathf.PI);
-
-        shader.SetFloat("_Radius", radius);
+        shader.SetFloat("_Radius", radius * progress);
         shader.SetFloat("_Transparency", transparency);
+        shader.SetFloat("_Stroke_Blur", strokeBlur + progress);
     }
 }

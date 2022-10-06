@@ -21,6 +21,7 @@ public class PlayerMelodyManager : MonoBehaviour
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Init();
         CurrentMelody = new Melody();
         MelodyChanged = new UnityEvent();
         characterController = GetComponent<CharacterMovement>();
