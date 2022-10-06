@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
 
 public class Location : MonoBehaviour
 {
@@ -59,9 +60,10 @@ public class Location : MonoBehaviour
 #endif
     }
 
-    private void OnValidate()
+    private void OnValidate() 
     {
         RefreshDistances();
+        SetId();
         if (this.Locations.Count > LocationManager.MAX_LOCATIONS)
         {
             Debug.LogWarning("You can't add more location");
@@ -85,7 +87,12 @@ public class Location : MonoBehaviour
                 }
             }
         }
+    }
 
+    public void SetId()
+    {
+        Id = FindObjectOfType<LocationManager>().AddLocation(this);
+        name = "Location " + Id;
     }
 
     private void RefreshDistances()

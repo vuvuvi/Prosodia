@@ -101,9 +101,7 @@ public class CharacterMovement : MonoBehaviour
         if (isInMovement && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayMovementSound(pos + 1);
-            locationManager.UncolorLocationsPinged();
             Location = Location.Locations[pos];
-            locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
             AgentNavMesh.SetDestination(Location.transform.position);
@@ -123,16 +121,6 @@ public class CharacterMovement : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
             Iwalk = false;
             isInMovement = false;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Location loc = other.GetComponent<Location>();
-        
-        if (loc && Location.Locations.Contains(loc))
-        {
-            locationManager.PingLocation(loc, KeysCodes[locationManager.LocationsArround.Count].ToString());
         }
     }
 }

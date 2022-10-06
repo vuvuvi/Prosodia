@@ -7,73 +7,69 @@ using UnityEngine;
 public class LocationManager : MonoBehaviour
 {
   public List<Location> Locations;
-  public List<Location> LocationsArround;
-  public List<Material> Materials;
-  public Material DefaultMatetrial;
   public Boolean RefreshIdLocations;
+  private Boolean refreshIdLocations;
 
   public static readonly int MAX_LOCATIONS = 4;
 
   void Start()
   {
-    Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    Locations = FindObjectsOfType<Location>().ToList();
     RefreshIdLocation();
   }
 
-  public void UncolorLocationsPinged()
-  {
-    foreach (Location location in LocationsArround)
-    {
-      location.ChangeMaterial(DefaultMatetrial);
-      location.noteKeyboard.text = "";
-      location.noteKeyboard.gameObject.SetActive(false);
-    }
-  }
-
-  public void PingLocation(Location location, string note)
-  {
-    int index = this.LocationsArround.IndexOf(location);
-
-    if(index < 0)
-    {
-      this.LocationsArround.Add(location);
-      index = this.LocationsArround.Count-1;
-    }
-    
-    location.PingLocation(Materials[index], note);
-  } 
-
   public void RefreshIdLocation()
   {
-    Locations = FindObjectsOfType<MonoBehaviour>().OfType<Location>().ToList();
+    Locations = FindObjectsOfType<Location>().ToList();
     
     for (int i = 0; i < Locations.Count; i++)
     {
       Locations[i].name = "Location " + i;
       Locations[i].Id = i;
-      Locations[i].transform.parent = null;
-      Locations[i].transform.parent = transform;
     }
   }
 
-  private void OnDrawGizmosSelected()
+  public int AddLocation(Location loc)
   {
-    if(RefreshIdLocations)
-    {  
-      RefreshIdLocation();
-      StartCoroutine(WaitRefresh());
-    }
-  }
+    if(Locations != null)
+    {
+      if(Locations.Contains(loc))
+      {
+        Debug.LogWarning("Locations already added");
+      }
+      else
+      {
+        Locations.Add(loc);
+      }
 
-  IEnumerator WaitRefresh()
-  {
-    yield return new WaitForSeconds(.1f);
-      Debug.Log("Refresh ID locations");
-      RefreshIdLocations = false;
+      return Locations.IndexOf(loc);
+    }
+    else
+    {
+      Debug.LogWarning("Locations null why ?");
+      return -1;
+    }    
   }
 
   public Location GetLocation(int id)
   {
     return Locations.Find(location => location.Id == id);
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    if(RefreshIdLocations && !refreshIdLocations)
+    {
+      RefreshIdLocation();
+      refreshIdLocations = true;
+      StartCoroutine(WaitRefresh());
+    }
+  }
+
+  private IEnumerator WaitRefresh()
+  {
+    yield return new WaitForSeconds(.1f);
+    Debug.Log("Refresh ID locations");
+    RefreshIdLocations = refreshIdLocations = false;
   }
 }
