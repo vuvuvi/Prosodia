@@ -96,7 +96,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveTo(int pos)
     {
-        if (isInMovement && Location.Locations[pos].IsAvailable)
+        if (isInMovement && !Iwalk && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
