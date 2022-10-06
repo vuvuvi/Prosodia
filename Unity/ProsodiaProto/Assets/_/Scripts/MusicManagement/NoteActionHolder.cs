@@ -26,7 +26,7 @@ public abstract class NoteActionHolder : MonoBehaviour
 
 public abstract class ActionHolder : MonoBehaviour
 {
-    public PuzzleOnMelody Puzzle;
+    public MusicListener Puzzle;
     public Action Action;
 
     public List<ICanReachGoal> Triggers { get; private set; }

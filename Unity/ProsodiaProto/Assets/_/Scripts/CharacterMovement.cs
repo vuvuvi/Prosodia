@@ -24,8 +24,10 @@ public class CharacterMovement : MonoBehaviour
     int isPlayingHash;
     public Transform MeshContainer;
     private CameraManager cameraManager;
+    private ChangeAudioMixedVolume audioVolumeChanger;
     void Start()
     {
+        audioVolumeChanger = FindObjectOfType<ChangeAudioMixedVolume>();
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
         audioManager = GetComponentInChildren<AudioManager>();
@@ -49,6 +51,7 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying)
             animator.SetBool(isPlayingHash, false);
         cameraManager.ToggleCamera();
+        audioVolumeChanger.ChangeVolume();
     }
 
     public void Echolocation()

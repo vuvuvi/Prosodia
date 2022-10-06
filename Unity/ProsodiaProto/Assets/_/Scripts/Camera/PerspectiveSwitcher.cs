@@ -30,7 +30,7 @@ public class PerspectiveSwitcher : MonoBehaviour
 
     void Update()
     {
-        TestCameraToggle();
+        //TestCameraToggle();
     }
 
     private void TestCameraToggle()
