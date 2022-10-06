@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void Init()
     {
-        if(isInit) return;
+        if (isInit) return;
         GetAudioSources();
         notesCurrentlyPlaying = new List<AudioSource>();
         timeForNextNotePlayed = Time.time + TimeBetweenNotAutoPlayed;
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     internal string GetSoundName(int i)
     {
-        return AudioSources.Keys.ToList()[i+1].ToString();
+        return AudioSources.Keys.ToList()[i + 1].ToString();
     }
 
     private void GetAudioSources()
@@ -93,7 +93,9 @@ public class AudioManager : MonoBehaviour
         }
         var n = AudioSources[sound][note];
         n.Play();
-        notesCurrentlyPlaying.Add(n);
+        Debug.Log($"playing {sound} {note}");
+        if (!notesCurrentlyPlaying.Contains(n))
+            notesCurrentlyPlaying.Add(n);
     }
     public void PlayMovementSound(int i)
     {
