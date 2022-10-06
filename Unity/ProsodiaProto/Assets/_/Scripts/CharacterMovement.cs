@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class CharacterMovement : MonoBehaviour
     int isWalkingHash;
     int isPlayingHash;
     public Transform MeshContainer;
+    public NoteInfoProvider NoteInfoProvider;
+    public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
     private ChangeAudioMixedVolume audioVolumeChanger;
     void Start()
@@ -30,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         audioVolumeChanger = FindObjectOfType<ChangeAudioMixedVolume>();
         locationManager = FindObjectOfType<LocationManager>();
         playerInput = GetComponent<PlayerInput>();
-        audioManager = GetComponentInChildren<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         animator = GetComponentInChildren<Animator>();
         isPlayingHash = Animator.StringToHash("isPlaying");
         isWalkingHash = Animator.StringToHash("isWalking");
@@ -59,23 +62,36 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying && !Iwalk)
         {
             audioManager.PlayNote(0, "Move");
-            effectPingPlayer.StartAnimation();
-            Location.noteKeyboard.text = "";
-            for (int i = 0; i < Location.Locations.Count; i++)
+            
+            if(!(effectPingPlayer.animate.State == StateAnime.STARTED))
             {
-                var loc = Location.Locations[i];
-                loc.noteKeyboard.text = KeysCodes[i].ToString();
-
-                NoteListener noteListener = loc.GetComponent<NoteListener>();
-                PingLocation(i).transform.position = loc.transform.position;
+                effectPingPlayer.StartAnimation();
+            
+                Location.noteKeyboard.text = "";
+                for (int i = 0; i < Location.Locations.Count; i++)
+                {
+                    var loc = Location.Locations[i];
+                    loc.noteKeyboard.text = KeysCodes[i].ToString();
+                    PuzzleOnMelody puzzleOnMelody = loc.GetComponent<PuzzleOnMelody>();
+                    HiddeAllHighlights(1);
+                    Color color = NoteInfoProvider.GetNoteColor(i);
+                    PingLocation(i, color).transform.position = loc.transform.position;
+                }
+                isInMovement = true;
             }
-            isInMovement = true;
         }
     }
 
-    public PingLocation PingLocation(int index)
+    public void HiddeAllHighlights(float value)
+    {
+        Highlight highlight = FindObjectOfType<Highlight>();
+        highlight.material.SetFloat("_transparency", value);
+    }
+
+    public PingLocation PingLocation(int index, Color color)
     {
         PingLocation pingLocation = pingLocations[index];
+        pingLocation.SetColor(color);
         pingLocation.StartAnimation();
         return pingLocation;
     }
@@ -90,38 +106,23 @@ public class CharacterMovement : MonoBehaviour
             locationManager.LocationsArround = new List<Location>();
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
-            MeshContainer.LookAt(Location.transform, Vector3.up);
+            AgentNavMesh.SetDestination(Location.transform.position);
+            HiddeAllHighlights(0);
         }
+    }
+
+    public bool CharacterReachedDestination()
+    {
+        return Iwalk && AgentNavMesh.remainingDistance != Mathf.Infinity && AgentNavMesh.pathStatus == NavMeshPathStatus.PathComplete && AgentNavMesh.remainingDistance == 0;
     }
 
     void Update()
     {
-        var locPos = Location.transform.position;
-        var playerPos = transform.position;
-        locPos.y = 0;
-        playerPos.y = 0;
-        var distanceLeft = Vector3.Distance(locPos, playerPos);
-        if (distanceLeft > 0.2f && movement.sqrMagnitude > 0.1f)
+        if(CharacterReachedDestination())
         {
-            var frameMovement = movement.normalized * Time.deltaTime * MoveSpeed;
-            transform.position += frameMovement;
-        }
-        else
-        {
-            if (distanceLeft < 0.2f)
-            {
-                animator.SetBool(isWalkingHash, false);
-                Iwalk = false;
-            }
-
-            if (isInMovement)
-            {
-                movement = Location.transform.position - transform.position;
-                if (movement.sqrMagnitude > 0.1)
-                {
-                    isInMovement = false;
-                }
-            }
+            animator.SetBool(isWalkingHash, false);
+            Iwalk = false;
+            isInMovement = false;
         }
     }
 

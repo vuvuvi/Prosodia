@@ -16,9 +16,16 @@ public class AudioManager : MonoBehaviour
     public float TimeBetweenNotAutoPlayed = 1;
     private List<AudioSource> notesCurrentlyPlaying;
     private Dictionary<string, List<AudioSource>> AudioSources;
+    private bool isInit = false;
 
     private void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
+        if(isInit) return;
         GetAudioSources();
         notesCurrentlyPlaying = new List<AudioSource>();
         timeForNextNotePlayed = Time.time + TimeBetweenNotAutoPlayed;
@@ -35,6 +42,7 @@ public class AudioManager : MonoBehaviour
         {
             Puzzle1AudioSources.Add(sources[i]);
         }
+        isInit = true;
     }
 
     internal string GetSoundName(int i)

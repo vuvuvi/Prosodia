@@ -15,6 +15,11 @@ public class PingLocation : MonoBehaviour
         }
     }
 
+    public void SetColor(Color color)
+    {
+        shader.color = color;
+    }
+
     public void UpdateAnimation(float currentTime)
     {
         float time = currentTime / animate.Duration;
