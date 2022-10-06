@@ -5,14 +5,12 @@ using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public bool IsPlaying => isPlaying;
     LocationManager locationManager;
     private bool isInMovement;
     private bool isPlaying;
-    private Vector3 movement;
     public EffectPingPlayer effectPingPlayer;
-    private PlayerInput playerInput;
     public Location Location;
-    public bool IsPlaying => isPlaying;
     public Keyboard keyboard;
     public TMPro.TMP_Text TextMode;
     public KeyCode[] KeysCodes = new KeyCode[4] { KeyCode.Q, KeyCode.S, KeyCode.F, KeyCode.G };
@@ -20,19 +18,19 @@ public class CharacterMovement : MonoBehaviour
     private AudioManager audioManager;
     public bool Iwalk;
     public float MoveSpeed = 6;
-    Animator animator;
-    int isWalkingHash;
-    int isPlayingHash;
+    private Animator animator;
+    private int isWalkingHash;
+    private int isPlayingHash;
     public Transform MeshContainer;
     public NoteInfoProvider NoteInfoProvider;
     public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
     private ChangeAudioMixedVolume audioVolumeChanger;
+
     void Start()
     {
         audioVolumeChanger = FindObjectOfType<ChangeAudioMixedVolume>();
         locationManager = FindObjectOfType<LocationManager>();
-        playerInput = GetComponent<PlayerInput>();
         audioManager = FindObjectOfType<AudioManager>();
         animator = GetComponentInChildren<Animator>();
         isPlayingHash = Animator.StringToHash("isPlaying");
@@ -62,11 +60,11 @@ public class CharacterMovement : MonoBehaviour
         if (!isPlaying && !Iwalk)
         {
             audioManager.PlayNote(0, "Move");
-            
-            if(!(effectPingPlayer.animate.State == StateAnime.STARTED))
+
+            if (!(effectPingPlayer.animate.State == StateAnime.STARTED))
             {
                 effectPingPlayer.StartAnimation();
-            
+
                 Location.noteKeyboard.text = "";
                 for (int i = 0; i < Location.Locations.Count; i++)
                 {
@@ -100,7 +98,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isInMovement && Location.Locations[pos].IsAvailable)
         {
-            audioManager.PlayMovementSound(pos + 1);
+            audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
@@ -116,7 +114,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if(CharacterReachedDestination())
+        if (CharacterReachedDestination())
         {
             animator.SetBool(isWalkingHash, false);
             Iwalk = false;
