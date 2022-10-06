@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00080954505, g: 0.004162026, b: 0.020064274, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008095468, g: 0.004161891, b: 0.02006406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12964,6 +12964,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1152955115}
     m_Modifications:
+    - target: {fileID: 1982255932355761638, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255932726574530, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255932867354685, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255932928389802, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255933139872900, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255933388511903, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255933641040579, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982255933830552108, guid: 5dab58d4f119c264d82a86d8625da798,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1982255933960520376, guid: 5dab58d4f119c264d82a86d8625da798,
         type: 3}
       propertyPath: m_Name
