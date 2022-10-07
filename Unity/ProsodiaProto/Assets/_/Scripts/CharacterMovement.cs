@@ -26,6 +26,7 @@ public class CharacterMovement : MonoBehaviour
     public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
     private ChangeAudioMixedVolume audioVolumeChanger;
+    public float WaitingTimeStandUp;
 
     void Start()
     {
@@ -57,7 +58,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Echolocation()
     {
-        if (!isPlaying && !Iwalk)
+        if (!isPlaying && !Iwalk && Time.time>WaitingTimeStandUp) //To Blocked Wake up animation
         {
             audioManager.PlayNote(0, "Move");
 
