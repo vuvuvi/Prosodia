@@ -103,7 +103,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: 0.22
+    - _Fill: 0.409
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -119,9 +119,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Stroke: 0
-    - _Stroke_Blur: 1.25
+    - _Stroke_Blur: 1
     - _Surface: 0
-    - _Transparency: -0.00000008742278
+    - _Transparency: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726

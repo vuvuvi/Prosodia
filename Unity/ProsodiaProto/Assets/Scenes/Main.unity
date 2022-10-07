@@ -28085,6 +28085,19 @@ MonoBehaviour:
   - {fileID: 1537437613}
   - {fileID: 1668082645}
   - {fileID: 1986340332}
+  - {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   RefreshIdLocations: 0
 --- !u!4 &2118005925
 Transform:
