@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Linq;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class CameraManager : MonoBehaviour
 
     private void Start()
     {
+        var allVirtualCamera = FindObjectsOfType<CinemachineVirtualCamera>().ToList();
+        allVirtualCamera.ForEach(vc => vc.enabled = false);
         perspectiveSwitcher = Camera.gameObject.GetComponent<PerspectiveSwitcher>();
         ResetCamera();
     }
