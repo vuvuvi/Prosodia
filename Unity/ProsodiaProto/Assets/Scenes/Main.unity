@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008095468, g: 0.004161891, b: 0.02006406, a: 1}
+  m_IndirectSpecularColor: {r: 0.00080954505, g: 0.004162026, b: 0.020064274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25097,7 +25097,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemsContainer: {fileID: 1605025143}
-  FixedMelody: 05000000050000000700000000000000040000000500000005000000
+  FixedMelody: 050000000500000007000000000000000400000005000000
   RandomMelody: 0
   NoteListeners: []
 --- !u!114 &1873271996
