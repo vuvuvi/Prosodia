@@ -66,11 +66,9 @@ public class CharacterMovement : MonoBehaviour
             {
                 effectPingPlayer.StartAnimation();
 
-                Location.noteKeyboard.text = "";
                 for (int i = 0; i < Location.Locations.Count; i++)
                 {
                     var loc = Location.Locations[i];
-                    loc.noteKeyboard.text = KeysCodes[i].ToString();
                     PuzzleOnMelody puzzleOnMelody = loc.GetComponent<PuzzleOnMelody>();
                     HiddeAllHighlights(1);
                     Color color = NoteInfoProvider.GetNoteColor(i);

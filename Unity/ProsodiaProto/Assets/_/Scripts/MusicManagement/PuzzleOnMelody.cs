@@ -40,7 +40,6 @@ public class PuzzleOnMelody : MusicListener
     {
         base.SubscribeToPlayer(player);
         player.MelodyChanged.AddListener(ValidateMelody);
-        Location.noteKeyboard.text = Melody.ToString();
 
     }
     protected override void UnsubscribeToPlayer(PlayerMelodyManager player)
