@@ -27,6 +27,8 @@ public class CharacterMovement : MonoBehaviour
     private CameraManager cameraManager;
     private ChangeAudioMixedVolume audioVolumeChanger;
     public float WaitingTimeStandUp;
+    public Overlay Overlay;
+    public AnimationTime waitWakeUp;
 
     void Start()
     {
@@ -39,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
         transform.position = Location.transform.position;
         cameraManager = GetComponent<CameraManager>();
         cameraManager.SetCharacterTransform(MeshContainer);
+        waitWakeUp.Duration = WaitingTimeStandUp;
     }
 
     internal void StartPlaying()
@@ -109,6 +112,12 @@ public class CharacterMovement : MonoBehaviour
     public bool CharacterReachedDestination()
     {
         return Iwalk && AgentNavMesh.remainingDistance != Mathf.Infinity && AgentNavMesh.pathStatus == NavMeshPathStatus.PathComplete && AgentNavMesh.remainingDistance == 0;
+    }
+
+    public void WakeUpFinish(float time)
+    {
+        Overlay.HiddeBands();
+        Overlay.SetTextSubtitle("");
     }
 
     void Update()
