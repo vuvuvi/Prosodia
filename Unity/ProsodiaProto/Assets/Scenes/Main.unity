@@ -11815,6 +11815,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 86629085dfbcdd74089f41d74599e94f, type: 2}
     - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
         type: 3}
+      propertyPath: State
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
+        type: 3}
       propertyPath: Duration
       value: 1
       objectReference: {fileID: 0}
@@ -13049,6 +13054,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d4f24d845caf38f49a14e70c8554ba76, type: 2}
     - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
         type: 3}
+      propertyPath: State
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
+        type: 3}
       propertyPath: Duration
       value: 1
       objectReference: {fileID: 0}
@@ -13591,6 +13601,11 @@ PrefabInstance:
       propertyPath: shader
       value: 
       objectReference: {fileID: 2100000, guid: bdf577af5c0fec04eb86b6929b1bb984, type: 2}
+    - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
+        type: 3}
+      propertyPath: State
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
         type: 3}
       propertyPath: Duration
@@ -21271,6 +21286,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ad0263e3c94a0d748bccedf3ded029df, type: 2}
     - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
         type: 3}
+      propertyPath: State
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671545785490650484, guid: 0ce0c6adb9c676c47a35599c74ba7a70,
+        type: 3}
       propertyPath: Duration
       value: 1
       objectReference: {fileID: 0}
@@ -28085,6 +28105,9 @@ MonoBehaviour:
   - {fileID: 1537437613}
   - {fileID: 1668082645}
   - {fileID: 1986340332}
+  - {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   RefreshIdLocations: 0
 --- !u!4 &2118005925
 Transform:

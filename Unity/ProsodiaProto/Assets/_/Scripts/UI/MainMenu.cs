@@ -38,8 +38,8 @@ public class MainMenu : MonoBehaviour
   {
     foreach (var ping in pingButtons)
     {
-       ping.SetFloat("_StrokeBlur", StrokeBlur);
-       ping.SetFloat("Transparency", Transparency);
+       ping.SetFloat("_Stroke_Blur", StrokeBlur);
+       ping.SetFloat("_Transparency", Transparency);
     }
     animate.StartAnimation();
   }

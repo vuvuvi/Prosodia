@@ -10,6 +10,11 @@ public class EffectPingPlayer : MonoBehaviour
     public float radius = 5.5f;
     public float strokeBlur = .25f;
 
+    private void Start()
+    {
+        shader.SetFloat("_Transparency", 0);
+    }
+
     public void StartAnimation()
     {
         if(animate.State != StateAnime.STARTED)
