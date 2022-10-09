@@ -10,6 +10,11 @@ public class AnimationTime : MonoBehaviour
 
     protected float _time;
     protected StateAnime _state;
+
+    private void Start()
+    {
+        _state = State;
+    }
     
     private void Update()
     {
