@@ -28,7 +28,7 @@ public class AnimationTime : MonoBehaviour
     {
         if(_time < Duration)
         {
-            _time += Time.deltaTime;
+            _time = Mathf.Clamp(_time + Time.deltaTime, 0, Duration);
             CurrentTime = _time;
             Updated.Invoke(_time);
         }
