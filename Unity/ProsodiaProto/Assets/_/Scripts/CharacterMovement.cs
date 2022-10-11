@@ -72,9 +72,9 @@ public class CharacterMovement : MonoBehaviour
                 for (int i = 0; i < Location.Locations.Count; i++)
                 {
                     var loc = Location.Locations[i];
-                    PuzzleOnMelody puzzleOnMelody = loc.GetComponent<PuzzleOnMelody>();
                     HiddeAllHighlights(1);
-                    Color color = NoteInfoProvider.GetNoteColor(i);
+                    var colorId = i + ((i < 2) ? 0 : 1);
+                    Color color = NoteInfoProvider.GetNoteColor(colorId);
                     PingLocation(i, color).transform.position = loc.transform.position;
                 }
                 isInMovement = true;
@@ -98,7 +98,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveTo(int pos)
     {
-        if (isInMovement && !Iwalk && Location.Locations[pos].IsAvailable)
+        if (isInMovement && !Iwalk && Location.Locations.Count > pos && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
