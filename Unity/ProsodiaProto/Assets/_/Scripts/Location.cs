@@ -58,7 +58,7 @@ public class Location : MonoBehaviour
     {
         if(Application.isPlaying) return;
         RefreshDistances();
-        SetId();
+        RefreshName();
         if (this.Locations.Count > LocationManager.MAX_LOCATIONS)
         {
             Debug.LogWarning("You can't add more location");
@@ -84,9 +84,8 @@ public class Location : MonoBehaviour
         }
     }
 
-    public void SetId()
+    public void RefreshName()
     {
-        Id = FindObjectOfType<LocationManager>().AddLocation(this);
         name = "Location " + Id;
     }
 
