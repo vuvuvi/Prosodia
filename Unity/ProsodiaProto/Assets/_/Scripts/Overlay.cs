@@ -11,6 +11,23 @@ public class Overlay : MonoBehaviour
     public AnimationTime animate;
     public bool toHidde;
     private Vector3[] initialPosition = new Vector3[2];
+    public TMP_Text[] textControls;
+    public NoteInfoProvider NoteInfoProvider;
+
+    private void Start()
+    {
+        TextControlsRefresh();
+    }
+
+    public void TextControlsRefresh()
+    {
+        for (int i = 0; i < NoteInfoProvider.Colors.Count-1; i++)
+        {
+            TMP_Text tMP_Text = textControls[i];
+            //tMP_Text.color = NoteInfoProvider.Colors[i];
+        }
+        //textControls[textControls.Length-1].color = Color.white;
+    }
 
     public void SetTextSubtitle(string text)
     {
