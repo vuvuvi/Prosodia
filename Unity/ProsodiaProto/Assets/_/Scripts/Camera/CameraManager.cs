@@ -8,9 +8,10 @@ public class CameraManager : MonoBehaviour
     public Camera Camera;
     public CinemachineVirtualCamera CharacterVirtualCam;
     private CinemachineVirtualCamera puzzleVirtualCam;
-    private Transform CharacterMesh;
     private PerspectiveSwitcher perspectiveSwitcher;
     private bool isOrtho;
+    public Transform CharacterMesh;
+
 
     private void Start()
     {
@@ -18,11 +19,6 @@ public class CameraManager : MonoBehaviour
         allVirtualCamera.ForEach(vc => vc.enabled = false);
         perspectiveSwitcher = Camera.gameObject.GetComponent<PerspectiveSwitcher>();
         ResetCamera();
-    }
-
-    public void SetCharacterTransform(Transform t)
-    {
-        CharacterMesh = t;
     }
 
     private void OnTriggerEnter(Collider other)

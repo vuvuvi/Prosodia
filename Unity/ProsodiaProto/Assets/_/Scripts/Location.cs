@@ -65,20 +65,20 @@ public class Location : MonoBehaviour
             this.Locations.RemoveAt(this.Locations.Count - 1);
         }
 
-        for (int i = 0; i < this.Locations.Count; i++)
+        for (int i = 0; i < Locations.Count; i++)
         {
-            Location location = this.Locations[i];
+            Location location = Locations[i];
 
             if (location && !location.Locations.Contains(this))
             {
-                Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
+                Debug.Log($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
                 if (location.Locations.Count < 4)
                 {
                     location.Locations.Add(this);
                 }
                 else
                 {
-                    Debug.LogWarning("I can't add more location. You will be reduce connection");
+                    Debug.LogWarning($"I can't add more location on {name}, {location.name} is sill missing");
                 }
             }
         }

@@ -23,7 +23,6 @@ public class PlayerMelodyManager : MonoBehaviour
         MelodyChanged = new UnityEvent();
         characterController = GetComponent<CharacterMovement>();
         SoundName = audioManager.GetSoundName(0);
-        Debug.Log(SoundName);
     }
 
     public void AddNote(int note)

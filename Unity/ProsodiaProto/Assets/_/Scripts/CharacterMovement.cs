@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator;
     private int isWalkingHash;
     private int isPlayingHash;
-    public Transform MeshContainer;
     public NoteInfoProvider NoteInfoProvider;
     public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
@@ -40,7 +39,6 @@ public class CharacterMovement : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking");
         transform.position = Location.transform.position;
         cameraManager = GetComponent<CameraManager>();
-        cameraManager.SetCharacterTransform(MeshContainer);
         waitWakeUp.Duration = WaitingTimeStandUp;
     }
 
