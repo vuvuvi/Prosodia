@@ -94,10 +94,21 @@ public class CharacterMovement : MonoBehaviour
         return pingLocation;
     }
 
+    public void HiddePingLocation()
+    {
+        foreach (var ping in pingLocations)
+        {
+            ping.animate.State = StateAnime.STOPED;
+            ping.shader.SetFloat("_Transparency", 0);
+            ping.toShow = false;
+        }
+    }
+
     public void MoveTo(int pos)
     {
         if (isInMovement && !Iwalk && Location.Locations.Count > pos && Location.Locations[pos].IsAvailable)
         {
+            HiddePingLocation();
             audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
             Iwalk = true;

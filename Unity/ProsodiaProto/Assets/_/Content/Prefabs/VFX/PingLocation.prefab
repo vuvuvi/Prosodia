@@ -69,7 +69,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1741467640818037951}
         m_TargetAssemblyTypeName: PingLocation, Assembly-CSharp
-        m_MethodName: UpdateAnimation
+        m_MethodName: StopedAnimation
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
