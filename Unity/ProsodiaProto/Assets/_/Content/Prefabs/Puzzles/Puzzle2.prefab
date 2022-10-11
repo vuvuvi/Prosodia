@@ -239,6 +239,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29b28187cd3cee419a16c9585a816fc, type: 3}
+--- !u!1 &7221809342957570616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a29b28187cd3cee419a16c9585a816fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 7563914889678845801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4176485627896625960
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221809342957570616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 726db49b823e9d545a8e807db4631aac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &714653820494415802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221809342957570616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c76b5645322044dac74307e2d4f740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3502733610638353687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221809342957570616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9023515c8e01237419c48ddad55c862f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 0}
+  Animator: {fileID: 4176485627896625960}
+  AnimationName: OrganAnim
 --- !u!4 &8030716351786324098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a29b28187cd3cee419a16c9585a816fc,
