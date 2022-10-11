@@ -57,5 +57,11 @@ public class PerspectiveSwitcher : MonoBehaviour
     internal void SetOrthographic()
     {
         orthoOn = true;
+        ChangeCameraProjectionMatrix();
+    }
+    internal void SetPerspective()
+    {
+        orthoOn = false;
+        ChangeCameraProjectionMatrix();
     }
 }

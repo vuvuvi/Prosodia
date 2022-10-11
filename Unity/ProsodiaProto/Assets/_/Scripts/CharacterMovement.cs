@@ -55,13 +55,13 @@ public class CharacterMovement : MonoBehaviour
             isPlaying = !isPlaying;
         if (!isPlaying)
             animator.SetBool(isPlayingHash, false);
-        cameraManager.ToggleCamera();
+        cameraManager.SetCamera(IsPlaying);
         audioVolumeChanger.ChangeVolume();
     }
 
     public void Echolocation()
     {
-        if (!isPlaying && !Iwalk && Time.time>WaitingTimeStandUp) //To Blocked Wake up animation
+        if (!isPlaying && !Iwalk && Time.time > WaitingTimeStandUp) //To Blocked Wake up animation
         {
             audioManager.PlayNote(0, "Move");
 
