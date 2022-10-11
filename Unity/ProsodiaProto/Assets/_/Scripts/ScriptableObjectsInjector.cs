@@ -8,6 +8,6 @@ public class ScriptableObjectsInjector : MonoBehaviour
   public NoteInfoProvider NoteInfoProvider;
   void Start()
   {
-    FindObjectsOfType<LightUpAction>().ToList().ForEach(lua => lua.NoteInfoProvider = NoteInfoProvider);
+    FindObjectsOfType<MonoBehaviour>().ToList().OfType<NoteActionHolder>().ToList().ForEach(lua => lua.NoteInfoProvider = NoteInfoProvider);
   }
 }

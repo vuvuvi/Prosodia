@@ -19,17 +19,18 @@ public class SimpleMoveObjectAction : NoteActionHolder
 
     private void Move(int i)
     {
-        isMoving = true;
+        if (IsValid)
+            isMoving = true;
     }
 
     private void Update()
     {
-        // if (Vector3.Distance(ObjectToMove.position, Destination.position) < 0.2f)
-        //     return;
-        // if (isMoving)
-        // {
-        //     var movement = Destination.position - ObjectToMove.position;
-        //     ObjectToMove.position += movement.normalized * Time.deltaTime * Speed;
-        // }
+        if (Vector3.Distance(ObjectToMove.position, Destination.position) < 0.2f)
+            return;
+        if (isMoving)
+        {
+            var movement = Destination.position - ObjectToMove.position;
+            ObjectToMove.position += movement.normalized * Time.deltaTime * Speed;
+        }
     }
 }

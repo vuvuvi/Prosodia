@@ -13,9 +13,9 @@ public class OrganAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //GetComponent<Animator>().Play("OrganAnim");
-        //} 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Animator>().Play("OrganAnim");
+        }
     }
 }
