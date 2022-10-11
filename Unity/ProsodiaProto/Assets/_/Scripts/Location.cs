@@ -7,26 +7,20 @@ public class Location : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     public float DistanceFromPlayer;
-    // public PingEffect Effect;
     public List<Location> Locations;
     public List<float> Distances;
     public int Id;
-    public TMPro.TMP_Text noteKeyboard;
     public bool IsAvailable = true;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false;
-        noteKeyboard.gameObject.transform.rotation = Camera.main.transform.rotation;
     }
 
     internal void PingLocation(Material material, string note)
     {
         ChangeMaterial(material);
-        // Effect.StartAnimation();
-        noteKeyboard.text = note;
-        noteKeyboard.gameObject.SetActive(true);
     }
 
     public void ChangeMaterial(Material material)
@@ -62,36 +56,36 @@ public class Location : MonoBehaviour
 
     private void OnValidate() 
     {
+        if(Application.isPlaying) return;
         RefreshDistances();
-        SetId();
+        RefreshName();
         if (this.Locations.Count > LocationManager.MAX_LOCATIONS)
         {
             Debug.LogWarning("You can't add more location");
             this.Locations.RemoveAt(this.Locations.Count - 1);
         }
 
-        for (int i = 0; i < this.Locations.Count; i++)
+        for (int i = 0; i < Locations.Count; i++)
         {
-            Location location = this.Locations[i];
+            Location location = Locations[i];
 
             if (location && !location.Locations.Contains(this))
             {
-                Debug.LogWarning($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
+                Debug.Log($" {name} is connect to {location.name}. But {location.name} is not connect to {name}. I will connect them.");
                 if (location.Locations.Count < 4)
                 {
                     location.Locations.Add(this);
                 }
                 else
                 {
-                    Debug.LogWarning("I can't add more location. You will be reduce connection");
+                    Debug.LogWarning($"I can't add more location on {name}, {location.name} is sill missing");
                 }
             }
         }
     }
 
-    public void SetId()
+    public void RefreshName()
     {
-        Id = FindObjectOfType<LocationManager>().AddLocation(this);
         name = "Location " + Id;
     }
 

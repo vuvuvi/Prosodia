@@ -1,4 +1,6 @@
 using Cinemachine;
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -6,19 +8,17 @@ public class CameraManager : MonoBehaviour
     public Camera Camera;
     public CinemachineVirtualCamera CharacterVirtualCam;
     private CinemachineVirtualCamera puzzleVirtualCam;
-    private Transform CharacterMesh;
     private PerspectiveSwitcher perspectiveSwitcher;
     private bool isOrtho;
+    public Transform CharacterMesh;
+
 
     private void Start()
     {
+        var allVirtualCamera = FindObjectsOfType<CinemachineVirtualCamera>().ToList();
+        allVirtualCamera.ForEach(vc => vc.enabled = false);
         perspectiveSwitcher = Camera.gameObject.GetComponent<PerspectiveSwitcher>();
         ResetCamera();
-    }
-
-    public void SetCharacterTransform(Transform t)
-    {
-        CharacterMesh = t;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,28 +39,40 @@ public class CameraManager : MonoBehaviour
 
     private void ResetCamera()
     {
-        if (puzzleVirtualCam != null) puzzleVirtualCam.enabled = false;
+        SwitchToOrtho();
         puzzleVirtualCam = null;
-        CharacterVirtualCam.enabled = true;
-        perspectiveSwitcher.SetOrthographic();
-        isOrtho = true;
     }
 
-    public void ToggleCamera()
+    private void SwitchToThirdPerson()
     {
         if (puzzleVirtualCam == null)
             return;
-        isOrtho = !isOrtho;
-        puzzleVirtualCam.enabled = !puzzleVirtualCam.enabled;
-        perspectiveSwitcher.ToggleCamera();
-        CharacterVirtualCam.enabled = !CharacterVirtualCam.enabled;
-
-        if(isOrtho)
-            CharacterMesh.localRotation = Quaternion.Euler(0,0,0);
+        puzzleVirtualCam.enabled = true;
+        CharacterVirtualCam.enabled = false;
+        perspectiveSwitcher.SetPerspective();
+        isOrtho = false;
     }
+    private void SwitchToOrtho()
+    {
+        if (puzzleVirtualCam != null)
+            puzzleVirtualCam.enabled = false;
+        CharacterVirtualCam.enabled = true;
+        perspectiveSwitcher.SetOrthographic();
+        isOrtho = true;
+        CharacterMesh.localRotation = Quaternion.Euler(0, 0, 0);
+    }
+
     private void Update()
     {
-        if(!isOrtho)
+        if (!isOrtho)
             CharacterMesh.rotation = Quaternion.LookRotation(Camera.transform.forward, Vector3.up);
+    }
+
+    internal void SetCamera(bool needPuzzleView)
+    {
+        if (needPuzzleView)
+            SwitchToThirdPerson();
+        else
+            SwitchToOrtho();
     }
 }

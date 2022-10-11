@@ -7,6 +7,11 @@ public class PingLocation : MonoBehaviour
     public Material shader;
     public AnimationTime animate;
 
+    private void Start()
+    {
+        shader.SetFloat("_Transparency", 0);
+    }
+
     public void StartAnimation()
     {
         if(animate.State != StateAnime.STARTED)

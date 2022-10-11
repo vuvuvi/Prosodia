@@ -18,10 +18,8 @@ public class CompareValuesComponent : MonoBehaviour, ICanReachGoal
 
     private void CompareValues()
     {
-        Debug.Log("Compare");
         if (Value.Value == Goal.Value)
         {
-            Debug.Log("Compare ==");
             GoalReached.Invoke();
         }
     }

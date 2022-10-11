@@ -21,11 +21,13 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator;
     private int isWalkingHash;
     private int isPlayingHash;
-    public Transform MeshContainer;
     public NoteInfoProvider NoteInfoProvider;
     public NavMeshAgent AgentNavMesh;
     private CameraManager cameraManager;
     private ChangeAudioMixedVolume audioVolumeChanger;
+    public float WaitingTimeStandUp;
+    public Overlay Overlay;
+    public AnimationTime waitWakeUp;
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking");
         transform.position = Location.transform.position;
         cameraManager = GetComponent<CameraManager>();
-        cameraManager.SetCharacterTransform(MeshContainer);
+        waitWakeUp.Duration = WaitingTimeStandUp;
     }
 
     internal void StartPlaying()
@@ -51,13 +53,13 @@ public class CharacterMovement : MonoBehaviour
             isPlaying = !isPlaying;
         if (!isPlaying)
             animator.SetBool(isPlayingHash, false);
-        cameraManager.ToggleCamera();
+        cameraManager.SetCamera(IsPlaying);
         audioVolumeChanger.ChangeVolume();
     }
 
     public void Echolocation()
     {
-        if (!isPlaying && !Iwalk)
+        if (!isPlaying && !Iwalk && Time.time > WaitingTimeStandUp) //To Blocked Wake up animation
         {
             audioManager.PlayNote(0, "Move");
 
@@ -65,14 +67,12 @@ public class CharacterMovement : MonoBehaviour
             {
                 effectPingPlayer.StartAnimation();
 
-                Location.noteKeyboard.text = "";
                 for (int i = 0; i < Location.Locations.Count; i++)
                 {
                     var loc = Location.Locations[i];
-                    loc.noteKeyboard.text = KeysCodes[i].ToString();
-                    PuzzleOnMelody puzzleOnMelody = loc.GetComponent<PuzzleOnMelody>();
                     HiddeAllHighlights(1);
-                    Color color = NoteInfoProvider.GetNoteColor(i);
+                    var colorId = i + ((i < 2) ? 0 : 1);
+                    Color color = NoteInfoProvider.GetNoteColor(colorId);
                     PingLocation(i, color).transform.position = loc.transform.position;
                 }
                 isInMovement = true;
@@ -96,7 +96,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveTo(int pos)
     {
-        if (isInMovement && !Iwalk && Location.Locations[pos].IsAvailable)
+        if (isInMovement && !Iwalk && Location.Locations.Count > pos && Location.Locations[pos].IsAvailable)
         {
             audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
@@ -110,6 +110,12 @@ public class CharacterMovement : MonoBehaviour
     public bool CharacterReachedDestination()
     {
         return Iwalk && AgentNavMesh.remainingDistance != Mathf.Infinity && AgentNavMesh.pathStatus == NavMeshPathStatus.PathComplete && AgentNavMesh.remainingDistance == 0;
+    }
+
+    public void WakeUpFinish(float time)
+    {
+        Overlay.HiddeBands();
+        Overlay.SetTextSubtitle("");
     }
 
     void Update()
