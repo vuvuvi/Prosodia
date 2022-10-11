@@ -27,6 +27,7 @@ public class LightUpAction : NoteActionHolder
 
     private void LightDown()
     {
+        if (IsValid) return;
         ParticuleSystem.SetActive(false);
         meshRenderer.material = baseMaterial;
     }
