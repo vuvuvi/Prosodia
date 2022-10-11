@@ -7,6 +7,15 @@ public class PingLocation : MonoBehaviour
     public Material shader;
     public AnimationTime animate;
 
+    private float maxRadius = 4.5f;
+    
+    [Range(0, 1)]
+    public float TransparencyLimit;
+    
+    [Range(0, 1)]
+    public float RadiusLimit;
+    public bool toShow;
+
     private void Start()
     {
         shader.SetFloat("_Transparency", 0);
@@ -14,8 +23,9 @@ public class PingLocation : MonoBehaviour
 
     public void StartAnimation()
     {
-        if(animate.State != StateAnime.STARTED)
+        if(!toShow)
         {
+            toShow = true;
             animate.StartAnimation();
         }
     }
@@ -27,12 +37,29 @@ public class PingLocation : MonoBehaviour
 
     public void UpdateAnimation(float currentTime)
     {
-        float time = currentTime / animate.Duration;
+        float progress = currentTime / animate.Duration;
 
-        float radius = 5.5f * time;
-        float transparency = Mathf.Sin(time * 2 * Mathf.PI);
+        float radius;
+        float transparency;
+
+        if(toShow)
+        {
+            radius = maxRadius * Mathf.Sqrt(progress);
+            transparency = Mathf.Sqrt(progress);
+        }
+        else
+        {
+            radius = maxRadius + Mathf.Sin(progress * 2 * Mathf.PI) * RadiusLimit;
+            transparency = .5f + Mathf.Sin(progress * 2 * Mathf.PI) * TransparencyLimit/2;
+        }
 
         shader.SetFloat("_Radius", radius);
         shader.SetFloat("_Transparency", transparency);
+    }
+
+    public void StopedAnimation(float currenTime)
+    {
+        toShow = false;
+        animate.StartAnimation();
     }
 }

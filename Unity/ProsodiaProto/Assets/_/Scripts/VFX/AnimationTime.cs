@@ -18,6 +18,8 @@ public class AnimationTime : MonoBehaviour
     
     private void Update()
     {
+        _state = State;
+        
         if(_state == StateAnime.STARTED)
         {
             UpdateTime();
