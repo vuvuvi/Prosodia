@@ -4057,6 +4057,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Location 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300221, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ee6e828b9660e4ea2c959fad592270, type: 3}
 --- !u!114 &326333241 stripped
@@ -24327,50 +24332,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118005925}
-  - component: {fileID: 2118005924}
   m_Layer: 0
-  m_Name: LocationManager
+  m_Name: Locations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2118005924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118005923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffcef85a17643ad43b28e0f6308c2c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Locations:
-  - {fileID: 258217469}
-  - {fileID: 305302754}
-  - {fileID: 326333241}
-  - {fileID: 492774661}
-  - {fileID: 533611880}
-  - {fileID: 654673425}
-  - {fileID: 753090778}
-  - {fileID: 852727441}
-  - {fileID: 864324423}
-  - {fileID: 949410735}
-  - {fileID: 1021609719}
-  - {fileID: 1279334185}
-  - {fileID: 1302689490}
-  - {fileID: 1321421324}
-  - {fileID: 1339766194}
-  - {fileID: 1431052490}
-  - {fileID: 1460839402}
-  - {fileID: 1464852010}
-  - {fileID: 1531294826}
-  - {fileID: 1537437613}
-  - {fileID: 1668082645}
-  - {fileID: 1986340332}
-  RefreshIdLocations: 0
 --- !u!4 &2118005925
 Transform:
   m_ObjectHideFlags: 0
