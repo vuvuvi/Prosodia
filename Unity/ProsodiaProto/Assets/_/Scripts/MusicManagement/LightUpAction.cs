@@ -1,46 +1,46 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightUpAction : NoteActionHolder
 {
-  private Material material;
-  private MeshRenderer meshRenderer;
-  private Color baseColor;
-  public float LitUpTime = 1;
-  protected void OnEnable()
-  {
-    Action = LightUp;
-    meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
-    material = new Material(meshRenderer.material);
-    meshRenderer.material = material;
-    baseColor = material.color;
-  }
-  private void LightUp(int note)
-  {
-    var newColor = NoteInfoProvider.GetNoteColor(note);
-    if (material.color == newColor)
+    public Material EmissiveMaterial;
+    private Material baseMaterial;
+    private MeshRenderer meshRenderer;
+    public GameObject ParticuleSystem;
+
+    public float LitUpTime = 1f;
+
+    private void OnEnable()
     {
-      return;
+        Action = LightUp;
+        meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
+        baseMaterial = new Material(meshRenderer.material);
+        meshRenderer.material = baseMaterial;
+        ParticuleSystem.SetActive(false);
+
     }
-    material.color = newColor;
-    StartCoroutine(LightDownCoroutine());
-  }
+    protected override void Validate()
+    {
+        LightDown();
+    }
 
-  private IEnumerator LightDownCoroutine()
-  {
-    yield return new WaitForSeconds(LitUpTime);
-    LightDown();
-    yield return null;
-  }
+    private void LightDown()
+    {
+        ParticuleSystem.SetActive(false);
+        meshRenderer.material = baseMaterial;
+    }
 
-  private void LightDown()
-  {
-    if (!IsValid)
-      material.color = baseColor;
-  }
-  protected override void Validate()
-  {
-    LightDown();
-  }
+    private void LightUp(int note)
+    {
+        ParticuleSystem.SetActive(true);
+        meshRenderer.material = EmissiveMaterial;
+        StartCoroutine(LightDownCoroutine());
+    }
+    private IEnumerator LightDownCoroutine()
+    {
+        yield return new WaitForSeconds(LitUpTime);
+        LightDown();
+        yield return null;
+    }
 }
