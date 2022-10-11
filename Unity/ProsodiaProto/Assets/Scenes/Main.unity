@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008095468, g: 0.004161891, b: 0.02006406, a: 1}
+  m_IndirectSpecularColor: {r: 0.00080954505, g: 0.004162026, b: 0.020064274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7242,6 +7242,11 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 7651894493784423238}
+    - target: {fileID: 7446301436903408976, guid: 7f58136fa3ed7ac44994079e98032598,
+        type: 3}
+      propertyPath: CharacterMesh
+      value: 
+      objectReference: {fileID: 1362166309}
     - target: {fileID: 7446301436903408976, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: CharacterVirtualCam
@@ -16070,6 +16075,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1362166309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6979500565820521593, guid: 7f58136fa3ed7ac44994079e98032598,
+    type: 3}
+  m_PrefabInstance: {fileID: 668942616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1367126950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24359,13 +24370,6 @@ MonoBehaviour:
   - {fileID: 1537437613}
   - {fileID: 1668082645}
   - {fileID: 1986340332}
-  - {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   RefreshIdLocations: 0
 --- !u!4 &2118005925
 Transform:
