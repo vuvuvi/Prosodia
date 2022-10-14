@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4833367606128580541}
+  - component: {fileID: 6919121980903752146}
   m_Layer: 0
   m_Name: Medusa
   m_TagString: Untagged
@@ -34,6 +35,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &6919121980903752146
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048356216539425317}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5242798258766911343
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,8 +69,8 @@ GameObject:
   - component: {fileID: 4608548437709470436}
   - component: {fileID: 1282063551873655130}
   - component: {fileID: 4428244564635506228}
-  - component: {fileID: 7573633592081659841}
   - component: {fileID: 2908416403628326687}
+  - component: {fileID: 89773103143755060}
   m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
@@ -133,22 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotePitch: 0
---- !u!114 &7573633592081659841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5242798258766911343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b63d19e9da6ca49b6e7c7001fba73c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoteInfoProvider: {fileID: 0}
-  ObjectToMove: {fileID: 4833367606128580541}
-  Destination: {fileID: 0}
-  Speed: 1
 --- !u!114 &2908416403628326687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +172,22 @@ MonoBehaviour:
   EmissiveMaterial: {fileID: 2100000, guid: 1d272344c65cd2e4daffc01d9ab9e663, type: 2}
   ParticuleSystem: {fileID: 8214536408723838831}
   LitUpTime: 1
+--- !u!114 &89773103143755060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242798258766911343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc082b10fbc25042bbfe53e092935a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 0}
+  ObjectToMove: {fileID: 6919121980903752146}
+  Destination: {fileID: 0}
+  MoveSpeed: 1
 --- !u!1001 &994785244834511596
 PrefabInstance:
   m_ObjectHideFlags: 0

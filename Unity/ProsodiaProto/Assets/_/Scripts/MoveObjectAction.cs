@@ -6,12 +6,12 @@ public class MoveObjectAction : ActionHolder
     public NavMeshAgent ObjectToMove;
     public Transform Destination;
 
-    private bool IsMoving;
     public float MoveSpeed;
 
     private void MoveObject()
     {
-        IsMoving = true;
+        ObjectToMove.speed = MoveSpeed;
+        ObjectToMove.SetDestination(Destination.position);
     }
 
     protected override void CreateAction()
@@ -20,12 +20,5 @@ public class MoveObjectAction : ActionHolder
         {
             MoveObject();
         };
-    }
-    private void Update()
-    {
-        if(IsMoving)
-        {
-            ObjectToMove.SetDestination( Destination.position); 
-        }
     }
 }
