@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5957553760437670077
+--- !u!114 &-2646128441142838008
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PingPlayer
-  m_Shader: {fileID: -6465566751694194690, guid: 5ca3b63a4aee66941a0a10ba3238f332,
+  m_Name: WaterFontain
+  m_Shader: {fileID: -6465566751694194690, guid: bc7eb19c01a6a2446aebb9aa18763a5b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -54,6 +54,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Displacement:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -64,6 +68,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 37b032e42292ce24e9c4eac5a4e83f92, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -99,39 +107,41 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth_Distance: 1.24
+    - _Depth_Strenght: 0.04
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Displace: 0.04
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: 0.409
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NormalStrength: 0.37
+    - _NormalTiling: 1
     - _OcclusionStrength: 1
+    - _Pan_Speed: 0.4
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 5.5
     - _ReceiveShadows: 1
+    - _Refract: 0.02
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Stroke: 0
-    - _Stroke_Blur: 1.25
     - _Surface: 0
-    - _Transparency: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _alpha: 0.726
-    - _intensity: 1
-    - _trans: 0.72215974
-    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Bottom: {r: 0.53391373, g: 0.6678176, b: 0.7921569, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Direction: {r: -0.03, g: 0.94, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Position: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Position1: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _Position2: {r: -0.1, g: -0.01, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Top: {r: 0, g: 0.9600265, b: 1, a: 1}
   m_BuildTextureStacks: []
