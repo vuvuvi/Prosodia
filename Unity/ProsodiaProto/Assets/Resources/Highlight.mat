@@ -107,6 +107,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Intensity: 3
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -126,13 +127,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726
-    - _fill: 0.71
+    - _fill: 0.28
     - _intensity: 1
     - _radius: 4.34
     - _stroke: 0.03
     - _stroke_blur: 0.95
     - _trans: 0.72215974
-    - _transparency: 0
+    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
