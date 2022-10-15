@@ -125,8 +125,8 @@ public class CharacterMovement : MonoBehaviour
 
     public void WakeUpFinish(float time)
     {
-        Overlay.HiddeBands();
-        Overlay.SetTextSubtitle("");
+        // Overlay.HiddeBands();
+        // Overlay.SetTextSubtitle("");
     }
 
     void Update()
