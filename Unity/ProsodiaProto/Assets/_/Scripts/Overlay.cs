@@ -7,7 +7,8 @@ public class Overlay : MonoBehaviour
 {
     public GameObject bandTop;
     public GameObject bandDown;
-    public TMP_Text subtitle;
+    public TMP_Text Subtitle;
+    public TMP_Text Key;
     public AnimationTime animate;
     public bool toHidde;
     private Vector3[] initialPosition = new Vector3[2];
@@ -17,6 +18,7 @@ public class Overlay : MonoBehaviour
     private void Start()
     {
         TextControlsRefresh();
+        Key.material = new Material(Key.material);
     }
 
     public void TextControlsRefresh()
@@ -31,7 +33,7 @@ public class Overlay : MonoBehaviour
 
     public void SetTextSubtitle(string text)
     {
-        subtitle.text = text;
+        Subtitle.text = text;
     }
 
     public void ShowBands()

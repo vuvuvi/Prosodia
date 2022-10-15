@@ -112,16 +112,16 @@ Material:
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 4.893839
+    - _Radius: 5.5
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Stroke: 0
-    - _Stroke_Blur: 2.75
+    - _Stroke_Blur: 1.25
     - _Surface: 0
-    - _Transparency: 0
+    - _Transparency: -0.00000008742278
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726
