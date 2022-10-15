@@ -107,8 +107,8 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth_Distance: 1.24
-    - _Depth_Strenght: 0.04
+    - _Depth_Distance: 0
+    - _Depth_Strenght: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Displace: 0.04
@@ -118,7 +118,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NormalStrength: 0.37
+    - _NormalStrength: 0.719
     - _NormalTiling: 1
     - _OcclusionStrength: 1
     - _Pan_Speed: 0.4
@@ -136,7 +136,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Bottom: {r: 0.53391373, g: 0.6678176, b: 0.7921569, a: 0}
+    - _Bottom: {r: 0.67326736, g: 0.84158415, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Direction: {r: -0.03, g: 0.94, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

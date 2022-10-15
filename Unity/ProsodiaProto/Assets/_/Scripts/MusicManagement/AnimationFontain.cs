@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class AnimationFontain : NoteActionHolder
 {
-    public ParticleSystem ParticleSystemRef;
-    public Material MaterialShader;
+    public ParticleSystem ParticleSystem;
     public float StartSpeed;
     public float LitUpTime = 1;
 
     private void Start()
     {
-        ParticleSystemRef.Stop();
+        CopyMaterial();
+        ParticleSystem.Stop();
+    }
+
+    protected void CopyMaterial()
+    {
+        ParticleSystem = GetComponentInChildren<ParticleSystem>();
+        ParticleSystemRenderer renderer = ParticleSystem.GetComponent<ParticleSystemRenderer>();
+        renderer.material = new Material(renderer.material);
     }
 
     protected void OnEnable()
@@ -21,8 +28,10 @@ public class AnimationFontain : NoteActionHolder
 
     private void NotePressed(int note)
     {
-        ParticleSystemRef.startSpeed = StartSpeed + note;
-        ParticleSystemRef.Play();
+        ParticleSystem.name = "PS" + note;
+        ParticleSystem.MainModule main = ParticleSystem.main;
+        main.startSpeedMultiplier = StartSpeed + note;
+        ParticleSystem.Play();
         StartCoroutine(LightDownCoroutine());
     }
 
@@ -37,8 +46,9 @@ public class AnimationFontain : NoteActionHolder
     {
         if (!IsValid)
         {
-            ParticleSystemRef.startSpeed = 0;
-            ParticleSystemRef.Stop();
+            ParticleSystem.MainModule main = ParticleSystem.main;
+            main.startSpeedMultiplier = 0;
+            ParticleSystem.Stop();
         }
     }
 
