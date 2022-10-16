@@ -7,6 +7,7 @@ public class ChangeColorAction : NoteActionHolder
   private MeshRenderer meshRenderer;
   private Color baseColor;
   public float LitUpTime = 1;
+  
   protected void OnEnable()
   {
     Action = LightUp;

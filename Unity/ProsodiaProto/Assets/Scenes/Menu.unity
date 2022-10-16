@@ -1822,7 +1822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99905dc62f5e91a44bdda998570452c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevelName: Main
+  FirstLevelName: Intro
   CreditsSceneName: Credit
   pingButtons:
   - {fileID: 2100000, guid: 86629085dfbcdd74089f41d74599e94f, type: 2}

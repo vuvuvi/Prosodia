@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
     public float WaitingTimeStandUp;
     public Overlay Overlay;
     public AnimationTime waitWakeUp;
+    public Tutorial Tutorial;
 
     void Start()
     {
@@ -74,6 +75,8 @@ public class CharacterMovement : MonoBehaviour
                     var colorId = i + ((i < 2) ? 0 : 1);
                     Color color = NoteInfoProvider.GetNoteColor(colorId);
                     PingLocation(i, color).transform.position = loc.transform.position;
+
+                    Tutorial.RefreshText(1, color);
                 }
                 isInMovement = true;
             }
@@ -108,6 +111,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isInMovement && !Iwalk && Location.Locations.Count > pos && Location.Locations[pos].IsAvailable)
         {
+            Tutorial.RefreshText(1, Color.blue);
             HiddePingLocation();
             audioManager.PlayNote(pos + 1, "Move");
             Location = Location.Locations[pos];
@@ -115,6 +119,7 @@ public class CharacterMovement : MonoBehaviour
             animator.SetBool(isWalkingHash, true);
             AgentNavMesh.SetDestination(Location.transform.position);
             HiddeAllHighlights(0);
+            Tutorial.RefreshText(2, Color.white);
         }
     }
 
@@ -125,8 +130,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void WakeUpFinish(float time)
     {
-        Overlay.HiddeBands();
-        Overlay.SetTextSubtitle("");
+        Tutorial.RefreshText(0, NoteInfoProvider.GetNoteColor(2));
     }
 
     void Update()

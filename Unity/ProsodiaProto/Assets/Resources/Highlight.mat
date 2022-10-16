@@ -107,6 +107,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Intensity: 24.33
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -117,7 +118,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed_Animation: 2
+    - _Speed_Animation: 1
     - _SrcBlend: 1
     - _Stroke: 0
     - _Stroke_Blur: 0.49
@@ -126,7 +127,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726
-    - _fill: 0.71
+    - _fill: 1.44
     - _intensity: 1
     - _radius: 4.34
     - _stroke: 0.03
