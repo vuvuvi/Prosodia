@@ -119,7 +119,7 @@ public class CharacterMovement : MonoBehaviour
             animator.SetBool(isWalkingHash, true);
             AgentNavMesh.SetDestination(Location.transform.position);
             HiddeAllHighlights(0);
-            Tutorial.RefreshText(1, Color.white);
+            Tutorial.RefreshText(2, Color.white);
         }
     }
 
@@ -130,9 +130,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void WakeUpFinish(float time)
     {
-        Tutorial.RefreshText(1, NoteInfoProvider.GetNoteColor(2));
-        // Overlay.HiddeBands();
-        // Overlay.SetTextSubtitle("");
+        Tutorial.RefreshText(0, NoteInfoProvider.GetNoteColor(2));
     }
 
     void Update()

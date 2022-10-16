@@ -13,6 +13,7 @@ public class Tutorial : MonoBehaviour
         string text = TutosTexts[index];
         overlay.SetTextSubtitle(MainText + "\n\n" + text);
         overlay.Key.text = "O";
-        overlay.Key.material.color = color;
+        color.a = 1;
+        overlay.Key.color = color;
     }
 }
