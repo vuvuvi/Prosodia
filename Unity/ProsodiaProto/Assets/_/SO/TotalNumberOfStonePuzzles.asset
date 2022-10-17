@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f84f57778efda458f49a68555be34e, type: 3}
   m_Name: TotalNumberOfStonePuzzles
   m_EditorClassIdentifier: 
-  val: 4
+  val: 1
   ValueChanged:
     m_PersistentCalls:
       m_Calls: []
