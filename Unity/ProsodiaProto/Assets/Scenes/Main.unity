@@ -10597,6 +10597,7 @@ GameObject:
   - component: {fileID: 837030822}
   - component: {fileID: 837030823}
   - component: {fileID: 837030824}
+  - component: {fileID: 837030825}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10682,6 +10683,19 @@ MonoBehaviour:
   - for move to location
   - for interract with location
   overlay: {fileID: 471807385}
+--- !u!114 &837030825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837030819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382d492629973604db7b5fa8748b1cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameSceneToLoad: Intro
 --- !u!1001 &838185880
 PrefabInstance:
   m_ObjectHideFlags: 0
