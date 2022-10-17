@@ -9607,9 +9607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainText: PRESS
   TutosTexts:
-  - for ping
-  - for move to location
-  - for interract with location
+  - to echolocate
+  - to move to location
+  - to interact with location
   overlay: {fileID: 471807385}
 --- !u!114 &837030825
 MonoBehaviour:
