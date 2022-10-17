@@ -429,6 +429,15 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RestartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""8d1881f6-2d6c-47c1-a0e6-eb862ce96ff3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -563,6 +572,17 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                     ""action"": ""ToggleMovePlay"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ad96518-51e2-4aca-8a11-3981e4a4670c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -602,6 +622,7 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
         m_PlayerMove_Move1 = m_PlayerMove.FindAction("Move1", throwIfNotFound: true);
         m_PlayerMove_Move2 = m_PlayerMove.FindAction("Move2", throwIfNotFound: true);
         m_PlayerMove_Move3 = m_PlayerMove.FindAction("Move3", throwIfNotFound: true);
+        m_PlayerMove_RestartGame = m_PlayerMove.FindAction("RestartGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -780,6 +801,7 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMove_Move1;
     private readonly InputAction m_PlayerMove_Move2;
     private readonly InputAction m_PlayerMove_Move3;
+    private readonly InputAction m_PlayerMove_RestartGame;
     public struct PlayerMoveActions
     {
         private @Keyboard m_Wrapper;
@@ -790,6 +812,7 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
         public InputAction @Move1 => m_Wrapper.m_PlayerMove_Move1;
         public InputAction @Move2 => m_Wrapper.m_PlayerMove_Move2;
         public InputAction @Move3 => m_Wrapper.m_PlayerMove_Move3;
+        public InputAction @RestartGame => m_Wrapper.m_PlayerMove_RestartGame;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMove; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -817,6 +840,9 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 @Move3.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
                 @Move3.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
                 @Move3.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnMove3;
+                @RestartGame.started -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnRestartGame;
+                @RestartGame.performed -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnRestartGame;
+                @RestartGame.canceled -= m_Wrapper.m_PlayerMoveActionsCallbackInterface.OnRestartGame;
             }
             m_Wrapper.m_PlayerMoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -839,6 +865,9 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
                 @Move3.started += instance.OnMove3;
                 @Move3.performed += instance.OnMove3;
                 @Move3.canceled += instance.OnMove3;
+                @RestartGame.started += instance.OnRestartGame;
+                @RestartGame.performed += instance.OnRestartGame;
+                @RestartGame.canceled += instance.OnRestartGame;
             }
         }
     }
@@ -874,5 +903,6 @@ public partial class @Keyboard : IInputActionCollection2, IDisposable
         void OnMove1(InputAction.CallbackContext context);
         void OnMove2(InputAction.CallbackContext context);
         void OnMove3(InputAction.CallbackContext context);
+        void OnRestartGame(InputAction.CallbackContext context);
     }
 }
