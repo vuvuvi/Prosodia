@@ -86,8 +86,6 @@ public class CharacterMovement : MonoBehaviour
 
     public void UpdateHighlights(float value)
     {
-        Highlight highlight = FindObjectOfType<Highlight>();
-        highlight.Material.SetFloat("_transparency", value);
     }
 
     public PingLocation PingLocation(int index, Color color)
