@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterFontain
+  m_Name: WaterFontainOrange
   m_Shader: {fileID: -6465566751694194690, guid: bc7eb19c01a6a2446aebb9aa18763a5b,
     type: 3}
   m_ValidKeywords: []
@@ -136,7 +136,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Bottom: {r: 0.67326736, g: 0.84158415, b: 1, a: 0}
+    - _Bottom: {r: 0.9339623, g: 0.3236875, b: 0.066082224, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Direction: {r: -0.03, g: 0.94, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
