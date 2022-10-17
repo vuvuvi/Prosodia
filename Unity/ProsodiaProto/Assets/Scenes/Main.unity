@@ -4843,10 +4843,10 @@ AudioSource:
   m_GameObject: {fileID: 347347519}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 365375079066533333, guid: 19f6be09041ec2f429793e81599e7007,
+  OutputAudioMixerGroup: {fileID: 6082574302433383474, guid: 19f6be09041ec2f429793e81599e7007,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 83511555bbac93f43b40b7ecfbc3f2cd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -4931,6 +4931,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &347347521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347347519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cecd2e937f73f418666fb04aa6c0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienPassword: {fileID: 347347520}
 --- !u!1001 &350687332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8415,6 +8428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4639268649073626975, guid: 7f58136fa3ed7ac44994079e98032598,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6133505510556589207, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8660,6 +8678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 7446301436903408986, guid: 7f58136fa3ed7ac44994079e98032598,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7446301437058775932, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -8672,6 +8695,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3578777392814021730, guid: 19f6be09041ec2f429793e81599e7007,
         type: 2}
+    - target: {fileID: 7752940597487265475, guid: 7f58136fa3ed7ac44994079e98032598,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7991331650428040610, guid: 7f58136fa3ed7ac44994079e98032598,
         type: 3}
       propertyPath: shader
