@@ -133,7 +133,7 @@ Material:
     - _stroke: 0.03
     - _stroke_blur: 0.95
     - _trans: 0.72215974
-    - _transparency: 0
+    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

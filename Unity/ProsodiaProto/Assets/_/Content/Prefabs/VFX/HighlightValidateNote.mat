@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Highlight
+  m_Name: HighlightValidateNote
   m_Shader: {fileID: -6465566751694194690, guid: 6b2e7ae5a6776a54dbee630d9e3d4fc9,
     type: 3}
   m_ValidKeywords: []
@@ -107,7 +107,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Intensity: 24.33
+    - _Intensity: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -127,16 +127,16 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _alpha: 0.726
-    - _fill: 1.44
+    - _fill: 0.22
     - _intensity: 1
     - _radius: 4.34
     - _stroke: 0.03
     - _stroke_blur: 0.95
     - _trans: 0.72215974
-    - _transparency: 0
+    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.14217694, g: 0.6698113, b: 0.3852765, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
