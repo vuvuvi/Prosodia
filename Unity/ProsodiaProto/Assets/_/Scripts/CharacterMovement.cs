@@ -50,8 +50,8 @@ public class CharacterMovement : MonoBehaviour
 
     public void ToggleMovePlay()
     {
-        if (!isInMovement)
-            isPlaying = !isPlaying;
+        isPlaying = !isPlaying;
+        isInMovement &= !isPlaying;
         if (!isPlaying)
             animator.SetBool(isPlayingHash, false);
         cameraManager.SetCamera(IsPlaying);
