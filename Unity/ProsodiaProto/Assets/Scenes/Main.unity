@@ -21030,26 +21030,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1460839401}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1753314217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753314212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800570cf165099a4887aaeec4e4fd7b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MelodyLength: 0
-  SoundName: PuzzleSeaOrgan
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  ItemsContainer: {fileID: 2060340008}
-  FixedMelody: 05000000050000000000000002000000
-  RandomMelody: 0
 --- !u!114 &1753314218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21062,7 +21042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25b13063fba5c6479e6a80d7b8d3c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Puzzle: {fileID: 1753314217}
+  Puzzle: {fileID: 0}
   TrackToPlay: {fileID: 1753314219}
   Delay: 0
 --- !u!82 &1753314219
@@ -21161,6 +21141,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1753314223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753314212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa53719c0f272634491ab92e18d2d603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MelodyLength: 0
+  SoundName: PuzzleSeaOrgan
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemsContainer: {fileID: 2060340008}
+  FixedMelody: 05000000050000000000000002000000
+  RandomMelody: 0
+  NoteListeners: []
 --- !u!1 &1760147197
 GameObject:
   m_ObjectHideFlags: 0
@@ -22595,6 +22596,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151945636}
     m_Modifications:
+    - target: {fileID: 4008741188039467116, guid: ef6c856faa9469c449929878e698f237,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585296675398572674, guid: ef6c856faa9469c449929878e698f237,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7165657140799056773, guid: ef6c856faa9469c449929878e698f237,
         type: 3}
       propertyPath: m_RootOrder
