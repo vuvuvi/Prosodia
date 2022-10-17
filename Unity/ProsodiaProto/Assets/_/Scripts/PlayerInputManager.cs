@@ -8,11 +8,13 @@ public class PlayerInputManager : MonoBehaviour
     private CharacterMovement characterMovement;
     private PlayerMelodyManager playerMelodyManager;
     private Keyboard keyboard;
+    private GameManager gameManager;
 
     private void Start()
     {
         characterMovement = GetComponent<CharacterMovement>();
         playerMelodyManager = GetComponent<PlayerMelodyManager>();
+        gameManager = FindObjectOfType<GameManager>();
         keyboard = new Keyboard();
         keyboard.Enable();
         SetUpBindings();
@@ -36,5 +38,6 @@ public class PlayerInputManager : MonoBehaviour
         keyboard.PlayerMove.Move2.performed += ctx => characterMovement.MoveTo(2);
         keyboard.PlayerMove.Move3.performed += ctx => characterMovement.MoveTo(3);
         keyboard.PlayerMove.Echolocation.performed += ctx => characterMovement.Echolocation();
+        keyboard.PlayerMove.RestartGame.performed += ctx => gameManager.RestartGame();
     }
 }

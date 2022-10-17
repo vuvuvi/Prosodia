@@ -73,10 +73,12 @@ public class CharacterMovement : MonoBehaviour
                     var loc = Location.Locations[i];
                     HiddeAllHighlights(1);
                     var colorId = i + ((i < 2) ? 0 : 1);
-                    Color color = NoteInfoProvider.GetNoteColor(colorId);
-                    PingLocation(i, color).transform.position = loc.transform.position;
-
-                    Tutorial.RefreshText(1, color);
+                    if(loc.IsAvailable)
+                    {
+                        Color color = NoteInfoProvider.GetNoteColor(colorId);
+                        PingLocation(i, color).transform.position = loc.transform.position;
+                        Tutorial.RefreshText(1, color);
+                    }
                 }
                 isInMovement = true;
             }
