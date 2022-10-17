@@ -6373,7 +6373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &471807384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13914,12 +13914,12 @@ PrefabInstance:
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: Distances.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: Locations.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -13934,7 +13934,7 @@ PrefabInstance:
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: Distances.Array.data[2]
-      value: 59.668873
+      value: 87.86332
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -13955,7 +13955,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Locations.Array.data[2]
       value: 
-      objectReference: {fileID: 1460839402}
+      objectReference: {fileID: 753090778}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
       propertyPath: Locations.Array.data[3]
@@ -18324,7 +18324,7 @@ PrefabInstance:
     - target: {fileID: 1073420388525920718, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7347183
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1073420388525920718, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
         type: 3}
@@ -18369,7 +18369,7 @@ PrefabInstance:
     - target: {fileID: 4972516069837759948, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e, type: 3}
@@ -26655,7 +26655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9023515c8e01237419c48ddad55c862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Puzzle: {fileID: 0}
+  Puzzle: {fileID: 2088432557}
   Animator: {fileID: 729077659}
   AnimationName: OrganAnim
 --- !u!82 &2088432553
