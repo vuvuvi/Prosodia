@@ -2108,6 +2108,7 @@ GameObject:
   - component: {fileID: 171506041}
   - component: {fileID: 171506040}
   - component: {fileID: 171506042}
+  - component: {fileID: 171506044}
   - component: {fileID: 171506043}
   m_Layer: 0
   m_Name: StonePuzzlesSolver
@@ -2259,6 +2260,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &171506044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171506039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e211454ea8f4846ad7e1dc38947a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 0}
+  LocationToUnlock: {fileID: 1537437613}
 --- !u!1001 &171738890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7204,6 +7219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Id
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: IsAvailable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -15673,6 +15693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
+      propertyPath: IsAvailable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
       propertyPath: Distances.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -18305,6 +18330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Id
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
+        type: 3}
+      propertyPath: IsAvailable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8180600580674300208, guid: c8ee6e828b9660e4ea2c959fad592270,
         type: 3}
@@ -24520,6 +24550,20 @@ MonoBehaviour:
   Puzzle: {fileID: 2088432557}
   TrackToPlay: {fileID: 2088432553}
   Delay: 0
+--- !u!114 &2088432562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088432546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e211454ea8f4846ad7e1dc38947a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puzzle: {fileID: 2088432557}
+  LocationToUnlock: {fileID: 753090778}
 --- !u!1001 &2103523831
 PrefabInstance:
   m_ObjectHideFlags: 0
