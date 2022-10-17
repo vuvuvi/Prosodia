@@ -39,6 +39,7 @@ public class CameraManager : MonoBehaviour
 
     private void ResetCamera()
     {
+        if (!enabled) return;
         SwitchToOrtho();
         puzzleVirtualCam = null;
     }

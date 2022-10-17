@@ -248,7 +248,7 @@ MonoBehaviour:
   Puzzle: {fileID: 0}
   ObjectToMove: {fileID: 6919121980903752146}
   Destination: {fileID: 0}
-  MoveSpeed: 1
+  MoveSpeed: 4
 --- !u!1 &5549216269524393301
 GameObject:
   m_ObjectHideFlags: 0
