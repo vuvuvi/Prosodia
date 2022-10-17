@@ -19,4 +19,8 @@ public class AnimateAction : ActionHolder
             Animate();
         };
     }
+
+    private void Update()
+    {
+    }
 }
