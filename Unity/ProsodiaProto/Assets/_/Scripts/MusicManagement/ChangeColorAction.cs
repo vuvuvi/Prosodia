@@ -9,6 +9,8 @@ public class ChangeColorAction : NoteActionHolder
     private MeshRenderer meshRenderer;
     private List<Color> baseColors;
     public float LitUpTime = 1;
+    public bool AllMaterials = true;
+    public List<bool> ChangeMaterial;
 
     protected void OnEnable()
     {
@@ -17,10 +19,17 @@ public class ChangeColorAction : NoteActionHolder
         materials = new List<Material>();
         baseColors = new List<Color>();
         var mats = meshRenderer.materials.ToList();
+        if (AllMaterials)
+        {
+            ChangeMaterial = new List<bool>();
+
+        }
         foreach (var mat in mats)
         {
             materials.Add(new Material(mat));
             baseColors.Add(mat.color);
+            if (AllMaterials)
+                ChangeMaterial.Add(true);
         }
         meshRenderer.materials = materials.ToArray();
     }
@@ -31,7 +40,10 @@ public class ChangeColorAction : NoteActionHolder
         {
             return;
         }
-        materials.ForEach(m => m.color = newColor);
+        for (int i = 0; i < materials.Count; i++)
+        {
+            materials[i].color = ChangeMaterial[i]? newColor : baseColors[i];
+        }
         StartCoroutine(LightDownCoroutine());
     }
 
