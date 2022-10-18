@@ -26,9 +26,6 @@ public class FinishGameAction : ActionHolder
         if(GameIsFinished && PathReached())
         {
             GameIsFinished = false;
-            Overlay.toHidde = false;
-            Overlay.animate.Duration = 5;
-            Overlay.animate.StartAnimation();
             StartCoroutine(LoadScene());
         }
     }
@@ -36,6 +33,10 @@ public class FinishGameAction : ActionHolder
     protected IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(TimeOutShowCredit);
+        Overlay.toHidde = false;
+        Overlay.animate.Duration = 5;
+        Overlay.animate.StartAnimation();
+        yield return new WaitForSeconds(Overlay.animate.Duration);
         SceneManager.LoadScene(CreditSceneName);
     }
 

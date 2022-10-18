@@ -21560,8 +21560,9 @@ MonoBehaviour:
   Puzzle: {fileID: 1873271995}
   Camera: {fileID: 222604845}
   CreditSceneName: Credit
-  GameIsFinished: 1
-  TimeOutShowCredit: 0
+  GameIsFinished: 0
+  TimeOutShowCredit: 12
+  Overlay: {fileID: 471807385}
 --- !u!114 &1779109357
 MonoBehaviour:
   m_ObjectHideFlags: 0
