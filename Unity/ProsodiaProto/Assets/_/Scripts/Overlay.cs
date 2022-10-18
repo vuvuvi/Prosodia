@@ -7,6 +7,7 @@ public class Overlay : MonoBehaviour
 {
     public GameObject bandTop;
     public GameObject bandDown;
+    public GameObject Canvas;
     public TMP_Text Subtitle;
     public TMP_Text Key;
     public AnimationTime animate;
@@ -19,7 +20,13 @@ public class Overlay : MonoBehaviour
     {
         TextControlsRefresh();
         Key.material = new Material(Key.material);
-        gameObject.SetActive(true);
+        Canvas.SetActive(true);
+    }
+
+    public void HiddeTexts()
+    {
+        Subtitle.gameObject.SetActive(false);
+        Key.gameObject.SetActive(false);
     }
 
     public void TextControlsRefresh()

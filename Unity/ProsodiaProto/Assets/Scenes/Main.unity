@@ -672,7 +672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &39773981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5820,6 +5820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bandTop: {fileID: 1104813284}
   bandDown: {fileID: 604780159}
+  Canvas: {fileID: 826605735}
   Subtitle: {fileID: 39773981}
   Key: {fileID: 2443326}
   animate: {fileID: 471807384}
@@ -9013,7 +9014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &826605736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12966,7 +12967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1129864718
 Transform:
   m_ObjectHideFlags: 0
