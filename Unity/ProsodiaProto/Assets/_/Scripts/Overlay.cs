@@ -19,7 +19,7 @@ public class Overlay : MonoBehaviour
     {
         TextControlsRefresh();
         Key.material = new Material(Key.material);
-        gameObject.SetActiveRecursively(true);
+        gameObject.SetActive(true);
     }
 
     public void TextControlsRefresh()
