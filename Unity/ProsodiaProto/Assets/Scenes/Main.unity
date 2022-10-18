@@ -4324,7 +4324,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 347347519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa53719c0f272634491ab92e18d2d603, type: 3}
+  m_Script: {fileID: 11500000, guid: 800570cf165099a4887aaeec4e4fd7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MelodyLength: 0
@@ -4335,7 +4335,6 @@ MonoBehaviour:
   ItemsContainer: {fileID: 347347519}
   FixedMelody: 
   RandomMelody: 0
-  NoteListeners: []
 --- !u!1001 &350687332
 PrefabInstance:
   m_ObjectHideFlags: 0
