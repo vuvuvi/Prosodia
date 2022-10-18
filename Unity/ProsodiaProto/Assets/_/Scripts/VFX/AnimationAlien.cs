@@ -8,6 +8,8 @@ public class AnimationAlien : MonoBehaviour
     public AnimationTime Animate;
     public Transform TransformRef;
     public float VerticalOffset;
+    public Transform MoveTo;
+    public GameObject Armature;
     
     public void UpdateAnimation(float time)
     {
@@ -20,5 +22,11 @@ public class AnimationAlien : MonoBehaviour
     public void StopAnimation(float time)
     {
         Animate.StartAnimation();
+    }
+
+    public void MoveAlien()
+    {
+        Armature.transform.position = MoveTo.position;
+        Armature.transform.rotation = MoveTo.rotation;
     }
 }

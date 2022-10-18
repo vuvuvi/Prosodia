@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 504075138482737071}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3381355344470327630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271620272378521958}
+  m_Layer: 0
+  m_Name: TargetAlien
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &271620272378521958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381355344470327630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7183906489863717749}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7183906488340841234
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +127,7 @@ Transform:
   m_Children:
   - {fileID: 7183906488340841261}
   - {fileID: 504075138482737071}
+  - {fileID: 271620272378521958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,6 +238,7 @@ MonoBehaviour:
   Animate: {fileID: 860419847}
   TransformRef: {fileID: 854435607}
   VerticalOffset: 1
+  MoveTo: {fileID: 0}
 --- !u!114 &860419847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,8 +351,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3260408175223084108, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
+--- !u!1 &5571646614731152131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7061825629043738046, guid: 57918b6ddd809604bb051da61f5629ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 3410020883034021565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924092442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571646614731152131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f4efb8b96ce32418834414fa172ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteInfoProvider: {fileID: 0}
+  LitUpTime: 1
+  AllMaterials: 1
+  ChangeMaterial: 
 --- !u!4 &8175574050720770084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6784578991080928921, guid: 57918b6ddd809604bb051da61f5629ac,
@@ -393,8 +449,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3260408175223084108, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
+--- !u!1 &6170459675268503163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7061825629043738046, guid: 57918b6ddd809604bb051da61f5629ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 4008560594128376773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &814701424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170459675268503163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f4efb8b96ce32418834414fa172ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteInfoProvider: {fileID: 0}
+  LitUpTime: 1
+  AllMaterials: 1
+  ChangeMaterial: 
 --- !u!4 &7604026954413663580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6784578991080928921, guid: 57918b6ddd809604bb051da61f5629ac,
@@ -468,8 +547,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3260408175223084108, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
+--- !u!1 &6689148039245662952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7061825629043738046, guid: 57918b6ddd809604bb051da61f5629ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 4527248258163789654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &814701427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689148039245662952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f4efb8b96ce32418834414fa172ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteInfoProvider: {fileID: 0}
+  LitUpTime: 1
+  AllMaterials: 1
+  ChangeMaterial: 
 --- !u!4 &6986119760655104463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6784578991080928921, guid: 57918b6ddd809604bb051da61f5629ac,
@@ -543,7 +645,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3260408175223084108, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57918b6ddd809604bb051da61f5629ac, type: 3}
 --- !u!4 &2092086623372242888 stripped
 Transform:
@@ -551,3 +654,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4841157490056239441}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2391301351723293935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7061825629043738046, guid: 57918b6ddd809604bb051da61f5629ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 4841157490056239441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &814701430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391301351723293935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f4efb8b96ce32418834414fa172ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteInfoProvider: {fileID: 0}
+  LitUpTime: 1
+  AllMaterials: 1
+  ChangeMaterial: 
