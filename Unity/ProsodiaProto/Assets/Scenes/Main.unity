@@ -16561,6 +16561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindOrgan
       objectReference: {fileID: 0}
+    - target: {fileID: 429566345058694054, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1073420388525920718, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
         type: 3}
       propertyPath: m_RootOrder
@@ -16616,10 +16621,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2973467479027813671, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183879275599035063, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4972516069837759948, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094976273593411239, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3feb5a3c84e58ed4eb0a6e5abe058e4e, type: 3}
