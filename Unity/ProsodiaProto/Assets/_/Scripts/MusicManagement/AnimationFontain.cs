@@ -7,6 +7,7 @@ public class AnimationFontain : NoteActionHolder
     public ParticleSystem ParticleSystem;
     public float StartSpeed;
     public float LitUpTime = 1;
+    private Material material;
 
     private void Start()
     {
@@ -18,7 +19,8 @@ public class AnimationFontain : NoteActionHolder
     {
         ParticleSystem = GetComponentInChildren<ParticleSystem>();
         ParticleSystemRenderer renderer = ParticleSystem.GetComponent<ParticleSystemRenderer>();
-        renderer.material = new Material(renderer.material);
+        material = new Material(renderer.material);
+        renderer.material = material;
     }
 
     protected void OnEnable()
@@ -28,6 +30,11 @@ public class AnimationFontain : NoteActionHolder
 
     private void NotePressed(int note)
     {
+        //ne fonctionne pas
+        //var color = NoteInfoProvider.GetNoteColor(note);
+        //material.color = color;
+        //material.SetColor("_Color", color);
+        //main.startColor = color;
         ParticleSystem.name = "PS" + note;
         ParticleSystem.MainModule main = ParticleSystem.main;
         main.startSpeedMultiplier = StartSpeed + note;

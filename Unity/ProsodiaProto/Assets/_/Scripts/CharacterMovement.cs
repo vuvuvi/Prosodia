@@ -71,7 +71,6 @@ public class CharacterMovement : MonoBehaviour
                 for (int i = 0; i < Location.Locations.Count; i++)
                 {
                     var loc = Location.Locations[i];
-                    HiddeAllHighlights(1);
                     var colorId = i + ((i < 2) ? 0 : 1);
                     if(loc.IsAvailable)
                     {
@@ -85,10 +84,8 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void HiddeAllHighlights(float value)
+    public void UpdateHighlights(float value)
     {
-        Highlight highlight = FindObjectOfType<Highlight>();
-        highlight.material.SetFloat("_transparency", value);
     }
 
     public PingLocation PingLocation(int index, Color color)
@@ -120,7 +117,6 @@ public class CharacterMovement : MonoBehaviour
             Iwalk = true;
             animator.SetBool(isWalkingHash, true);
             AgentNavMesh.SetDestination(Location.transform.position);
-            HiddeAllHighlights(0);
             Tutorial.RefreshText(2, Color.white);
         }
     }
