@@ -693,10 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Where am I ? What is this planet ?
-
-    What am I hearing ? It''s like
-    the atmosphere is audible...'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2301,7 +2298,8 @@ AudioSource:
   m_GameObject: {fileID: 171506039}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 350067268559864080, guid: 19f6be09041ec2f429793e81599e7007,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: df58cfda6494c154f8e3f67c1c428710, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -13276,7 +13274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1129864718
 Transform:
   m_ObjectHideFlags: 0
