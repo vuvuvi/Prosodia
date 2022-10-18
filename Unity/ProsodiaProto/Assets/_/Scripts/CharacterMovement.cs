@@ -50,6 +50,9 @@ public class CharacterMovement : MonoBehaviour
 
     public void ToggleMovePlay()
     {
+        MusicListener musicListener = Location.GetComponent<MusicListener>();
+        if(!musicListener || !musicListener.enabled) return;
+        
         isPlaying = !isPlaying;
         isInMovement &= !isPlaying;
         if (!isPlaying)
